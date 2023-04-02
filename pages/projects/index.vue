@@ -10,10 +10,10 @@
         <div
           class="mt-6 space-y-12 lg:grid lg:grid-cols-3 lg:gap-x-6 lg:space-y-0"
         >
-          <NuxtLink
+          <li
             v-for="destination in destinations"
             :key="destination.name"
-            class="group relative"
+            class="group relative list-none"
           >
             <div
               class="relative h-80 w-full overflow-hidden rounded-lg group-hover:opacity-75 sm:aspect-w-2 sm:aspect-h-1 sm:h-64 lg:aspect-w-1 lg:aspect-h-1"
@@ -33,7 +33,7 @@
             >
               {{ destination.short_description }}
             </p>
-          </NuxtLink>
+          </li>
         </div>
         <!-- end projects div -->
       </div>
@@ -42,7 +42,7 @@
   </div>
 </template>
 <script>
-import sourceData from "assets/data/data.json";
+import sourceData from "@/content/data.json";
 export default {
   data() {
     return {
