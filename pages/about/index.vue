@@ -1,5 +1,5 @@
 <template lang="">
-  <div class="md:container pt-2 m-16">
+  <div class="md:container pt-2 m-6 justify-self-auto">
     <h2
       class="text-4xl font-bold text-center no-underline text-purple-600 dark:text-cyan-300"
     >

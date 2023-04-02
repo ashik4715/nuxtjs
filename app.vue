@@ -22,25 +22,25 @@
           </button>
         </div>
         <div class="hidden lg:flex lg:gap-x-12">
-          <router-link
+          <NuxtLink
             class="text-lg font-semibold leading-7 text-white hover:text-emerald-500 dark:hover:text-rose-500"
             to="/"
-            >Home</router-link
+            >Home</NuxtLink
           >
-          <router-link
+          <NuxtLink
             class="text-lg font-semibold leading-7 text-white hover:text-emerald-500 dark:hover:text-rose-500"
             to="/about"
-            >About</router-link
+            >About</NuxtLink
           >
-          <router-link
+          <NuxtLink
             class="text-lg font-semibold leading-7 text-white hover:text-emerald-500 dark:hover:text-rose-500"
             to="/contact"
-            >Contact</router-link
+            >Contact</NuxtLink
           >
-          <router-link
+          <NuxtLink
             class="text-lg font-semibold leading-7 text-white hover:text-emerald-500 dark:hover:text-rose-500"
             to="/projects"
-            >Projects</router-link
+            >Projects</NuxtLink
           >
         </div>
         <div class="hidden lg:flex lg:flex-1 lg:justify-end">
@@ -52,7 +52,7 @@
                 class="sr-only peer"
               />
               <div
-                class="w-11 h-6 bg-gray-600 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"
+                class="w-11 h-6 bg-gray-600 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-cyan-400"
               ></div>
               <span
                 class="ml-2 text-sm font-medium text-cyan-300 dark:text-gray-200"
@@ -75,7 +75,7 @@
       >
         <div class="fixed inset-0 z-50" />
         <DialogPanel
-          class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white dark:bg-black px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
+          class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white dark:bg-gray-700 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
         >
           <div class="flex items-center justify-between">
             <a href="/" class="-m-1.5 p-1.5">
@@ -93,35 +93,35 @@
           <div class="mt-6 flow-root">
             <div class="-my-6 divide-y divide-gray-500/10">
               <div class="space-y-2 py-6">
-                <router-link
+                <NuxtLink
                   class="-mx-3 block rounded-lg py-2 px-3 text-lg font-semibold leading-7 text-gray-900 dark:text-white hover:bg-slate-400"
                   to="/"
-                  >Home</router-link
+                  >Home</NuxtLink
                 >
-                <router-link
+                <NuxtLink
                   class="-mx-3 block rounded-lg py-2 px-3 text-lg font-semibold leading-7 text-gray-900 dark:text-white hover:bg-slate-400"
                   to="/about"
-                  >About</router-link
+                  >About</NuxtLink
                 >
-                <router-link
+                <NuxtLink
                   class="-mx-3 block rounded-lg py-2 px-3 text-lg font-semibold leading-7 text-gray-900 dark:text-white hover:bg-slate-400"
                   to="/contact"
-                  >Contact</router-link
+                  >Contact</NuxtLink
                 >
-                <router-link
+                <NuxtLink
                   class="-mx-3 block rounded-lg py-2 px-3 text-lg font-semibold leading-7 text-gray-900 dark:text-white hover:bg-slate-400"
                   to="/projects"
-                  >Projects</router-link
+                  >Projects</NuxtLink
                 >
-                <router-link
+                <NuxtLink
                   class="-mx-3 block rounded-lg py-2 px-3 text-lg font-semibold leading-7 text-gray-900 dark:text-white hover:bg-slate-400"
                   to="/privacy-policy"
-                  >Privacy-policy</router-link
+                  >Privacy-policy</NuxtLink
                 >
-                <router-link
-                  to="/Terms-conditions"
+                <NuxtLink
+                  to="/terms-conditions"
                   class="-mx-3 block rounded-lg py-2 px-3 text-lg font-semibold leading-7 text-gray-900 dark:text-white hover:bg-slate-400"
-                  >Terms &amp; Conditions Agreement</router-link
+                  >Terms &amp; Conditions Agreement</NuxtLink
                 >
               </div>
               <div class="py-6">
@@ -150,38 +150,38 @@
     >
       <nav class="flex flex-wrap justify-center -mx-5 -my-2">
         <div class="px-5 py-2">
-          <router-link
+          <NuxtLink
             to="/about"
             class="text-lg leading-6 text-white hover:text-cyan-300 dark:hover:text-pink-500"
-            >About</router-link
+            >About</NuxtLink
           >
         </div>
         <div class="px-5 py-2">
-          <router-link
+          <NuxtLink
             to="/contact"
             class="text-lg leading-6 text-white hover:text-cyan-300 dark:hover:text-pink-500"
-            >Contact</router-link
+            >Contact</NuxtLink
           >
         </div>
         <div class="px-5 py-2">
-          <router-link
+          <NuxtLink
             to="/projects"
             class="text-lg leading-6 text-white hover:text-cyan-300 dark:hover:text-pink-500"
-            >Projects</router-link
+            >Projects</NuxtLink
           >
         </div>
         <div class="px-5 py-2">
-          <router-link
+          <NuxtLink
             to="/privacy-policy"
             class="text-lg leading-6 text-white hover:text-cyan-300 dark:hover:text-pink-500"
-            >Privacy Policy</router-link
+            >Privacy Policy</NuxtLink
           >
         </div>
         <div class="px-5 py-2">
-          <router-link
+          <NuxtLink
             to="/terms-conditions"
             class="text-lg leading-6 text-white hover:text-cyan-300 dark:hover:text-pink-500"
-            >Terms and Conditions</router-link
+            >Terms and Conditions</NuxtLink
           >
         </div>
       </nav>
@@ -244,8 +244,8 @@
       </div>
       <p class="mt-8 text-lg leading-6 text-center text-gray-400">
         © 2023
-        <router-link to="/" class="text-cyan-400 hover:text-purple-500"
-          >aydidhasan.com</router-link
+        <NuxtLink to="/" class="text-cyan-400 hover:text-purple-500"
+          >aydidhasan.com</NuxtLink
         >. All rights reserved.
       </p>
     </div>
