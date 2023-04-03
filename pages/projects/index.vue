@@ -18,8 +18,9 @@
             <div
               class="relative h-80 w-full overflow-hidden rounded-lg group-hover:opacity-75 sm:aspect-w-2 sm:aspect-h-1 sm:h-64 lg:aspect-w-1 lg:aspect-h-1"
             >
+              <!-- :src="destination.imageSrc" -->
               <img
-                :src="`@/static/img/${destination.image}`"
+                :src="`_nuxt/static/img/${destination.image}`"
                 :alt="destination.slug"
                 @click="showModal(destination)"
                 class="h-full w-full object-cover object-center cursor-pointer"

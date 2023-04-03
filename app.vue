@@ -187,7 +187,7 @@
       </nav>
       <div class="flex justify-center mt-8 space-x-6">
         <a
-          href="https://www.facebook.com/dragon.slayer1010"
+          href="https://www.facebook.com/ajholok"
           target="_blank"
           rel="noopener noreferrer"
           class="text-gray-400 hover:text-gray-500"
@@ -207,7 +207,7 @@
           </svg>
         </a>
         <a
-          href="https://github.com/MohammedAydid"
+          href="https://github.com/ashik4715"
           target="_blank"
           rel="noopener noreferrer"
           class="text-gray-400 hover:text-gray-500"
@@ -226,7 +226,11 @@
             ></path>
           </svg>
         </a>
-        <a href="#" class="text-gray-400 hover:text-gray-500">
+        <a
+          href="https://dribbble.com/amitbwas007"
+          target="_blank"
+          class="text-gray-400 hover:text-gray-500"
+        >
           <span class="sr-only">Dribbble</span>
           <svg
             class="w-6 h-6"
