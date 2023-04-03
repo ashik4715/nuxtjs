@@ -18,9 +18,9 @@
         </div>
       </div>
       <div
-        class="col-span-auto text-center inline-flex relative h-full w-full overflow-hidden rounded-lg"
+        class="col-span-3 text-center justify-evenly inline-flex relative h-full w-full overflow-hidden rounded-lg"
       >
-        <div class="mx-auto mb-4 items-center justify-center hover:opacity-75">
+        <div class="mb-4 items-center hover:opacity-75">
           <a
             href="https://www.facebook.com/dragon.slayer1010"
             target="_blank"
@@ -39,7 +39,7 @@
               ></path></svg
           ></a>
         </div>
-        <div class="mx-auto mb-4 items-center justify-center hover:opacity-75">
+        <div class="mb-4 items-center hover:opacity-75">
           <a
             href="https://www.linkedin.com/in/mohammed-aydid-hasan/"
             target="_blank"
@@ -59,7 +59,7 @@
           </a>
         </div>
         <div
-          class="mx-auto mb-4 h-10 w-10 items-center justify-center rounded-full bg-inherit hover:opacity-75"
+          class="mb-4 h-10 w-10 items-center rounded-full bg-inherit hover:opacity-75"
         >
           <a
             href="https://github.com/MohammedAydid"

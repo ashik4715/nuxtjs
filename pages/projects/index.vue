@@ -12,16 +12,17 @@
         >
           <li
             v-for="destination in destinations"
-            :key="destination.name"
+            :key="destination.id"
             class="group relative list-none"
           >
             <div
               class="relative h-80 w-full overflow-hidden rounded-lg group-hover:opacity-75 sm:aspect-w-2 sm:aspect-h-1 sm:h-64 lg:aspect-w-1 lg:aspect-h-1"
             >
               <img
-                :src="`/images/${destination.image}`"
+                :src="`_nuxt/static/img/${destination.image}`"
                 :alt="destination.slug"
-                class="h-full w-full object-cover object-center"
+                @click="showModal(destination)"
+                class="h-full w-full object-cover object-center cursor-pointer"
               />
             </div>
             <h3 class="mt-6 text-lg text-purple-600 dark:text-cyan-300">
@@ -43,11 +44,20 @@
 </template>
 <script>
 import sourceData from "@/content/data.json";
+
 export default {
   data() {
     return {
       destinations: sourceData.destinations,
+      selectedDestination: null,
     };
+  },
+  methods: {
+    showModal(destination) {
+      console.log(destination);
+      this.selectedDestination = destination;
+    },
   },
 };
 </script>
+<script setup></script>
