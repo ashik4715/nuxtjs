@@ -22,7 +22,7 @@
       >
         <div class="mb-4 items-center hover:opacity-75">
           <a
-            href="https://www.facebook.com/dragon.slayer1010"
+            href="https://www.facebook.com/ajholok"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -41,7 +41,7 @@
         </div>
         <div class="mb-4 items-center hover:opacity-75">
           <a
-            href="https://www.linkedin.com/in/mohammed-aydid-hasan/"
+            href="https://www.linkedin.com/in/ashikur-rahman-0a272ba1/"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -62,7 +62,9 @@
           class="mb-4 h-10 w-10 items-center rounded-full bg-inherit hover:opacity-75"
         >
           <a
-            href="https://github.com/MohammedAydid"
+            href="https://github.com/ashik4715"
+            target="_blank"
+            rel="noopener noreferrer"
             class="text-slate-400 hover:text-gray-500"
           >
             <span class="sr-only">GitHub</span>

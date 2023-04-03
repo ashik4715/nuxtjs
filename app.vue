@@ -67,74 +67,76 @@
           </div>
         </div>
       </nav>
-      <Dialog
-        as="div"
-        class="lg:hidden"
-        @close="mobileMenuOpen = false"
-        :open="mobileMenuOpen"
-      >
-        <div class="fixed inset-0 z-50" />
-        <DialogPanel
-          class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white dark:bg-gray-700 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
+      <Suspense>
+        <Dialog
+          as="div"
+          class="lg:hidden"
+          @close="mobileMenuOpen = false"
+          :open="mobileMenuOpen"
         >
-          <div class="flex items-center justify-between">
-            <a href="/" class="-m-1.5 p-1.5">
-              <!-- <img class="h-8 w-auto" src="#" alt="logo" /> -->
-            </a>
-            <button
-              type="button"
-              class="-m-2.5 rounded-md p-2.5 text-red-600 hover:text-emerald-500"
-              @click="mobileMenuOpen = false"
-            >
-              <span class="sr-only">Close menu</span>
-              <XMarkIcon class="h-6 w-6" aria-hidden="true" />
-            </button>
-          </div>
-          <div class="mt-6 flow-root">
-            <div class="-my-6 divide-y divide-gray-500/10">
-              <div class="space-y-2 py-6">
-                <NuxtLink
-                  class="-mx-3 block rounded-lg py-2 px-3 text-lg font-semibold leading-7 text-gray-900 dark:text-white hover:bg-slate-400"
-                  to="/"
-                  >Home</NuxtLink
-                >
-                <NuxtLink
-                  class="-mx-3 block rounded-lg py-2 px-3 text-lg font-semibold leading-7 text-gray-900 dark:text-white hover:bg-slate-400"
-                  to="/about"
-                  >About</NuxtLink
-                >
-                <NuxtLink
-                  class="-mx-3 block rounded-lg py-2 px-3 text-lg font-semibold leading-7 text-gray-900 dark:text-white hover:bg-slate-400"
-                  to="/contact"
-                  >Contact</NuxtLink
-                >
-                <NuxtLink
-                  class="-mx-3 block rounded-lg py-2 px-3 text-lg font-semibold leading-7 text-gray-900 dark:text-white hover:bg-slate-400"
-                  to="/projects"
-                  >Projects</NuxtLink
-                >
-                <NuxtLink
-                  class="-mx-3 block rounded-lg py-2 px-3 text-lg font-semibold leading-7 text-gray-900 dark:text-white hover:bg-slate-400"
-                  to="/privacy-policy"
-                  >Privacy-policy</NuxtLink
-                >
-                <NuxtLink
-                  to="/terms-conditions"
-                  class="-mx-3 block rounded-lg py-2 px-3 text-lg font-semibold leading-7 text-gray-900 dark:text-white hover:bg-slate-400"
-                  >Terms &amp; Conditions Agreement</NuxtLink
-                >
-              </div>
-              <div class="py-6">
-                <a
-                  href="/"
-                  class="-mx-3 block rounded-lg py-2.5 px-3 text-lg font-semibold leading-7 text-gray-900 dark:text-white hover:bg-slate-400"
-                  >Log in</a
-                >
+          <div class="fixed inset-0 z-50" />
+          <DialogPanel
+            class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white dark:bg-gray-700 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
+          >
+            <div class="flex items-center justify-between">
+              <a href="/" class="-m-1.5 p-1.5">
+                <!-- <img class="h-8 w-auto" src="#" alt="logo" /> -->
+              </a>
+              <button
+                type="button"
+                class="-m-2.5 rounded-md p-2.5 text-red-600 hover:text-emerald-500"
+                @click="mobileMenuOpen = false"
+              >
+                <span class="sr-only">Close menu</span>
+                <XMarkIcon class="h-6 w-6" aria-hidden="true" />
+              </button>
+            </div>
+            <div class="mt-6 flow-root">
+              <div class="-my-6 divide-y divide-gray-500/10">
+                <div class="space-y-2 py-6">
+                  <NuxtLink
+                    class="-mx-3 block rounded-lg py-2 px-3 text-lg font-semibold leading-7 text-gray-900 dark:text-white hover:bg-slate-400"
+                    to="/"
+                    >Home</NuxtLink
+                  >
+                  <NuxtLink
+                    class="-mx-3 block rounded-lg py-2 px-3 text-lg font-semibold leading-7 text-gray-900 dark:text-white hover:bg-slate-400"
+                    to="/about"
+                    >About</NuxtLink
+                  >
+                  <NuxtLink
+                    class="-mx-3 block rounded-lg py-2 px-3 text-lg font-semibold leading-7 text-gray-900 dark:text-white hover:bg-slate-400"
+                    to="/contact"
+                    >Contact</NuxtLink
+                  >
+                  <NuxtLink
+                    class="-mx-3 block rounded-lg py-2 px-3 text-lg font-semibold leading-7 text-gray-900 dark:text-white hover:bg-slate-400"
+                    to="/projects"
+                    >Projects</NuxtLink
+                  >
+                  <NuxtLink
+                    class="-mx-3 block rounded-lg py-2 px-3 text-lg font-semibold leading-7 text-gray-900 dark:text-white hover:bg-slate-400"
+                    to="/privacy-policy"
+                    >Privacy-policy</NuxtLink
+                  >
+                  <NuxtLink
+                    to="/terms-conditions"
+                    class="-mx-3 block rounded-lg py-2 px-3 text-lg font-semibold leading-7 text-gray-900 dark:text-white hover:bg-slate-400"
+                    >Terms &amp; Conditions Agreement</NuxtLink
+                  >
+                </div>
+                <div class="py-6">
+                  <a
+                    href="/"
+                    class="-mx-3 block rounded-lg py-2.5 px-3 text-lg font-semibold leading-7 text-gray-900 dark:text-white hover:bg-slate-400"
+                    >Log in</a
+                  >
+                </div>
               </div>
             </div>
-          </div>
-        </DialogPanel>
-      </Dialog>
+          </DialogPanel>
+        </Dialog>
+      </Suspense>
     </header>
   </div>
 
@@ -263,14 +265,19 @@ import { Dialog, DialogPanel } from "@headlessui/vue";
 import { Bars3Icon, XMarkIcon } from "@heroicons/vue/24/outline";
 import { useDark, useToggle } from "@vueuse/core";
 export default {
+  components: {
+    Dialog,
+    DialogPanel,
+  },
+  ssr: false,
   data() {
     return {
       view: {
         atTopOfPage: true,
+        mobileMenuOpen: false,
       },
     };
   },
-
   // a beforeMount call to add a listener to the window
   beforeMount() {
     window.addEventListener("scroll", this.handleScroll);

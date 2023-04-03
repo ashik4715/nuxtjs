@@ -16,7 +16,7 @@
       >
         <div class="grid h-screen place-items-center mx-auto p-8 text-5xl">
           <h1 class="text-cyan-400 py-5 no-underline">
-            I'm an
+            I'm a
             <span class="text-fuchsia-400">{{ typeValue }}</span>
             <span class="cursor" :class="{ typing: typeStatus }">&nbsp;</span>
           </h1>
@@ -49,7 +49,7 @@ export default {
     return {
       typeValue: "",
       typeStatus: false,
-      typeArray: ["Asset Management Analyst"],
+      typeArray: ["Web Developer", "Computer Engineer", "Gamer"],
       typingSpeed: 60,
       erasingSpeed: 70,
       newTextDelay: 1500,
