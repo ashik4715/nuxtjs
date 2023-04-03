@@ -1,5 +1,8 @@
 export default {
   modules: ["@nuxtjs/tailwindcss"],
+  experimental: {
+    payloadExtraction: false,
+  },
   components: true,
   ssr: true,
   nitro: {
