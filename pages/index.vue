@@ -9,5 +9,20 @@
     </div>
   </div>
 </template>
-
-<style lang=""></style>
+<script lang="ts" setup>
+useHead({
+  title: "Home Page",
+  meta: [
+    {
+      name: "description",
+      content: "My Homepage of this portfolio website.",
+    },
+    {
+      property: "og:description",
+      content: "My Homepage of this portfolio website.",
+    },
+    { property: "og:image", content: `summary_large_image` },
+    { name: "twitter:card", content: `summary_large_image` },
+  ],
+});
+</script>

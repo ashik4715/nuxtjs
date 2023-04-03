@@ -132,3 +132,20 @@
     </div>
   </div>
 </template>
+<script lang="ts" setup>
+useHead({
+  title: "Terms & Conditions Agreement Page",
+  meta: [
+    {
+      name: "description",
+      content: "My Terms & Conditions Agreement Page.",
+    },
+    {
+      property: "og:description",
+      content: "My Terms & Conditions Agreement Page.",
+    },
+    { property: "og:image", content: `summary_large_image` },
+    { name: "twitter:card", content: `summary_large_image` },
+  ],
+});
+</script>

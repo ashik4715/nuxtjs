@@ -60,3 +60,20 @@
   </div>
 </template>
 <style scoped></style>
+<script lang="ts" setup>
+useHead({
+  title: "About Me Page",
+  meta: [
+    {
+      name: "description",
+      content: "A short summary about myself.",
+    },
+    {
+      property: "og:description",
+      content: "A short summary about myself.",
+    },
+    { property: "og:image", content: `summary_large_image` },
+    { name: "twitter:card", content: `summary_large_image` },
+  ],
+});
+</script>

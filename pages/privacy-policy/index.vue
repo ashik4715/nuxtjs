@@ -135,3 +135,20 @@
     </div>
   </div>
 </template>
+<script lang="ts" setup>
+useHead({
+  title: "Privacy Poilicy Page",
+  meta: [
+    {
+      name: "description",
+      content: "My Privacy Poilicy Page.",
+    },
+    {
+      property: "og:description",
+      content: "My Privacy Poilicy Page.",
+    },
+    { property: "og:image", content: `summary_large_image` },
+    { name: "twitter:card", content: `summary_large_image` },
+  ],
+});
+</script>

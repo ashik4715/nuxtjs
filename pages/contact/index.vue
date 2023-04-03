@@ -84,5 +84,21 @@
     </div>
   </div>
 </template>
-
+<script lang="ts" setup>
+useHead({
+  title: "Contact Me Page",
+  meta: [
+    {
+      name: "description",
+      content: "Can Contact Me thorugh social links.",
+    },
+    {
+      property: "og:description",
+      content: "Can Contact Me thorugh social links.",
+    },
+    { property: "og:image", content: `summary_large_image` },
+    { name: "twitter:card", content: `summary_large_image` },
+  ],
+});
+</script>
 <style scoped></style>

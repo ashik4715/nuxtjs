@@ -60,4 +60,20 @@ export default {
   },
 };
 </script>
-<script setup></script>
+<script setup>
+useHead({
+  title: "Projects Section",
+  meta: [
+    {
+      name: "description",
+      content: "My Projects section that I have worked on so far.",
+    },
+    {
+      property: "og:description",
+      content: "My Projects section that I have worked on so far.",
+    },
+    { property: "og:image", content: `summary_large_image` },
+    { name: "twitter:card", content: `summary_large_image` },
+  ],
+});
+</script>
