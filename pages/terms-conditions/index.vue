@@ -1,6 +1,6 @@
 <template lang="">
   <div
-    class="md:container p-5 m-1 justify-self-auto text-gray-900 dark:text-white"
+    class="md:container p-5 m-1 justify-self-auto dark:text-gray-100"
     data-aos="fade"
   >
     <h3

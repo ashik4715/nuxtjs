@@ -7,7 +7,7 @@
       >
         <img
           class="h-full w-full object-cover object-center"
-          src="@/static/img/hamburg.png"
+          src="@/static/img/hamburg.avif"
           alt="portfolio-pic2"
         />
       </div>
