@@ -3,16 +3,16 @@
     <!-- Grid profile section -->
     <div class="grid row-auto hover:row-span-3 grid-cols-6 gap-3 p-6 m-5">
       <div
-        class="col-span-3 text-center relative h-full w-full overflow-hidden rounded-lg hover:opacity-75"
+        class="col-span-3 text-center pt-8 relative h-full w-full overflow-hidden rounded-lg hover:opacity-75"
       >
         <img
-          class="h-full w-full object-cover object-center"
+          class="h-full w-full object-cover object-center rounded-xl"
           src="@/static/img/hamburg.avif"
           alt="portfolio-pic2"
         />
       </div>
       <div
-        class="col-span-3 text-center pt-6 text-gray-400 relative overflow-hidden rounded-lg"
+        class="col-span-3 text-center pt-1 text-gray-400 relative overflow-hidden rounded-lg"
       >
         <div class="grid h-screen place-items-center mx-auto p-8 text-5xl">
           <h1 class="text-cyan-400 py-5 no-underline">

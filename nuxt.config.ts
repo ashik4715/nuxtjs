@@ -9,6 +9,7 @@ export default {
     preset: "vercel-edge",
   },
   css: ["@/assets/css/tailwind.css"],
+  devtools: { enabled: true },
   image: { dir: "static/img" },
   static: {
     prefix: true,
