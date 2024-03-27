@@ -161,7 +161,7 @@
       <div class="text-center">
         <div class="flex items-center justify-center space-x-8">
           <a href="https://dribbble.com/amitbwas007" target="_blank" rel="noopener noreferrer"
-            class="w-16 h-16 flex items-center justify-center rounded-full hover:bg-gray-200 transition ease-in-out duration-500">
+            class="invisible-text w-16 h-16 flex items-center justify-center rounded-full hover:bg-gray-200 transition ease-in-out duration-500">
             <i class="text-gray-500 hover:text-gray-700 transition ease-in-out duration-500">
               <span class="sr-only">Dribbble</span>
               <svg class="w-16 h-16" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
@@ -173,7 +173,7 @@
           </a>
 
           <a href="https://www.facebook.com/ajholok" target="_blank" rel="noopener noreferrer"
-            class="w-16 h-16 flex items-center justify-center rounded-full hover:bg-gray-200 transition ease-in-out duration-500">
+            class="invisible-text w-16 h-16 flex items-center justify-center rounded-full hover:bg-gray-200 transition ease-in-out duration-500">
             <i class="text-gray-500 hover:text-gray-700 transition ease-in-out duration-500">
               <span class="sr-only">Facebook</span>
               <svg class="w-16 h-16" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
@@ -186,7 +186,7 @@
           </a>
 
           <a href="https://github.com/ashik4715" target="_blank" rel="noopener noreferrer"
-            class="w-16 h-16 flex items-center justify-center rounded-full hover:bg-gray-200 transition ease-in-out duration-500">
+            class="invisible-text w-16 h-16 flex items-center justify-center rounded-full hover:bg-gray-200 transition ease-in-out duration-500">
             <i class="text-gray-500 hover:text-gray-700 transition ease-in-out duration-500">
               <span class="sr-only">Github</span>
               <svg class="w-16 h-16" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
@@ -198,7 +198,7 @@
           </a>
 
           <a href="mailto:ashikurjhalak@gmail.com" rel="noopener noreferrer"
-            class="w-16 h-16 flex items-center justify-center rounded-full hover:bg-gray-200 transition ease-in-out duration-500">
+            class="invisible-text w-16 h-16 flex items-center justify-center rounded-full hover:bg-gray-200 transition ease-in-out duration-500">
             <i class="text-gray-500 hover:text-gray-700 transition ease-in-out duration-500">
               <svg class="w-16 h-16" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
                 <path
@@ -208,7 +208,7 @@
           </a>
 
           <a href="https://www.instagram.com/ashikur4715/" target="_blank" rel="noopener noreferrer"
-            class="w-16 h-16 flex items-center justify-center rounded-full hover:bg-gray-200 transition ease-in-out duration-500">
+            class="invisible-text w-16 h-16 flex items-center justify-center rounded-full hover:bg-gray-200 transition ease-in-out duration-500">
             <i class="text-gray-500 hover:text-gray-700 transition ease-in-out duration-500">
               <svg class="w-16 h-16" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
                 <path
@@ -219,10 +219,8 @@
         </div>
       </div>
 
-      <p class="mt-8 text-lg leading-6 text-center text-gray-400">
-        © 2023
-        <NuxtLink to="/" class="text-cyan-400 hover:text-purple-500">jholok.vercel.app</NuxtLink>. All rights
-        reserved.
+      <p class="mt-8 text-lg leading-6 text-center text-white"> © 2023 <NuxtLink to="/"
+          class="text-yellow-400 hover:text-green-500">jholok.vercel.app</NuxtLink>. All rights reserved.
       </p>
     </div>
   </footer>
@@ -281,5 +279,9 @@ nav {
 
 nav.scrolled {
   border-bottom: 0px;
+}
+
+.invisible-text {
+  display: none;
 }
 </style>
