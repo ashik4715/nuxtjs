@@ -2,6 +2,10 @@
   <div class="md:container-lg md:mx-auto bg-no-repeat">
     <!-- Grid profile section -->
     <div class="grid row-auto hover:row-span-3 grid-cols-6 gap-3 p-6 m-5">
+      
+      <!-- templating new UI -->
+      <!-- end templating new UI -->
+      
       <div
         class="col-span-3 text-center pt-8 relative h-full w-full overflow-hidden rounded-lg hover:opacity-75"
       >
@@ -15,9 +19,9 @@
         class="col-span-3 text-center pt-1 text-gray-400 relative overflow-hidden rounded-lg"
       >
         <div class="grid h-screen place-items-center mx-auto p-8 text-5xl">
-          <h1 class="text-cyan-400 py-5 no-underline">
+          <h1 class="text-cyan-800 py-5 no-underline">
             I'm a
-            <span class="text-fuchsia-400">{{ typeValue }}</span>
+            <span class="text-fuchsia-800">{{ typeValue }}</span>
             <span class="cursor" :class="{ typing: typeStatus }">&nbsp;</span>
           </h1>
         </div>

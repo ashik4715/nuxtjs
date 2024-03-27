@@ -1,5 +1,11 @@
 export default {
   modules: ["@nuxtjs/tailwindcss"],
+  head: {
+    htmlAttrs: {
+      lang: 'en', 
+    },
+    // Other head configurations...
+  },
   experimental: {
     payloadExtraction: false,
   },
