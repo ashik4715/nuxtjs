@@ -20,7 +20,7 @@
             >
               <!-- :src="destination.imageSrc" -->
               <img
-                :src="`_nuxt/static/img/${destination.image}`"
+                :src="`@/static/img/${destination.image}`"
                 :alt="destination.slug"
                 @click="showModal(destination)"
                 class="h-full w-full object-cover object-center cursor-pointer"
