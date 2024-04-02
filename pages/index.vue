@@ -108,7 +108,7 @@
               company.
             </li>
             <li class="font-normal text-gray-500 text-md text-justify">
-              handled 2-3 projects from sratch to deployment.
+              handled 2-3 projects from scratch to deployment.
             </li>
             <li class="font-normal text-gray-500 text-md text-justify">
               best practise to avoid SQL injection for websites.

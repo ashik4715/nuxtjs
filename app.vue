@@ -25,7 +25,7 @@
             <Bars3Icon class="h-6 w-6" aria-hidden="true" />
           </button>
         </div> -->
-        <div class="sm:flex sm:gap-x-8">
+        <div class="sm:flex sm:gap-x-4">
           <NuxtLink
             class="text-lg font-semibold leading-7 text-white hover:text-emerald-500 dark:hover:text-rose-500"
             to="/"
@@ -43,7 +43,7 @@
           >
         </div>
         <div class="hidden sm:flex sm:flex-1 sm:justify-end">
-          <div class="toggle-button flex space-x-5">
+          <div class="toggle-button flex space-x-6">
             <label
               for="darkModeToggle"
               @click="toggleDark()"
@@ -63,8 +63,8 @@
             <NuxtLink
               href="https://docs.google.com/document/d/1upH-cEhGpNOEiWA8EUaV5uYaDaRvEFAT_EHHFAdbS1U/edit?usp=sharing"
               target="_blank"
-              class="px-4 py-2 md:px-5 md:py-2 bg-white font-medium md:font-semibold text-gray-700 text-md rounded-md hover:bg-gray-700 hover:text-white transition ease-linear duration-500"
-              >Get my CV
+              class="px-1 py-2 md:px-5 md:py-2 bg-white font-medium md:font-semibold text-gray-700 text-md rounded-md hover:bg-gray-700 hover:text-white transition ease-linear duration-500"
+              >Resume
             </NuxtLink>
             <!-- <a
               href="/"
