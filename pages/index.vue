@@ -108,24 +108,19 @@
               company.
             </li>
             <li class="font-normal text-gray-500 text-md text-justify">
-              promoted as a Project Lead Full stack developer to maintain small
-              team around 2-5 people.
+              handled 2-3 projects from sratch to deployment.
             </li>
             <li class="font-normal text-gray-500 text-md text-justify">
-              best practise to avoid SQL injection and build SQL friendly
-              websites.
+              best practise to avoid SQL injection for websites.
             </li>
             <li class="font-normal text-gray-500 text-md text-justify">
               implemented custom Bulk email sender for marketing purposes.
             </li>
             <li class="font-normal text-gray-500 text-md text-justify">
-              followed best practise of Payment API with Stripe, Paypal SDK.
+              implemented Payment API with Stripe, Paypal SDK.
             </li>
             <li class="font-normal text-gray-500 text-md text-justify">
-              implemented custom code to detect if users uses VPN.
-            </li>
-            <li class="font-normal text-gray-500 text-md text-justify">
-              used indexing and in memory caching to increase performance of
+              used SQL indexing and in memory caching to increase performance of
               websites.
             </li>
           </ul>
@@ -146,12 +141,6 @@
           <ul class="list-disc list-outside">
             <li class="font-normal text-gray-500 text-md text-justify">
               started as a PHP Internship in this E-commerce based IT company.
-            </li>
-            <li class="font-normal text-gray-500 text-md text-justify">
-              collaborated with team around 11-50 people.
-            </li>
-            <li class="font-normal text-gray-500 text-md text-justify">
-              developed custom Bulk email sender for marketing purposes.
             </li>
             <li class="font-normal text-gray-500 text-md text-justify">
               implemented API from Laravel to Android and IOS platform.
