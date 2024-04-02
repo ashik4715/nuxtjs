@@ -8,11 +8,11 @@
       >
         <div class="flex md:flex-1">
           <a href="/" class="logo -m-1.5 p-1.5">
-            <img
+            <!-- <img
               class="h-auto w-auto"
               src="@/static/logo/navbar-logo.png"
               alt="logo"
-            />
+            /> -->
           </a>
         </div>
         <!-- <div class="flex lg:hidden">
