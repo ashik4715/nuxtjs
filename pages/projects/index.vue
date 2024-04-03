@@ -1,9 +1,12 @@
 <template lang="">
-  <div class="md:container text-center p-5 m-20">
+  <div
+    class="lg:m-6 sm:m-12 sm:pt-6 justify-self-auto text-gray-900 dark:text-white"
+    data-aos="fade"
+  >
     <!-- Projects section -->
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div
-        class="mx-auto max-w-2xl py-8 sm:py-20 lg:max-w-none lg:py-8 text-purple-600 dark:text-cyan-300"
+        class="mx-auto max-w-2xl py-8 sm:py-1 lg:max-w-none lg:py-8 text-purple-600 dark:text-cyan-300"
       >
         <h2 class="text-4xl font-bold text-center no-underline">Projects</h2>
         <!--  projects div -->
@@ -20,7 +23,7 @@
             >
               <!-- :src="destination.imageSrc" -->
               <img
-                :src="`@/static/img/${destination.image}`"
+                :src="`/img/${destination.image}`"
                 :alt="destination.slug"
                 @click="showModal(destination)"
                 class="h-full w-full object-cover object-center cursor-pointer"

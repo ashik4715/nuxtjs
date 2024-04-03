@@ -1,5 +1,5 @@
 <template>
-  <div class="md:container lg:m-6 sm:m-12 sm:pt-12">
+  <div class="md:container lg:m-6 sm:m-12 sm:pt-2">
     <h2
       class="sm:pt-10 text-4xl font-bold text-center no-underline text-purple-600 dark:text-cyan-300"
     >

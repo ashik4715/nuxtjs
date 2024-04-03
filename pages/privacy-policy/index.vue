@@ -1,10 +1,10 @@
 <template lang="">
   <div
-    class="md:container p-5 m-1 justify-self-auto text-gray-900 dark:text-white"
+    class="lg:m-6 sm:m-12 sm:pt-2 justify-self-auto text-gray-900 dark:text-white"
     data-aos="fade"
   >
     <h3
-      class="p-5 m-1 text-4xl font-bold text-center no-underline text-purple-600 dark:text-cyan-300"
+      class="sm:pt-10 text-4xl font-bold text-center no-underline text-purple-600 dark:text-cyan-300"
     >
       Privacy Policy
     </h3>
@@ -39,7 +39,7 @@
           Journal&nbsp;may offer via its website third party services, such as
           article recommendations, social login, social sharing, and banners to
           third party sites. The information which is collected by
-          <a class="font-bold underline decoration-pink-500">Aydidhasan.com</a
+          <a class="font-bold underline decoration-pink-500">jholok.com</a
           >&nbsp;when you access third party services is processed under this
           Privacy Policy, while information collected by third-party operators
           themselves will be governed by their own privacy policies.
@@ -73,13 +73,13 @@
           position within your institution or organization, and your research
           interests. Some of this information is required to properly set up the
           user account for you to use all of
-          <a class="font-bold underline decoration-pink-500">Aydidhasan.com</a
+          <a class="font-bold underline decoration-pink-500">jholok.com</a
           >&nbsp;services.<br />
           <br />
           <strong>3.2</strong>&nbsp;International Medical Journal&nbsp;may use
           this information to fulfill our contract with you (e.g. the
           publication of your article). Furthermore,
-          <a class="font-bold underline decoration-pink-500">Aydidhasan.com</a
+          <a class="font-bold underline decoration-pink-500">jholok.com</a
           >&nbsp;may also use this information internally, e.g., to evaluate and
           improve our business, respond to any questions, requests or comments
           you make, for targeted marketing purposes, or to identify and prevent
@@ -90,7 +90,7 @@
           of interest to you (e.g. new services, products or publications) and
           for other advertising. If the personal information was provided to us
           by a third party,
-          <a class="font-bold underline decoration-pink-500">Aydidhasan.com</a
+          <a class="font-bold underline decoration-pink-500">jholok.com</a
           >&nbsp;may still use this information in the same manner as described
           above. You will have the chance to opt-out of receiving such e-mails
           by unsubscribing.
@@ -107,8 +107,8 @@
           information with anyone nor with any third parties. Anyone can be
           subscribed to us and will get further information and announcement
           through the mail of
-          <a class="font-bold underline decoration-pink-500">Aydidhasan.com</a>.
-          <a class="font-bold underline decoration-pink-500">Aydidhasan.com</a
+          <a class="font-bold underline decoration-pink-500">jholok.com</a>.
+          <a class="font-bold underline decoration-pink-500">jholok.com</a
           >&nbsp;takes steps to ensure your personal information is continued to
           be protected wherever it is stored and/or processed.
         </p>

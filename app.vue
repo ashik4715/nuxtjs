@@ -25,7 +25,7 @@
             <Bars3Icon class="h-6 w-6" aria-hidden="true" />
           </button>
         </div> -->
-        <div class="sm:flex sm:gap-x-4">
+        <div class="sm:flex sm:gap-x-5">
           <NuxtLink
             class="text-lg font-semibold leading-7 text-white hover:text-emerald-500 dark:hover:text-rose-500"
             to="/"
@@ -149,7 +149,9 @@
     </div>
   </div>
   <!-- footer -->
-  <footer class="py-6 flex justify-between bg-teal-800 dark:bg-gray-800">
+  <footer
+    class="xl:py-20 sm:py-2 flex justify-between bg-teal-800 dark:bg-gray-800"
+  >
     <div
       class="max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-3 lg:px-8"
     >

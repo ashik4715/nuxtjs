@@ -1,17 +1,17 @@
 <template lang="">
   <div
-    class="md:container p-5 m-1 justify-self-auto dark:text-gray-100"
+    class="lg:m-6 sm:m-12 sm:pt-2 justify-self-auto text-gray-900 dark:text-white"
     data-aos="fade"
   >
     <h3
-      class="p-5 m-1 text-4xl font-bold text-center no-underline text-purple-600 dark:text-cyan-300"
+      class="sm:pt-10 text-4xl font-bold text-center no-underline text-purple-600 dark:text-cyan-300"
     >
       Terms & Conditions Agreement
     </h3>
     <div class="mt-5">
       <p class="justify-items-start">
         Welcome to
-        <a class="font-bold underline decoration-rose-500">aydidhasan.com</a>
+        <a class="font-bold underline decoration-rose-500">jholok.com</a>
         (the "Website"). By accessing or using the Website, you agree to be
         bound by the following terms and conditions (the "Agreement"). If you do
         not agree to these terms and conditions, you may not access or use the
@@ -61,7 +61,7 @@
         <p>
           All content on the Website, including but not limited to text,
           graphics, logos, images, and software, is the property of
-          <a class="font-bold underline decoration-rose-500">aydidhasan</a>
+          <a class="font-bold underline decoration-rose-500">jholok</a>
           or its content suppliers and is protected by copyright, trademark, and
           other intellectual property laws. You may not reproduce, modify, or
           distribute any content on the Website without our prior written
@@ -122,8 +122,7 @@
           notice. By continuing to use the Website after any changes to this
           Agreement, you agree to be bound by the modified Agreement. If you
           have any questions about this Agreement, please contact us at
-          <a class="font-bold underline decoration-rose-500"
-            >admin@aydidhasan.com</a
+          <a class="font-bold underline decoration-rose-500">admin@jholok.com</a
           >. By accessing or using the Website, you agree to be bound by this
           Agreement. If you do not agree to this Agreement, do not access or use
           the Website.
