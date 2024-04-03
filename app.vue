@@ -50,7 +50,8 @@
               class="relative inline-flex items-center cursor-pointer"
             >
               <span
-                class="ml-2 text-md font-medium text-cyan-300 dark:text-gray-200 cursor-pointer"
+                id="darkModeToggle"
+                class="ml-auto text-md font-medium text-cyan-300 dark:text-gray-200 cursor-pointer"
               >
                 <div v-if="isDark">
                   <SunIcon class="h-6 w-6" aria-hidden="true" />
@@ -61,7 +62,7 @@
               </span>
             </label>
             <NuxtLink
-              href="https://docs.google.com/document/d/1upH-cEhGpNOEiWA8EUaV5uYaDaRvEFAT_EHHFAdbS1U/edit?usp=sharing"
+              href="https://docs.google.com/document/d/1jMSX_AFilJ6OBDWlBuDP-a1O3uhnrMk6/edit?usp=sharing&ouid=103074314345741318016&rtpof=true&sd=true"
               target="_blank"
               class="px-1 py-2 md:px-5 md:py-2 bg-white font-medium md:font-semibold text-gray-700 text-md rounded-md hover:bg-gray-700 hover:text-white transition ease-linear duration-500"
               >Resume

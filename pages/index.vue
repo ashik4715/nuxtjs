@@ -79,11 +79,11 @@
               TypeScript.
             </li>
             <li class="font-normal text-gray-500 text-md text-justify">
-              Follow best practises of MongoDB and FormBuilder in Angular.
+              Adhered to the best practices of MongoDB and Angular.
             </li>
             <li class="font-normal text-gray-500 text-md text-justify">
-              Always do pull request to await review from others and merge a
-              branch once approved.
+              Git Pull request to await review from others and merge a branch
+              once approved.
             </li>
           </ul>
         </div>
@@ -104,24 +104,20 @@
 
           <ul class="list-disc list-outside">
             <li class="font-normal text-gray-500 text-md text-justify">
-              started as a Software Developer in this startup IT e-commerce
-              company.
+              Developed three projects from scratch to deployment.
             </li>
             <li class="font-normal text-gray-500 text-md text-justify">
-              handled 2-3 projects from scratch to deployment.
+              Adhered to the best practices to avoid SQL injections.
             </li>
             <li class="font-normal text-gray-500 text-md text-justify">
-              best practise to avoid SQL injection for websites.
+              Implemented custom bulk email sender for marketing purposes.
             </li>
             <li class="font-normal text-gray-500 text-md text-justify">
-              implemented custom Bulk email sender for marketing purposes.
+              Applied Payment API with Stripe, Paypal SDK.
             </li>
             <li class="font-normal text-gray-500 text-md text-justify">
-              implemented Payment API with Stripe, Paypal SDK.
-            </li>
-            <li class="font-normal text-gray-500 text-md text-justify">
-              used SQL indexing and in memory caching to increase performance of
-              websites.
+              Optimized website performance with SQL indexing and in-memory
+              caching.
             </li>
           </ul>
         </div>
@@ -140,13 +136,14 @@
 
           <ul class="list-disc list-outside">
             <li class="font-normal text-gray-500 text-md text-justify">
-              started as a PHP Internship in this E-commerce based IT company.
+              Started an Internship as a PHP developer and later promoted to
+              Junior PHP Developer.
             </li>
             <li class="font-normal text-gray-500 text-md text-justify">
-              implemented API from Laravel to Android and IOS platform.
+              Implemented Laravel API for Android and IOS platforms.
             </li>
             <li class="font-normal text-gray-500 text-md text-justify">
-              learned about SEO friendly approach.
+              Acquired knowledge of SEO friendly approaches.
             </li>
           </ul>
         </div>
