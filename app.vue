@@ -319,7 +319,9 @@
 
       <p class="mt-8 text-xl leading-6 text-center text-white">
         © 2024
-        <NuxtLink to="/" class="text-red-300 hover:text-lime-200"
+        <NuxtLink
+          to="/"
+          class="text-white hover:text-red-400 shadow-lg shadow-red-500/50"
           >jholok.vercel.app</NuxtLink
         >. All rights reserved.
       </p>

@@ -35,7 +35,7 @@
           href="https://www.linkedin.com/in/ashikur-rahman-0a272ba1/"
           target="_blank"
           rel="no-referrer"
-          class="px-7 py-2 md:px-9 md:py-4 font-medium md:font-semibold bg-gray-700 text-gray-200 text-sm rounded-md hover:bg-gray-200 hover:text-black transition ease-linear duration-500"
+          class="px-7 py-2 md:px-9 md:py-4 font-medium md:font-semibold bg-gray-700 text-gray-200 text-sm rounded-md hover:bg-gray-200 hover:text-black transition ease-linear duration-500 shadow-lg shadow-emerald-500/50"
           >Follow me on LinkedIn</NuxtLink
         >
       </div>
