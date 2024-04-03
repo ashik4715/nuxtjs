@@ -8,11 +8,13 @@
       >
         <div class="flex md:flex-1">
           <a href="/" class="logo -m-1.5 p-1.5">
-            <!-- <img
-              class="h-auto w-auto"
-              src="@/static/logo/navbar-logo.png"
+            <img
+              class="logo"
+              width="100"
+              height="100"
+              src="@/static/logo/logo.svg"
               alt="logo"
-            /> -->
+            />
           </a>
         </div>
         <!-- <div class="flex lg:hidden">
@@ -315,9 +317,9 @@
         </div>
       </div>
 
-      <p class="mt-8 text-lg leading-6 text-center text-white">
-        © 2023
-        <NuxtLink to="/" class="text-yellow-400 hover:text-green-500"
+      <p class="mt-8 text-xl leading-6 text-center text-white">
+        © 2024
+        <NuxtLink to="/" class="text-red-300 hover:text-lime-200"
           >jholok.vercel.app</NuxtLink
         >. All rights reserved.
       </p>
