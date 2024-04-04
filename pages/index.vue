@@ -81,10 +81,6 @@
             <li class="font-normal text-gray-500 text-md text-justify">
               Adhered to the best practices of MongoDB and Angular.
             </li>
-            <li class="font-normal text-gray-500 text-md text-justify">
-              Git Pull request to await review from others and merge a branch
-              once approved.
-            </li>
           </ul>
         </div>
 
