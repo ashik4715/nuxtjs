@@ -471,15 +471,17 @@
 export default {
   setup() {
     useHead({
-      title: "Home Page",
+      title: "MD ASHIKUR RAHMAN - Web Developer Porfolio",
       meta: [
         {
           name: "description",
-          content: "My Homepage of this portfolio website.",
+          content:
+            "Explore the work of skilled developer MD ASHIKUR RAHMAN. Discover intuitive projects to become excited on.",
         },
         {
           property: "og:description",
-          content: "My Homepage of this portfolio website.",
+          content:
+            "Explore the work of skilled developer MD ASHIKUR RAHMAN. Discover intuitive projects to become excited on.",
         },
         { property: "og:image", content: `summary_large_image` },
         { name: "twitter:card", content: `summary_large_image` },
