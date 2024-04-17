@@ -58,7 +58,7 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <div class="bg-gray-300 dark:bg-gray-100 px-8 py-10 rounded-md">
           <div
-            class="w-20 py-6 flex justify-center bg-gray-900 dark:bg-gray-700 rounded-md mb-4"
+            class="w-20 py-6 flex justify-center bg-gray-200 dark:bg-gray-700 rounded-md mb-4"
           >
             <i data-feather="briefcase"></i>
           </div>
@@ -86,7 +86,7 @@
 
         <div class="bg-gray-300 dark:bg-gray-100 px-8 py-10 rounded-md">
           <div
-            class="w-20 py-6 flex justify-center bg-gray-900 dark:bg-gray-700 rounded-md mb-4"
+            class="w-20 py-6 flex justify-center bg-gray-200 dark:bg-gray-700 rounded-md mb-4"
           >
             <i data-feather="briefcase"></i>
           </div>
@@ -120,7 +120,7 @@
 
         <div class="bg-gray-300 dark:bg-gray-100 px-8 py-10 rounded-md">
           <div
-            class="w-20 py-6 flex justify-center bg-gray-900 dark:bg-gray-700 rounded-md mb-4"
+            class="w-20 py-6 flex justify-center bg-gray-200 dark:bg-gray-700 rounded-md mb-4"
           >
             <i data-feather="book-open"></i>
           </div>
