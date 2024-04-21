@@ -483,10 +483,6 @@ export default {
           content: "Ashikur Jholok | MD ASHIKUR RAHMAN",
         },
         {
-          name: "title",
-          content: "MD ASHIKUR RAHMAN | Software Engineer",
-        },
-        {
           name: "description",
           content:
             "Discover the intuitive web application of skilled developer MD ASHIKUR RAHMAN.",
