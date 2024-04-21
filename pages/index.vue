@@ -471,12 +471,37 @@
 export default {
   setup() {
     useHead({
-      title: "MD ASHIKUR RAHMAN | Web Developer Porfolio",
+      title: "MD ASHIKUR RAHMAN | Software Engineer",
       meta: [
+        {
+          name: "keywords",
+          content:
+            "ASHIKUR, RAHMAN, Software, Engineer, Web, Developer, Backend, Frontend, MERN, MEAN, Laravel, Vue, React, PHP",
+        },
+        {
+          name: "author",
+          content: "Ashikur Jholok | MD ASHIKUR RAHMAN",
+        },
+        {
+          name: "title",
+          content: "MD ASHIKUR RAHMAN | Software Engineer",
+        },
         {
           name: "description",
           content:
             "Discover the intuitive web application of skilled developer MD ASHIKUR RAHMAN.",
+        },
+        {
+          property: "og:site_name",
+          content: "MD ASHIKUR RAHMAN | Software Engineer",
+        },
+        {
+          property: "og:url",
+          content: "jholok.vercel.app",
+        },
+        {
+          property: "og:title",
+          content: "MD ASHIKUR RAHMAN | Software Engineer",
         },
         {
           property: "og:description",
