@@ -1,0 +1,102 @@
+{
+  "personal_info": {
+    "name": "Mohammed Ashikur Rahman",
+    "profession": "Junior Software Consultant",
+    "specializations": [
+      "Computer Science",
+      "Artificial Intelligence",
+      "Cyber Security"
+    ],
+    "location": "Chobham, UK",
+    "website": "https://jholok.vercel.app",
+    "description": "A dedicated and highly skilled professional with a passion for computer science, artificial intelligence, and cyber security."
+  },
+  "education": {
+    "primary_degree": {
+      "degree": "BSc in Computer Science",
+      "specialization": "Artificial Intelligence",
+      "university": "BRAC University",
+      "status": "Completed",
+      "description": "Prestigious program that equipped me with foundational knowledge and skills needed to succeed in the rapidly evolving field of AI. Included industrial placement for real-world applications."
+    }
+  },
+  "work_experience": [
+    {
+      "position": "Junior Software Consultant",
+      "company": "Commerce Connection LTD",
+      "location": "Chobham, UK",
+      "duration": "September 2023 - Present",
+      "status": "Current",
+      "description": "Tackling various projects and challenges, demonstrating adaptability and strong problem-solving skills. Contributing expertise while growing professionally."
+    },
+    {
+      "position": "Business Intelligence Support Analyst",
+      "company": "Graphnet Health",
+      "location": "UK",
+      "duration": "September 2021 - December 2021",
+      "description": "Honed skills in data analysis and reporting, providing critical support to business intelligence initiatives."
+    },
+    {
+      "position": "IT Intern",
+      "company": "Parker Hannifin Corporation",
+      "location": "Hemel Hempstead",
+      "duration": "2019",
+      "description": "Gained hands-on experience in information technology and learned to apply academic knowledge in a corporate environment."
+    }
+  ],
+  "skills": {
+    "technical_areas": [
+      "Computer Science",
+      "Artificial Intelligence",
+      "Cyber Security",
+      "Business Intelligence",
+      "Data Analysis",
+      "Information Technology",
+      "Software Development",
+      "Network Security",
+      "Problem Solving"
+    ],
+    "soft_skills": [
+      "Adaptability",
+      "Strong Problem-Solving",
+      "Leadership",
+      "Team Collaboration",
+      "Continuous Learning"
+    ]
+  },
+  "personality_traits": {
+    "core_values": [
+      "Passion for technology",
+      "Commitment to excellence",
+      "Eagerness to learn",
+      "Taking on new challenges",
+      "Professional growth"
+    ],
+    "approach": "Always eager to learn and take on new challenges, with a commitment to excellence in everything I do."
+  },
+  "portfolio": {
+    "description": "Wide range of projects showcasing passion for technology and commitment to excellence",
+    "focus_areas": [
+      "AI Projects",
+      "Cyber Security Solutions",
+      "Business Intelligence Tools",
+      "Software Development"
+    ]
+  },
+  "contact_info": {
+    "availability": "Open to collaborations and new opportunities",
+    "approach": "Feel free to reach out for questions or potential collaborations"
+  },
+  "conversation_topics": [
+    "Artificial Intelligence and Machine Learning",
+    "Cyber Security and Network Protection",
+    "Business Intelligence and Data Analysis",
+    "Software Development and Consulting",
+    "Career journey and experiences",
+    "Education at BRAC University",
+    "Experience in Singapore",
+    "UK work experience",
+    "Technology trends and innovations",
+    "Project collaborations"
+  ]
+}

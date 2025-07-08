@@ -43,6 +43,11 @@
             to="/projects"
             >Projects</NuxtLink
           >
+          <NuxtLink
+            class="text-lg font-semibold leading-7 text-white hover:text-emerald-500 dark:hover:text-rose-500"
+            to="/ai-agent"
+            >AI Assistant</NuxtLink
+          >
         </div>
         <div class="hidden sm:flex sm:flex-1 sm:justify-end">
           <div class="toggle-button flex space-x-6">

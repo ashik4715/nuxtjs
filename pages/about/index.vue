@@ -22,13 +22,6 @@
       opportunity to undertake an industrial placement, further enhancing my
       understanding of real-world applications of computer science.
     </p>
-    <p class="py-3 sm:py-3 text-lg">
-      In addition to my primary degree, I completed a summer program in cyber
-      security at Nanyang Technological University in Singapore. This enriching
-      experience expanded my expertise in network and information security,
-      providing me with valuable insights into the world of cyber threats and
-      defense mechanisms.
-    </p>
     <h2 class="text-xl underline decoration-emerald-500">Career:</h2>
     <p class="py-3 sm:py-3 text-lg">
       My professional journey began in 2019 as an IT Intern at Parker Hannifin
