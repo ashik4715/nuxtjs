@@ -9,9 +9,7 @@
         <div class="flex md:flex-1">
           <a href="/" class="logo -m-1.5 p-1.5">
             <img
-              class="logo"
-              width="100"
-              height="100"
+              class="logo w-16 h-16 md:w-12 md:h-12"
               src="@/static/logo/logo.svg"
               alt="logo"
             />
@@ -336,10 +334,9 @@
 </template>
 
 <script>
-import { ref } from "vue";
 // import { Dialog, DialogPanel } from "@headlessui/vue";
 // import { Bars3Icon, XMarkIcon } from "@heroicons/vue/24/outline";
-import { SunIcon, MoonIcon } from "@heroicons/vue/24/outline";
+import { MoonIcon, SunIcon } from "@heroicons/vue/24/outline";
 import { useDark, useToggle } from "@vueuse/core";
 export default {
   components: {

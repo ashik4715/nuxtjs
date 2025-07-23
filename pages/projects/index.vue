@@ -1,6 +1,6 @@
 <template lang="">
   <div
-    class="lg:m-6 sm:m-12 sm:pt-6 justify-self-auto text-gray-900 dark:text-white"
+    class="lg:m-6 sm:m-12 sm:pt-20 justify-self-auto text-gray-900 dark:text-white"
     data-aos="fade"
   >
     <!-- Projects section -->

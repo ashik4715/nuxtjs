@@ -3,7 +3,7 @@
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="bg-white rounded-lg shadow-lg p-6">
         <div class="text-center mb-8">
-          <h1 class="text-3xl font-bold text-gray-900 mt-10">
+          <h1 class="text-3xl font-bold text-gray-900 mt-20">
             Chat with Ashikur Rahman's AI Assistant
           </h1>
           <p class="text-gray-600">
@@ -93,8 +93,10 @@
 
         <!-- Voice Settings -->
         <div class="mt-6 p-4 bg-gray-50 rounded-lg">
-          <h3 class="text-sm font-medium text-gray-700 mb-3">🎙️ Voice Settings:</h3>
-          <VoiceSettings 
+          <h3 class="text-sm font-medium text-gray-700 mb-3">
+            🎙️ Voice Settings:
+          </h3>
+          <VoiceSettings
             ref="voiceSettings"
             @voice-changed="onVoiceChanged"
             @speed-changed="onSpeedChanged"
@@ -131,17 +133,26 @@ const isSpeaking = ref(false);
 
 // Example questions
 const exampleQuestions = [
-  "What is Ashikur's current role?",
-  "Tell me about his education",
-  "What are his technical skills?",
-  "Where did he work before?",
-  "What is his experience in AI?",
-  "Tell me about his cyber security background",
+  "What is Ashikur's current job role?",
+  "Where did Ashikur study computer science?",
+  "Can you describe his experience with NestJS and Node.js?",
+  "What companies has Ashikur worked at before WeGro Global?",
+  "Tell me about Ashikur’s work as a Lead PHP Developer.",
+  "What cloud platforms does he use?",
+  "What technologies are in Ashikur’s tech stack?",
+  "Does Ashikur have experience with Docker and CI/CD?",
+  "What kind of projects has he worked on?",
+  "What are his strengths in backend development?",
+  "How did his education in AI influence his career?",
+  "Can you explain his Laravel internship experience?",
+  "Has he worked in both Bangladesh and the UK?",
+  "What frontend technologies does Ashikur use?",
+  "Is Ashikur open to collaborations or new opportunities?",
 ];
 
 // Voice settings
 const voiceSettings = ref(null);
-const currentVoice = ref('alloy');
+const currentVoice = ref("alloy");
 const currentSpeed = ref(1.0);
 
 // Audio playback setup
@@ -208,59 +219,58 @@ const speakText = async (text) => {
     isSpeaking.value = true;
 
     // Call the OpenAI TTS API with current voice settings
-    const response = await fetch('/api/text-to-speech', {
-      method: 'POST',
+    const response = await fetch("/api/text-to-speech", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify({ 
+      body: JSON.stringify({
         text,
         voice: currentVoice.value,
-        speed: currentSpeed.value
+        speed: currentSpeed.value,
       }),
     });
 
     if (!response.ok) {
-      throw new Error('Failed to generate speech');
+      throw new Error("Failed to generate speech");
     }
 
     // Create audio blob from response
     const audioBlob = await response.blob();
     const audioUrl = URL.createObjectURL(audioBlob);
-    
+
     // Create and play audio
     currentAudio = new Audio(audioUrl);
-    
+
     currentAudio.onended = () => {
       isSpeaking.value = false;
       URL.revokeObjectURL(audioUrl);
       currentAudio = null;
     };
-    
+
     currentAudio.onerror = () => {
       isSpeaking.value = false;
       URL.revokeObjectURL(audioUrl);
       currentAudio = null;
-      console.error('Error playing audio');
+      console.error("Error playing audio");
     };
-    
+
     await currentAudio.play();
-    
   } catch (error) {
-    console.error('Error in text-to-speech:', error);
+    console.error("Error in text-to-speech:", error);
     isSpeaking.value = false;
-    
+
     // Fallback to browser speech synthesis if OpenAI TTS fails
     if (window.speechSynthesis) {
       const utterance = new SpeechSynthesisUtterance(text);
       utterance.rate = 0.8;
       utterance.pitch = 1;
       utterance.volume = 1;
-      
+
       utterance.onend = () => {
         isSpeaking.value = false;
       };
-      
+
       window.speechSynthesis.speak(utterance);
     }
   }

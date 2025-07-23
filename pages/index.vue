@@ -1,9 +1,9 @@
 <template>
   <!-- templating new UI -->
-  <section class="py-2 md:py-4">
-    <div class="container max-w-screen-xl mx-auto px-3">
+  <section class="pt-4 sm:pt-10">
+    <div class="container max-w-screen-xl mx-auto pt-5 px-3">
       <div class="text-center">
-        <div class="flex justify-center mt-24 mb-5">
+        <div class="flex justify-center sm:mt-24">
           <img
             class="h-40 w-auto rounded-full"
             src="@/static/img/me.jfif"

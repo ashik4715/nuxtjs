@@ -1,15 +1,15 @@
 {
   "personal_info": {
     "name": "Mohammed Ashikur Rahman",
-    "profession": "Junior Software Consultant",
+    "profession": "Senior Software Engineer",
     "specializations": [
-      "Computer Science",
-      "Artificial Intelligence",
-      "Cyber Security"
+      "Backend Development",
+      "Full-Stack Applications",
+      "Cloud Infrastructure"
     ],
-    "location": "Chobham, UK",
+    "location": "UK",
     "website": "https://jholok.vercel.app",
-    "description": "A dedicated and highly skilled professional with a passion for computer science, artificial intelligence, and cyber security."
+    "description": "Senior Software Engineer with over 5 years of experience building scalable, secure backend systems and full-stack applications using Node.js, TypeScript, NestJS, Docker, AWS, and modern development best practices."
   },
   "education": {
     "primary_degree": {
@@ -17,86 +17,109 @@
       "specialization": "Artificial Intelligence",
       "university": "BRAC University",
       "status": "Completed",
-      "description": "Prestigious program that equipped me with foundational knowledge and skills needed to succeed in the rapidly evolving field of AI. Included industrial placement for real-world applications."
+      "description": "Completed BSc in Computer Science with specialization in Artificial Intelligence from BRAC University in late 2018. The program emphasized algorithms, AI technologies, and included an industrial placement to gain real-world development experience."
     }
   },
   "work_experience": [
     {
+      "position": "Senior Backend Engineer",
+      "company": "WeGro Global Ltd",
+      "location": "UK",
+      "duration": "August 2024 - Present",
+      "status": "Current",
+      "description": "Leading backend architecture and development using NestJS (TypeORM Architecture), NextJS, TypeScript, and PostgreSQL. Responsible for deploying production-ready applications on AWS EC2, managing CI/CD with GitHub Actions, and overseeing containerized infrastructure using Docker, Nginx, and Certbot."
+    },
+    {
       "position": "Junior Software Consultant",
       "company": "Commerce Connection LTD",
       "location": "Chobham, UK",
-      "duration": "September 2023 - Present",
-      "status": "Current",
-      "description": "Tackling various projects and challenges, demonstrating adaptability and strong problem-solving skills. Contributing expertise while growing professionally."
+      "duration": "September 2023 - January 2024",
+      "description": "Provided client-facing technical consulting and participated in full-stack software development, improving both technical depth and stakeholder communication."
     },
     {
-      "position": "Business Intelligence Support Analyst",
-      "company": "Graphnet Health",
-      "location": "UK",
-      "duration": "September 2021 - December 2021",
-      "description": "Honed skills in data analysis and reporting, providing critical support to business intelligence initiatives."
+      "position": "Lead PHP Developer",
+      "company": "MNB Technology",
+      "location": "Dhaka, Bangladesh",
+      "duration": "May 2019 - November 2022",
+      "description": "Led backend development using PHP and Laravel, focusing on reporting systems, analytics tools, and business intelligence features. Strengthened data analysis and software design skills."
     },
     {
-      "position": "IT Intern",
-      "company": "Parker Hannifin Corporation",
-      "location": "Hemel Hempstead",
+      "position": "Laravel Intern",
+      "company": "Mazegeek Incorporation",
+      "location": "Banani, Dhaka, Bangladesh",
       "duration": "2019",
-      "description": "Gained hands-on experience in information technology and learned to apply academic knowledge in a corporate environment."
+      "description": "Internship focused on learning Laravel and enterprise PHP development, contributing to team projects in a real-world corporate IT environment."
     }
   ],
   "skills": {
     "technical_areas": [
-      "Computer Science",
-      "Artificial Intelligence",
-      "Cyber Security",
-      "Business Intelligence",
-      "Data Analysis",
-      "Information Technology",
-      "Software Development",
-      "Network Security",
-      "Problem Solving"
+      "Node.js",
+      "NestJS",
+      "TypeScript",
+      "PHP",
+      "Laravel",
+      "React",
+      "Vue.js",
+      "JavaScript",
+      "HTML",
+      "CSS",
+      "PostgreSQL",
+      "MySQL",
+      "AWS (EC2, S3, Lambda)",
+      "Docker",
+      "CI/CD",
+      "GitHub Actions",
+      "Jest",
+      "Stripe API",
+      "PayPal API",
+      "REST APIs",
+      "JWT Authentication",
+      "Nginx",
+      "System Monitoring"
     ],
     "soft_skills": [
+      "Problem Solving",
+      "Attention to Detail",
       "Adaptability",
-      "Strong Problem-Solving",
-      "Leadership",
       "Team Collaboration",
       "Continuous Learning"
     ]
   },
   "personality_traits": {
     "core_values": [
-      "Passion for technology",
-      "Commitment to excellence",
-      "Eagerness to learn",
-      "Taking on new challenges",
-      "Professional growth"
+      "Efficiency",
+      "Maintainability",
+      "Scalability",
+      "Commitment to Quality",
+      "Curiosity for Emerging Tech"
     ],
-    "approach": "Always eager to learn and take on new challenges, with a commitment to excellence in everything I do."
+    "approach": "I approach every project with a focus on clean, maintainable code, efficient system design, and a commitment to staying ahead with new technologies."
   },
   "portfolio": {
-    "description": "Wide range of projects showcasing passion for technology and commitment to excellence",
+    "description": "A collection of professional and personal projects that demonstrate backend scalability, full-stack integration, and cloud infrastructure expertise.",
     "focus_areas": [
-      "AI Projects",
-      "Cyber Security Solutions",
-      "Business Intelligence Tools",
-      "Software Development"
+      "Scalable Backend Systems",
+      "Cloud Deployment and DevOps",
+      "Full-Stack Web Applications",
+      "Payment Integrations",
+      "Monitoring and System Automation"
     ]
   },
   "contact_info": {
     "availability": "Open to collaborations and new opportunities",
-    "approach": "Feel free to reach out for questions or potential collaborations"
+    "approach": "Feel free to reach out to discuss projects, job opportunities, or anything tech-related!"
   },
   "conversation_topics": [
+    "Backend Development and Architecture",
+    "NestJS and Node.js",
     "Artificial Intelligence and Machine Learning",
-    "Cyber Security and Network Protection",
-    "Business Intelligence and Data Analysis",
-    "Software Development and Consulting",
-    "Career journey and experiences",
-    "Education at BRAC University",
-    "Experience in Singapore",
-    "UK work experience",
-    "Technology trends and innovations",
-    "Project collaborations"
+    "Cloud Infrastructure (AWS, Docker, CI/CD)",
+    "Laravel and PHP Projects",
+    "Frontend with Vue.js and React",
+    "Education and AI background at BRAC University",
+    "Remote Work and International Collaboration",
+    "Tech Trends and Emerging Tools",
+    "DevOps Automation and Deployment",
+    "Open Source and Learning Culture"
   ]
 }
