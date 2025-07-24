@@ -1,0 +1,125 @@
+{
+  "personal_info": {
+    "name": "Mohammed Ashikur Rahman",
+    "profession": "Senior Software Engineer",
+    "specializations": [
+      "Backend Development",
+      "Full-Stack Applications",
+      "Cloud Infrastructure"
+    ],
+    "location": "UK",
+    "website": "https://jholok.vercel.app",
+    "description": "Senior Software Engineer with over 5 years of experience building scalable, secure backend systems and full-stack applications using Node.js, TypeScript, NestJS, Docker, AWS, and modern development best practices."
+  },
+  "education": {
+    "primary_degree": {
+      "degree": "BSc in Computer Science",
+      "specialization": "Artificial Intelligence",
+      "university": "BRAC University",
+      "status": "Completed",
+      "description": "Completed BSc in Computer Science with specialization in Artificial Intelligence from BRAC University in late 2018. The program emphasized algorithms, AI technologies, and included an industrial placement to gain real-world development experience."
+    }
+  },
+  "work_experience": [
+    {
+      "position": "Senior Backend Engineer",
+      "company": "WeGro Global Ltd",
+      "location": "UK",
+      "duration": "August 2024 - Present",
+      "status": "Current",
+      "description": "Leading backend architecture and development using NestJS (TypeORM Architecture), NextJS, TypeScript, and PostgreSQL. Responsible for deploying production-ready applications on AWS EC2, managing CI/CD with GitHub Actions, and overseeing containerized infrastructure using Docker, Nginx, and Certbot."
+    },
+    {
+      "position": "Junior Software Consultant",
+      "company": "Commerce Connection LTD",
+      "location": "Chobham, UK",
+      "duration": "September 2023 - January 2024",
+      "description": "Provided client-facing technical consulting and participated in full-stack software development, improving both technical depth and stakeholder communication."
+    },
+    {
+      "position": "Lead PHP Developer",
+      "company": "MNB Technology",
+      "location": "Dhaka, Bangladesh",
+      "duration": "May 2019 - November 2022",
+      "description": "Led backend development using PHP and Laravel, focusing on reporting systems, analytics tools, and business intelligence features. Strengthened data analysis and software design skills."
+    },
+    {
+      "position": "Laravel Intern",
+      "company": "Mazegeek Incorporation",
+      "location": "Banani, Dhaka, Bangladesh",
+      "duration": "2019",
+      "description": "Internship focused on learning Laravel and enterprise PHP development, contributing to team projects in a real-world corporate IT environment."
+    }
+  ],
+  "skills": {
+    "technical_areas": [
+      "Node.js",
+      "NestJS",
+      "TypeScript",
+      "PHP",
+      "Laravel",
+      "React",
+      "Vue.js",
+      "JavaScript",
+      "HTML",
+      "CSS",
+      "PostgreSQL",
+      "MySQL",
+      "AWS (EC2, S3, Lambda)",
+      "Docker",
+      "CI/CD",
+      "GitHub Actions",
+      "Jest",
+      "Stripe API",
+      "PayPal API",
+      "REST APIs",
+      "JWT Authentication",
+      "Nginx",
+      "System Monitoring"
+    ],
+    "soft_skills": [
+      "Problem Solving",
+      "Attention to Detail",
+      "Adaptability",
+      "Team Collaboration",
+      "Continuous Learning"
+    ]
+  },
+  "personality_traits": {
+    "core_values": [
+      "Efficiency",
+      "Maintainability",
+      "Scalability",
+      "Commitment to Quality",
+      "Curiosity for Emerging Tech"
+    ],
+    "approach": "I approach every project with a focus on clean, maintainable code, efficient system design, and a commitment to staying ahead with new technologies."
+  },
+  "portfolio": {
+    "description": "A collection of professional and personal projects that demonstrate backend scalability, full-stack integration, and cloud infrastructure expertise.",
+    "focus_areas": [
+      "Scalable Backend Systems",
+      "Cloud Deployment and DevOps",
+      "Full-Stack Web Applications",
+      "Payment Integrations",
+      "Monitoring and System Automation"
+    ]
+  },
+  "contact_info": {
+    "availability": "Open to collaborations and new opportunities",
+    "approach": "Feel free to reach out to discuss projects, job opportunities, or anything tech-related!"
+  },
+  "conversation_topics": [
+    "Backend Development and Architecture",
+    "NestJS and Node.js",
+    "Artificial Intelligence and Machine Learning",
+    "Cloud Infrastructure (AWS, Docker, CI/CD)",
+    "Laravel and PHP Projects",
+    "Frontend with Vue.js and React",
+    "Education and AI background at BRAC University",
+    "Remote Work and International Collaboration",
+    "Tech Trends and Emerging Tools",
+    "DevOps Automation and Deployment",
+    "Open Source and Learning Culture"
+  ]
+}
