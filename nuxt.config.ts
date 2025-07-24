@@ -1,4 +1,4 @@
-export default {
+export default defineNuxtConfig({
   modules: ["@nuxtjs/tailwindcss"],
   app: {
     head: {
@@ -52,7 +52,6 @@ export default {
   ssr: true,
   nitro: {
     preset: "vercel",
-    // Add explicit API routes for Vercel
     routeRules: {
       '/api/**': {
         cors: true,
@@ -66,10 +65,6 @@ export default {
   },
   css: ["@/assets/css/tailwind.css"],
   devtools: { enabled: true },
-  image: { dir: "static/img" },
-  static: {
-    prefix: true,
-    dir: "static/img",
-  },
-};
+});
+
 
