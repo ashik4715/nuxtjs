@@ -1,7 +1,14 @@
 import OpenAI from 'openai';
 
+const config = useRuntimeConfig();
+if (!config.openaiApiKey) {
+  throw createError({
+    statusCode: 500,
+    statusMessage: 'OpenAI API key not configured'
+  });
+}
 const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY || 'your-openai-api-key-here'
+  apiKey: config.openaiApiKey as string
 });
 
 export default defineEventHandler(async (event) => {

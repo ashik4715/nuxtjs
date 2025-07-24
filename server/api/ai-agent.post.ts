@@ -1,9 +1,17 @@
-import OpenAI from 'openai';
 import fs from 'fs';
+import OpenAI from 'openai';
 import path from 'path';
 
+const config = useRuntimeConfig();
+if (!config.openaiApiKey) {
+  throw createError({
+    statusCode: 500,
+    statusMessage: 'OpenAI API key not configured'
+  });
+}
+
 const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY || 'your-api-key-here'
+  apiKey: config.openaiApiKey as string
 });
 
 export default defineEventHandler(async (event) => {
@@ -19,7 +27,7 @@ export default defineEventHandler(async (event) => {
     }
 
     // Load AI agent data
-    const dataPath = path.join(process.cwd(), 'static', 'ai-agent-data.json');
+    const dataPath = path.join(process.cwd(), 'public', 'ai-agent-data.json');
     const aiData = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
 
     // Find relevant context

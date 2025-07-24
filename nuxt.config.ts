@@ -55,7 +55,12 @@ export default defineNuxtConfig({
   },
   css: ["@/assets/css/tailwind.css"],
   devtools: { enabled: true },
+  runtimeConfig: {
+    openaiApiKey: process.env.NUXT_OPENAI_API_KEY,
+    public: {
+      // Public keys go here
+    }
+  },
 });
-
 
 
