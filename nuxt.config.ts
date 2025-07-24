@@ -1,4 +1,4 @@
-export default defineNuxtConfig({
+export default {
   modules: ["@nuxtjs/tailwindcss"],
   app: {
     head: {
@@ -71,5 +71,5 @@ export default defineNuxtConfig({
     prefix: true,
     dir: "static/img",
   },
-});
+};
 
