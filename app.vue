@@ -58,12 +58,17 @@
                 id="darkModeToggle"
                 class="ml-auto text-md font-medium text-cyan-300 dark:text-gray-200 cursor-pointer"
               >
-                <div v-if="isDark">
-                  <SunIcon class="h-6 w-6" aria-hidden="true" />
-                </div>
-                <div v-else>
-                  <MoonIcon class="h-6 w-6" aria-hidden="true" />
-                </div>
+                <ClientOnly>
+                  <div v-if="isDark">
+                    <SunIcon class="h-6 w-6" aria-hidden="true" />
+                  </div>
+                  <div v-else>
+                    <MoonIcon class="h-6 w-6" aria-hidden="true" />
+                  </div>
+                  <template #fallback>
+                    <div class="h-6 w-6"></div>
+                  </template>
+                </ClientOnly>
               </span>
             </label>
             <NuxtLink

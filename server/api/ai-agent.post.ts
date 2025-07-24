@@ -1,5 +1,5 @@
-import fs from 'fs';
 import OpenAI from 'openai';
+import fs from 'fs';
 import path from 'path';
 
 const config = useRuntimeConfig();
@@ -13,6 +13,29 @@ if (!config.openaiApiKey) {
 const openai = new OpenAI({
   apiKey: config.openaiApiKey as string
 });
+
+function findRelevantContext(query: string, aiData: any) {
+  const lowerQuery = query.toLowerCase();
+  let context = '';
+  
+  if (lowerQuery.includes('skill') || lowerQuery.includes('technology')) {
+    context += `Skills: ${aiData.skills?.join(', ') || 'Various technical skills'}. `;
+  }
+  
+  if (lowerQuery.includes('experience') || lowerQuery.includes('work')) {
+    context += `Experience: ${aiData.experience?.map((exp: any) => 
+      `${exp.position} at ${exp.company} (${exp.duration})`
+    ).join(', ') || 'Professional experience in software development'}. `;
+  }
+  
+  if (lowerQuery.includes('project')) {
+    context += `Projects: ${aiData.projects?.map((proj: any) => 
+      `${proj.name} - ${proj.description}`
+    ).join(', ') || 'Various development projects'}. `;
+  }
+  
+  return context || `About: ${aiData.personal?.bio || 'Full-stack developer with expertise in modern web technologies'}`;
+}
 
 export default defineEventHandler(async (event) => {
   try {
@@ -28,7 +51,22 @@ export default defineEventHandler(async (event) => {
 
     // Load AI agent data
     const dataPath = path.join(process.cwd(), 'public', 'ai-agent-data.json');
-    const aiData = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
+    let aiData;
+    
+    try {
+      aiData = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
+    } catch (error) {
+      // Fallback data if file doesn't exist
+      aiData = {
+        personal: {
+          name: "Mohammed Ashikur Rahman",
+          bio: "Full-stack developer with expertise in modern web technologies"
+        },
+        skills: ["JavaScript", "Vue.js", "Node.js", "Python"],
+        experience: [],
+        projects: []
+      };
+    }
 
     // Find relevant context
     const context = findRelevantContext(query, aiData);
@@ -37,7 +75,7 @@ export default defineEventHandler(async (event) => {
     const prompt = `You are Mohammed Ashikur Rahman's AI assistant. Based on the following information about him, answer the user's question naturally and conversationally. If you're asked about something not in the data, politely say you don't have that information.
 
 Context about Mohammed Ashikur Rahman:
-${JSON.stringify(context, null, 2)}
+${context}
 
 User Question: ${query}
 
@@ -68,45 +106,3 @@ Please provide a helpful, friendly, and informative response as if you're repres
     });
   }
 });
-
-function findRelevantContext(query: string, data: any) {
-  const queryLower = query.toLowerCase();
-  const relevantData: any = {};
-
-  // Check for relevant sections based on query keywords
-  if (queryLower.includes('education') || queryLower.includes('university') || queryLower.includes('degree')) {
-    relevantData.education = data.education;
-  }
-
-  if (queryLower.includes('work') || queryLower.includes('job') || queryLower.includes('experience') || queryLower.includes('career')) {
-    relevantData.work_experience = data.work_experience;
-  }
-
-  if (queryLower.includes('skill') || queryLower.includes('technical') || queryLower.includes('programming')) {
-    relevantData.skills = data.skills;
-  }
-
-  if (queryLower.includes('about') || queryLower.includes('who') || queryLower.includes('personal')) {
-    relevantData.personal_info = data.personal_info;
-    relevantData.personality_traits = data.personality_traits;
-  }
-
-  if (queryLower.includes('contact') || queryLower.includes('reach') || queryLower.includes('collaboration')) {
-    relevantData.contact_info = data.contact_info;
-  }
-
-  if (queryLower.includes('project') || queryLower.includes('portfolio')) {
-    relevantData.portfolio = data.portfolio;
-  }
-
-  // If no specific context found, return general information
-  if (Object.keys(relevantData).length === 0) {
-    return {
-      personal_info: data.personal_info,
-      skills: data.skills,
-      work_experience: data.work_experience.slice(0, 1) // Just current job
-    };
-  }
-
-  return relevantData;
-}
