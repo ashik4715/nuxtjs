@@ -10,7 +10,7 @@
           <a href="/" class="logo -m-1.5 p-1.5">
             <img
               class="logo w-16 h-16 md:w-12 md:h-12"
-              src="@/static/logo/logo.svg"
+              src="/logo/logo.svg"
               alt="logo"
             />
           </a>

@@ -6,7 +6,7 @@
         <div class="flex justify-center sm:mt-24">
           <img
             class="h-40 w-auto rounded-full"
-            src="@/static/img/me.jfif"
+            src="/img/me.jfif"
             alt="Image"
           />
         </div>
@@ -251,7 +251,7 @@
           >
             <img
               class="h-50 w-50 object-cover object-center rounded-xl"
-              src="@/static/img/hamburg.avif"
+              src="/img/hamburg.avif"
               alt="portfolio-pic2"
             />
           </div>
