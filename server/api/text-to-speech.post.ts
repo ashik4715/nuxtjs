@@ -23,7 +23,7 @@ export default defineEventHandler(async (event) => {
       });
     }
 
-    if (!process.env.OPENAI_API_KEY) {
+    if (!process.env.NUXT_OPENAI_API_KEY) {
       throw createError({
         statusCode: 500,
         statusMessage: 'OpenAI API key not configured'

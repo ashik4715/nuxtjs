@@ -1,5 +1,5 @@
-import OpenAI from 'openai';
 import fs from 'fs';
+import OpenAI from 'openai';
 import path from 'path';
 
 const config = useRuntimeConfig();
@@ -17,24 +17,24 @@ const openai = new OpenAI({
 function findRelevantContext(query: string, aiData: any) {
   const lowerQuery = query.toLowerCase();
   let context = '';
-  
+
   if (lowerQuery.includes('skill') || lowerQuery.includes('technology')) {
     context += `Skills: ${aiData.skills?.join(', ') || 'Various technical skills'}. `;
   }
-  
+
   if (lowerQuery.includes('experience') || lowerQuery.includes('work')) {
-    context += `Experience: ${aiData.experience?.map((exp: any) => 
+    context += `Experience: ${aiData.work_experience?.map((exp: any) =>
       `${exp.position} at ${exp.company} (${exp.duration})`
     ).join(', ') || 'Professional experience in software development'}. `;
   }
-  
+
   if (lowerQuery.includes('project')) {
-    context += `Projects: ${aiData.projects?.map((proj: any) => 
+    context += `Projects: ${aiData.projects?.map((proj: any) =>
       `${proj.name} - ${proj.description}`
     ).join(', ') || 'Various development projects'}. `;
   }
-  
-  return context || `About: ${aiData.personal?.bio || 'Full-stack developer with expertise in modern web technologies'}`;
+
+  return context || `About: ${aiData.personal_info?.description || 'Full-stack developer with expertise in modern web technologies'}`;
 }
 
 export default defineEventHandler(async (event) => {
@@ -49,46 +49,53 @@ export default defineEventHandler(async (event) => {
       });
     }
 
-    // Load AI agent data
-    const dataPath = path.join(process.cwd(), 'public', 'ai-agent-data.json');
+    // Try multiple paths for the data file
     let aiData;
-    
-    try {
-      aiData = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
-    } catch (error) {
-      // Fallback data if file doesn't exist
+    const possiblePaths = [
+      path.join(process.cwd(), 'static', 'ai-agent-data.json'),
+      path.join(process.cwd(), 'public', 'ai-agent-data.json'),
+      './static/ai-agent-data.json',
+      './public/ai-agent-data.json'
+    ];
+
+    for (const dataPath of possiblePaths) {
+      try {
+        if (fs.existsSync(dataPath)) {
+          aiData = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
+          break;
+        }
+      } catch (error) {
+        continue;
+      }
+    }
+
+    // Fallback data if file not found
+    if (!aiData) {
       aiData = {
-        personal: {
+        personal_info: {
           name: "Mohammed Ashikur Rahman",
-          bio: "Full-stack developer with expertise in modern web technologies"
+          description: "Senior Software Engineer with expertise in modern web technologies"
         },
         skills: ["JavaScript", "Vue.js", "Node.js", "Python"],
-        experience: [],
-        projects: []
+        work_experience: []
       };
     }
 
-    // Find relevant context
     const context = findRelevantContext(query, aiData);
 
-    // Create the prompt for OpenAI
-    const prompt = `You are Mohammed Ashikur Rahman's AI assistant. Based on the following information about him, answer the user's question naturally and conversationally. If you're asked about something not in the data, politely say you don't have that information.
-
-Context about Mohammed Ashikur Rahman:
-${context}
-
-User Question: ${query}
-
-Please provide a helpful, friendly, and informative response as if you're representing Mohammed Ashikur Rahman:`;
-
-    // Call OpenAI API
     const response = await openai.chat.completions.create({
       model: 'gpt-3.5-turbo',
       max_tokens: 1000,
       messages: [
         {
           role: 'user',
-          content: prompt
+          content: `You are Mohammed Ashikur Rahman's AI assistant. Based on the following information about him, answer the user's question naturally and conversationally.
+
+Context: ${context}
+
+User Question: ${query}
+
+Please provide a helpful, friendly response:`
         }
       ]
     });
@@ -102,7 +109,7 @@ Please provide a helpful, friendly, and informative response as if you're repres
     console.error('Error in AI agent:', error);
     throw createError({
       statusCode: 500,
-      statusMessage: 'Failed to process query'
+      statusMessage: `Failed to process query}`
     });
   }
 });

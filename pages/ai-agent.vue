@@ -125,6 +125,12 @@
 <script setup>
 import { onMounted, ref } from "vue";
 
+// Add this for debugging
+onMounted(() => {
+  console.log("Public runtime config:", useRuntimeConfig().public);
+  console.log("Full runtime config (server vars hidden):", useRuntimeConfig());
+});
+
 // Reactive data
 const messages = ref([]);
 const currentMessage = ref("");
