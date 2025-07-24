@@ -12,7 +12,7 @@
         <select
           v-model="selectedVoice"
           @change="updateVoice"
-          class="border border-gray-300 rounded px-2 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 min-w-0 flex-1 sm:w-auto"
+          class="border border-gray-300 rounded px-2 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white dark:border-gray-600 dark:placeholder-gray-400 min-w-0 flex-1 sm:w-auto"
         >
           <option value="alloy">Alloy</option>
           <option value="echo">Echo</option>
@@ -31,7 +31,7 @@
         <select
           v-model="selectedSpeed"
           @change="updateSpeed"
-          class="border border-gray-300 rounded px-2 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 min-w-0 flex-1 sm:w-auto"
+          class="border border-gray-300 rounded px-2 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white dark:border-gray-600 dark:placeholder-gray-400 min-w-0 flex-1 sm:w-auto"
         >
           <option value="0.75">0.75x</option>
           <option value="1.0">1.0x</option>

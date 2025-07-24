@@ -1,7 +1,7 @@
 <template>
-  <div class="min-h-screen bg-gray-50 py-4">
+  <div class="min-h-screen bg-gray-50 dark:bg-gray-200 py-4">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="bg-white rounded-lg shadow-lg p-6">
+      <div class="bg-white dark:bg-gray-200 rounded-lg shadow-lg p-6">
         <div class="text-center mb-8">
           <h1 class="text-3xl font-bold text-gray-900 mt-20">
             Chat with Ashikur Rahman's AI Assistant
@@ -79,8 +79,8 @@
             @keypress.enter="sendMessage"
             type="text"
             placeholder="Ask me anything about Ashikur..."
-            class="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             :disabled="isLoading"
+            class="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white dark:border-gray-600 dark:placeholder-gray-400"
           />
           <button
             @click="sendMessage"
