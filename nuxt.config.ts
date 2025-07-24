@@ -1,4 +1,4 @@
-export default {
+export default defineNuxtConfig({
   modules: ["@nuxtjs/tailwindcss"],
   app: {
     head: {
@@ -22,7 +22,7 @@ export default {
         {
           rel: "preconnect",
           href: "https://fonts.gstatic.com",
-          crossorigin: true,
+          crossorigin: "anonymous",
         },
       ],
       script: [
@@ -51,7 +51,18 @@ export default {
   components: true,
   ssr: true,
   nitro: {
-    preset: "vercel-edge",
+    preset: "vercel",
+    // Add explicit API routes for Vercel
+    routeRules: {
+      '/api/**': {
+        cors: true,
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Methods': 'GET,HEAD,PUT,PATCH,POST,DELETE',
+          'Access-Control-Allow-Headers': 'Content-Type, Authorization'
+        }
+      }
+    }
   },
   css: ["@/assets/css/tailwind.css"],
   devtools: { enabled: true },
@@ -60,4 +71,5 @@ export default {
     prefix: true,
     dir: "static/img",
   },
-};
+});
+
