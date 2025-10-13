@@ -1,145 +1,198 @@
 <template>
-  <!-- templating new UI -->
-  <section class="pt-4 sm:pt-10">
+  <!-- Hero Section -->
+  <section class="pt-4 sm:pt-10 bg-gradient-to-r from-blue-50 to-indigo-100 dark:from-gray-800 dark:to-gray-900">
     <div class="container max-w-screen-xl mx-auto pt-5 px-3">
       <div class="text-center">
         <div class="flex justify-center sm:mt-24">
           <img
-            class="h-40 w-auto rounded-full"
+            class="h-40 w-auto rounded-full shadow-2xl border-4 border-white dark:border-gray-700"
             src="/img/me.jfif"
-            alt="Image"
+            alt="MD Ashikur Rahman - Senior Software Engineer"
           />
         </div>
 
         <h6
-          class="font-medium text-gray-500 dark:text-gray-300 text-lg md:text-2xl mb-5"
+          class="font-medium text-gray-600 dark:text-gray-300 text-lg md:text-2xl mb-3 mt-6"
         >
           MD ASHIKUR RAHMAN
         </h6>
 
         <h1
-          class="font-normal text-gray-900 dark:text-gray-300 text-4xl md:text-7xl leading-none mb-5"
+          class="font-bold text-gray-900 dark:text-gray-100 text-3xl md:text-6xl leading-tight mb-6"
         >
-          I'm a
-          <span class="text-purple-500">{{ typeValue }}</span>
+          Senior Software Engineer
+          <br>
+          <span class="text-blue-600 dark:text-blue-400">{{ typeValue }}</span>
           <span class="cursor" :class="{ typing: typeStatus }">&nbsp;</span>
         </h1>
 
         <p
-          class="font-normal text-gray-600 dark:text-gray-300 text-md md:text-xl mb-10"
+          class="font-normal text-gray-700 dark:text-gray-300 text-lg md:text-xl mb-8 max-w-4xl mx-auto leading-relaxed"
         >
-          I make Interactive and Interesting Web Applications.
+          Results-driven Senior Software Engineer with 5+ years of experience in backend and full-stack development. 
+          Proven expertise in designing scalable, secure systems and deploying production-grade applications on cloud infrastructure.
         </p>
 
-        <NuxtLink
-          href="https://www.linkedin.com/in/ashikur-rahman-0a272ba1/"
-          target="_blank"
-          rel="no-referrer"
-          class="px-7 py-2 md:px-9 md:py-4 font-medium md:font-semibold bg-gray-700 text-gray-200 text-sm rounded-md hover:bg-gray-200 hover:text-black transition ease-linear duration-500 shadow-lg shadow-emerald-500/50"
-          >Follow me on LinkedIn</NuxtLink
-        >
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+          <NuxtLink
+            href="https://www.linkedin.com/in/ashikur-rahman-0a272ba1/"
+            target="_blank"
+            rel="no-referrer"
+            class="px-8 py-3 font-semibold bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300 shadow-lg hover:shadow-xl"
+          >
+            Connect on LinkedIn
+          </NuxtLink>
+          <NuxtLink
+            to="/projects"
+            class="px-8 py-3 font-semibold border-2 border-blue-600 text-blue-600 dark:text-blue-400 rounded-lg hover:bg-blue-600 hover:text-white transition duration-300"
+          >
+            View My Work
+          </NuxtLink>
+        </div>
+
+        <!-- Current Role Highlight -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 max-w-2xl mx-auto">
+          <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">Currently Working At</p>
+          <h3 class="text-xl font-bold text-gray-900 dark:text-gray-100 mb-2">WeGro Global Ltd</h3>
+          <p class="text-gray-600 dark:text-gray-300">Leading backend architecture using NestJS, TypeScript, and PostgreSQL</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="py-10 md:py-10">
+  <!-- Professional Experience -->
+  <section class="py-16 md:py-20 bg-white dark:bg-gray-900">
     <div class="container max-w-screen-xl mx-auto px-4">
-      <h1
-        class="font-medium text-black dark:text-gray-200 text-3xl md:text-4xl mb-5"
-      >
-        Experience
-      </h1>
+      <div class="text-center mb-16">
+        <h2 class="font-bold text-gray-900 dark:text-gray-100 text-4xl md:text-5xl mb-6">
+          Professional Experience
+        </h2>
+        <p class="font-normal text-gray-600 dark:text-gray-300 text-lg md:text-xl max-w-2xl mx-auto">
+          5+ years of experience building scalable systems and leading development teams
+        </p>
+      </div>
 
-      <p
-        class="font-normal text-gray-500 dark:text-gray-300 text-xs md:text-base mb-5"
-      >
-        Below is a summary of the places I worked as professional
-      </p>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="bg-gray-300 dark:bg-gray-100 px-8 py-10 rounded-md">
-          <div
-            class="w-20 py-6 flex justify-center bg-gray-200 dark:bg-gray-700 rounded-md mb-4"
-          >
-            <i data-feather="briefcase"></i>
+      <div class="space-y-12">
+        <!-- WeGro Global -->
+        <div class="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-8 shadow-lg">
+          <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
+            <div>
+              <h3 class="font-bold text-gray-900 dark:text-gray-100 text-2xl mb-2">
+                Senior Backend Engineer
+              </h3>
+              <h4 class="font-semibold text-blue-600 dark:text-blue-400 text-xl mb-2">
+                WeGro Global Ltd
+              </h4>
+              <p class="text-gray-600 dark:text-gray-300">Dhaka, Bangladesh</p>
+            </div>
+            <div class="mt-4 md:mt-0">
+              <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-4 py-2 rounded-full text-sm font-medium">
+                Aug 2024 – Present
+              </span>
+            </div>
           </div>
-
-          <h4 class="font-medium text-black text-lg mb-4">
-            Commerce Connections LTD, UK
-          </h4>
-          <h5 class="font-semibold text-black text-md mb-2">
-            Junior Software Consultant
-          </h5>
-
-          <ul class="list-disc list-outside">
-            <li class="font-normal text-gray-500 text-md text-balance">
-              Developed Sales Based website for B2B business model.
+          <ul class="space-y-3">
+            <li class="flex items-start">
+              <span class="text-blue-500 mr-3 mt-1">▸</span>
+              <span class="text-gray-700 dark:text-gray-300">Lead backend architecture using NestJS (Node.js), TypeScript, and PostgreSQL</span>
             </li>
-            <li class="font-normal text-gray-500 text-md text-justify">
-              Process and Manipulate Edbic API to Ionic Website using
-              TypeScript.
+            <li class="flex items-start">
+              <span class="text-blue-500 mr-3 mt-1">▸</span>
+              <span class="text-gray-700 dark:text-gray-300">Deploy production systems on AWS EC2 with Docker, Nginx, and GitHub Actions CI/CD</span>
             </li>
-            <li class="font-normal text-gray-500 text-md text-justify">
-              Adhered to the best practices of MongoDB and Angular.
+            <li class="flex items-start">
+              <span class="text-blue-500 mr-3 mt-1">▸</span>
+              <span class="text-gray-700 dark:text-gray-300">Optimize database queries and implement system monitoring for performance and reliability</span>
             </li>
           </ul>
         </div>
 
-        <div class="bg-gray-300 dark:bg-gray-100 px-8 py-10 rounded-md">
-          <div
-            class="w-20 py-6 flex justify-center bg-gray-200 dark:bg-gray-700 rounded-md mb-4"
-          >
-            <i data-feather="briefcase"></i>
+        <!-- Commerce Connection -->
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8 shadow-lg">
+          <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
+            <div>
+              <h3 class="font-bold text-gray-900 dark:text-gray-100 text-2xl mb-2">
+                Junior Software Consultant
+              </h3>
+              <h4 class="font-semibold text-green-600 dark:text-green-400 text-xl mb-2">
+                Commerce Connection Ltd (UK)
+              </h4>
+              <p class="text-gray-600 dark:text-gray-300">Remote / Chobham, UK</p>
+            </div>
+            <div class="mt-4 md:mt-0">
+              <span class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-4 py-2 rounded-full text-sm font-medium">
+                Sep 2023 – Jan 2024
+              </span>
+            </div>
           </div>
-
-          <h4 class="font-medium text-black text-lg mb-4">
-            MNB Technologies BD LTD, Bangladesh
-          </h4>
-          <h5 class="font-semibold text-black text-md mb-2">
-            Full Stack Developer
-          </h5>
-
-          <ul class="list-disc list-outside">
-            <li class="font-normal text-gray-500 text-md text-justify">
-              Developed three projects from scratch to deployment.
+          <ul class="space-y-3">
+            <li class="flex items-start">
+              <span class="text-green-500 mr-3 mt-1">▸</span>
+              <span class="text-gray-700 dark:text-gray-300">Developed and enhanced full-stack features for enterprise clients</span>
             </li>
-            <li class="font-normal text-gray-500 text-md text-justify">
-              Adhered to the best practices to avoid SQL injections.
-            </li>
-            <li class="font-normal text-gray-500 text-md text-justify">
-              Implemented custom bulk email sender for marketing purposes.
-            </li>
-            <li class="font-normal text-gray-500 text-md text-justify">
-              Applied Payment API with Stripe, Paypal SDK.
-            </li>
-            <li class="font-normal text-gray-500 text-md text-justify">
-              Optimized website performance with SQL indexing and in-memory
-              caching.
+            <li class="flex items-start">
+              <span class="text-green-500 mr-3 mt-1">▸</span>
+              <span class="text-gray-700 dark:text-gray-300">Supported client-facing consulting on software integration and deployment</span>
             </li>
           </ul>
         </div>
 
-        <div class="bg-gray-300 dark:bg-gray-100 px-8 py-10 rounded-md">
-          <div
-            class="w-20 py-6 flex justify-center bg-gray-200 dark:bg-gray-700 rounded-md mb-4"
-          >
-            <i data-feather="book-open"></i>
+        <!-- MNB Technology -->
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8 shadow-lg">
+          <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
+            <div>
+              <h3 class="font-bold text-gray-900 dark:text-gray-100 text-2xl mb-2">
+                Lead PHP Developer
+              </h3>
+              <h4 class="font-semibold text-purple-600 dark:text-purple-400 text-xl mb-2">
+                MNB Technology
+              </h4>
+              <p class="text-gray-600 dark:text-gray-300">Dhaka, Bangladesh</p>
+            </div>
+            <div class="mt-4 md:mt-0">
+              <span class="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-4 py-2 rounded-full text-sm font-medium">
+                May 2019 – Nov 2022
+              </span>
+            </div>
           </div>
-
-          <h4 class="font-medium text-black text-lg mb-4">Mazegeek Inc.</h4>
-          <h5 class="font-semibold text-black text-md mb-2">
-            Junior PHP Developer
-          </h5>
-
-          <ul class="list-disc list-outside">
-            <li class="font-normal text-gray-500 text-md text-justify">
-              Started an Internship as a PHP developer and later promoted to
-              Junior PHP Developer.
+          <ul class="space-y-3">
+            <li class="flex items-start">
+              <span class="text-purple-500 mr-3 mt-1">▸</span>
+              <span class="text-gray-700 dark:text-gray-300">Led backend and data-driven application development using Laravel and MySQL</span>
             </li>
-            <li class="font-normal text-gray-500 text-md text-justify">
-              Implemented Laravel API for Android and IOS platforms.
+            <li class="flex items-start">
+              <span class="text-purple-500 mr-3 mt-1">▸</span>
+              <span class="text-gray-700 dark:text-gray-300">Designed reporting systems and BI dashboards to improve client decision-making</span>
             </li>
-            <li class="font-normal text-gray-500 text-md text-justify">
-              Acquired knowledge of SEO friendly approaches.
+          </ul>
+        </div>
+
+        <!-- Mazegeek -->
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8 shadow-lg">
+          <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
+            <div>
+              <h3 class="font-bold text-gray-900 dark:text-gray-100 text-2xl mb-2">
+                Laravel Intern
+              </h3>
+              <h4 class="font-semibold text-orange-600 dark:text-orange-400 text-xl mb-2">
+                Mazegeek Incorporation
+              </h4>
+              <p class="text-gray-600 dark:text-gray-300">Dhaka, Bangladesh</p>
+            </div>
+            <div class="mt-4 md:mt-0">
+              <span class="bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 px-4 py-2 rounded-full text-sm font-medium">
+                Jan 2019 – Apr 2019
+              </span>
+            </div>
+          </div>
+          <ul class="space-y-3">
+            <li class="flex items-start">
+              <span class="text-orange-500 mr-3 mt-1">▸</span>
+              <span class="text-gray-700 dark:text-gray-300">Built and tested enterprise web applications using Laravel and PHP</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-orange-500 mr-3 mt-1">▸</span>
+              <span class="text-gray-700 dark:text-gray-300">Collaborated with development team to deliver production-ready modules</span>
             </li>
           </ul>
         </div>
@@ -147,186 +200,159 @@
     </div>
   </section>
 
-  <section class="py-10 md:py-10">
+  <!-- Technical Skills -->
+  <section class="py-16 md:py-20 bg-gradient-to-r from-gray-50 to-blue-50 dark:from-gray-800 dark:to-gray-900">
     <div class="container max-w-screen-xl mx-auto px-4">
-      <h1
-        class="font-medium text-black dark:text-gray-100 text-3xl md:text-4xl mb-5"
-      >
-        Education
-      </h1>
+      <div class="text-center mb-16">
+        <h2 class="font-bold text-gray-900 dark:text-gray-100 text-4xl md:text-5xl mb-6">
+          Technical Skills
+        </h2>
+        <p class="font-normal text-gray-600 dark:text-gray-300 text-lg md:text-xl max-w-2xl mx-auto">
+          Expertise in modern technologies and development practices
+        </p>
+      </div>
 
-      <p
-        class="font-normal text-gray-500 dark:text-gray-400 text-xs md:text-base mb-10"
-      >
-        Below is a summary of the places I studied
-      </p>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="bg-gray-300 dark:bg-gray-100 px-8 py-10 rounded-md">
-          <h4 class="font-medium text-black text-lg mb-4">2020 – 2022</h4>
-
-          <p class="font-normal text-gray-600 text-md mb-4">
-            University of Applied Sciences Wedel, Hamburg, Germany.
-          </p>
-          <p class="font-medium text-gray-600 text-md mb-4">
-            Master in Information & Technology.
-          </p>
-
-          <div class="relative">
-            <h6 class="font-semibold text-gray-500 text-md relative z-10">
-              <NuxtLink href="https://www.fh-wedel.de" target="_blank"
-                >See the place here</NuxtLink
-              >
-            </h6>
-            <span
-              class="w-32 h-1 bg-blue-200 absolute bottom-1 left-0 z-0"
-            ></span>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Backend -->
+        <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-xl transition duration-300">
+          <div class="text-center mb-4">
+            <div class="w-16 h-16 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-2xl text-green-600 dark:text-green-400">🚀</span>
+            </div>
+            <h3 class="font-bold text-gray-900 dark:text-gray-100 text-xl mb-2">Backend</h3>
+          </div>
+          <div class="space-y-2">
+            <span class="inline-block bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full text-sm font-medium">Node.js</span>
+            <span class="inline-block bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full text-sm font-medium">NestJS</span>
+            <span class="inline-block bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full text-sm font-medium">PHP Laravel</span>
           </div>
         </div>
 
-        <div class="bg-gray-300 dark:bg-gray-100 px-8 py-10 rounded-md">
-          <h4 class="font-medium text-black text-lg mb-4">2013 – 2018</h4>
-
-          <p class="font-normal text-gray-500 text-md mb-4">
-            BRAC University, Dhaka, Bangladesh
-          </p>
-          <p class="font-medium text-gray-500 text-md mb-4">
-            Bachelor of Science in <br />
-            Computer Science & Engineering.
-          </p>
-
-          <div class="relative">
-            <h6 class="font-semibold text-gray-500 text-md relative z-10">
-              <NuxtLink href="https://www.bracu.ac.bd" target="_blank"
-                >See the place here</NuxtLink
-              >
-            </h6>
-            <span
-              class="w-32 h-1 bg-blue-200 absolute bottom-1 left-0 z-0"
-            ></span>
+        <!-- Frontend -->
+        <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-xl transition duration-300">
+          <div class="text-center mb-4">
+            <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-2xl text-blue-600 dark:text-blue-400">💻</span>
+            </div>
+            <h3 class="font-bold text-gray-900 dark:text-gray-100 text-xl mb-2">Frontend</h3>
+          </div>
+          <div class="space-y-2">
+            <span class="inline-block bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-sm font-medium">NextJS</span>
+            <span class="inline-block bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-sm font-medium">Vue.js</span>
+            <span class="inline-block bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-sm font-medium">React</span>
+            <span class="inline-block bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-sm font-medium">TypeScript</span>
           </div>
         </div>
 
-        <div class="bg-gray-300 dark:bg-gray-100 px-8 py-10 rounded-md">
-          <h4 class="font-medium text-black text-lg mb-4">2010 – 2012</h4>
+        <!-- Databases -->
+        <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-xl transition duration-300">
+          <div class="text-center mb-4">
+            <div class="w-16 h-16 bg-purple-100 dark:bg-purple-900 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-2xl text-purple-600 dark:text-purple-400">🗃️</span>
+            </div>
+            <h3 class="font-bold text-gray-900 dark:text-gray-100 text-xl mb-2">Databases</h3>
+          </div>
+          <div class="space-y-2">
+            <span class="inline-block bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-3 py-1 rounded-full text-sm font-medium">PostgreSQL</span>
+            <span class="inline-block bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-3 py-1 rounded-full text-sm font-medium">MySQL</span>
+            <span class="inline-block bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-3 py-1 rounded-full text-sm font-medium">MongoDB</span>
+          </div>
+        </div>
 
-          <p class="font-normal text-gray-500 text-md mb-4">
-            Bangladesh Navy College, Dhaka, Bangladesh
-          </p>
-          <p class="font-medium text-gray-500 text-md mb-4">
-            Higher Secondary School
-          </p>
+        <!-- Cloud & DevOps -->
+        <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-xl transition duration-300">
+          <div class="text-center mb-4">
+            <div class="w-16 h-16 bg-orange-100 dark:bg-orange-900 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-2xl text-orange-600 dark:text-orange-400">☁️</span>
+            </div>
+            <h3 class="font-bold text-gray-900 dark:text-gray-100 text-xl mb-2">Cloud & DevOps</h3>
+          </div>
+          <div class="space-y-2">
+            <span class="inline-block bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 px-3 py-1 rounded-full text-sm font-medium">AWS</span>
+            <span class="inline-block bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 px-3 py-1 rounded-full text-sm font-medium">Docker</span>
+            <span class="inline-block bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 px-3 py-1 rounded-full text-sm font-medium">CI/CD</span>
+            <span class="inline-block bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 px-3 py-1 rounded-full text-sm font-medium">Nginx</span>
+          </div>
+        </div>
+      </div>
 
-          <div class="relative">
-            <h6 class="font-semibold text-gray-500 text-md relative z-10">
-              <NuxtLink href="https://bncd.edu.bd" target="_blank"
-                >See the place here</NuxtLink
-              >
-            </h6>
-            <span
-              class="w-32 h-1 bg-blue-200 absolute bottom-1 left-0 z-0"
-            ></span>
+      <!-- Additional Skills -->
+      <div class="mt-12 bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg">
+        <h3 class="font-bold text-gray-900 dark:text-gray-100 text-2xl mb-6 text-center">Additional Expertise</h3>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+          <div class="p-4">
+            <h4 class="font-semibold text-gray-900 dark:text-gray-100 mb-2">Testing</h4>
+            <p class="text-gray-600 dark:text-gray-300 text-sm">Jest, Playwright, Automated Testing</p>
+          </div>
+          <div class="p-4">
+            <h4 class="font-semibold text-gray-900 dark:text-gray-100 mb-2">APIs</h4>
+            <p class="text-gray-600 dark:text-gray-300 text-sm">REST APIs, JWT Authentication</p>
+          </div>
+          <div class="p-4">
+            <h4 class="font-semibold text-gray-900 dark:text-gray-100 mb-2">Payment</h4>
+            <p class="text-gray-600 dark:text-gray-300 text-sm">Stripe & PayPal APIs</p>
+          </div>
+          <div class="p-4">
+            <h4 class="font-semibold text-gray-900 dark:text-gray-100 mb-2">Specialization</h4>
+            <p class="text-gray-600 dark:text-gray-300 text-sm">Image Processing, Data Visualization</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="py-10 md:py-10">
+  <!-- Education -->
+  <section class="py-16 md:py-20 bg-white dark:bg-gray-900">
     <div class="container max-w-screen-xl mx-auto px-4">
-      <div class="flex flex-col lg:flex-row justify-between">
-        <div class="mb-10 lg:mb-0">
-          <h1
-            class="font-medium text-black dark:text-gray-100 text-3xl md:text-4xl mb-5"
-          >
-            Portfolio
-          </h1>
+      <div class="text-center mb-16">
+        <h2 class="font-bold text-gray-900 dark:text-gray-100 text-4xl md:text-5xl mb-6">
+          Education
+        </h2>
+        <p class="font-normal text-gray-600 dark:text-gray-300 text-lg md:text-xl max-w-2xl mx-auto">
+          Academic foundation in computer science and engineering
+        </p>
+      </div>
 
-          <p class="font-normal text-gray-400 text-xs md:text-base">
-            I have brought here my biggest and favorite works <br />
-            as a professional.
-          </p>
-          <div
-            class="col-span-3 text-center pt-5 relative h-full w-full overflow-hidden rounded-lg hover:opacity-75"
-          >
-            <img
-              class="h-50 w-50 object-cover object-center rounded-xl"
-              src="/img/hamburg.avif"
-              alt="portfolio-pic2"
-            />
-          </div>
-        </div>
-
-        <div class="space-y-24">
-          <div class="flex space-x-6">
-            <h1
-              class="font-normal text-black dark:text-gray-400 text-3xl md:text-4xl"
-            >
-              01
-            </h1>
-
-            <span class="w-28 h-0.5 bg-gray-300 mt-5"></span>
-
+      <div class="max-w-4xl mx-auto">
+        <div class="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-8 shadow-lg">
+          <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
             <div>
-              <h1
-                class="font-normal text-black dark:text-gray-400 text-3xl md:text-4xl mb-5"
-              >
-                Demo API Generator
-              </h1>
-
-              <p class="font-normal text-gray-500 text-sm md:text-base">
-                A dummy data free and documented API generator to facilitate
-                <br />
-                the process of testing the front-end portion of projects.
-              </p>
+              <h3 class="font-bold text-gray-900 dark:text-gray-100 text-2xl mb-2">
+                Bachelor of Science in Computer Science
+              </h3>
+              <h4 class="font-semibold text-blue-600 dark:text-blue-400 text-xl mb-2">
+                BRAC University
+              </h4>
+              <p class="text-gray-600 dark:text-gray-300">Dhaka, Bangladesh</p>
+            </div>
+            <div class="mt-4 md:mt-0">
+              <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-4 py-2 rounded-full text-sm font-medium">
+                2018
+              </span>
             </div>
           </div>
-
-          <div class="flex space-x-6">
-            <h1
-              class="font-normal text-black dark:text-gray-400 text-3xl md:text-4xl"
-            >
-              02
-            </h1>
-
-            <span class="w-28 h-0.5 bg-gray-300 mt-5"></span>
-
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <h1
-                class="font-normal text-black dark:text-gray-400 text-3xl md:text-4xl mb-5"
-              >
-                Demo API Generator
-              </h1>
-
-              <p class="font-normal text-gray-500 text-sm md:text-base">
-                A dummy data free and documented API generator to facilitate
-                <br />
-                the process of testing the front-end portion of projects.
-              </p>
+              <h5 class="font-semibold text-gray-900 dark:text-gray-100 mb-2">Specialization</h5>
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <span class="text-blue-500 mr-3 mt-1">▸</span>
+                  <span class="text-gray-700 dark:text-gray-300">Image Processing</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-blue-500 mr-3 mt-1">▸</span>
+                  <span class="text-gray-700 dark:text-gray-300">Data Visualization</span>
+                </li>
+              </ul>
             </div>
-          </div>
-
-          <div class="flex space-x-6">
-            <h1
-              class="font-normal text-black dark:text-gray-400 text-3xl md:text-4xl"
-            >
-              03
-            </h1>
-
-            <span class="w-28 h-0.5 bg-gray-300 mt-5"></span>
-
-            <div>
-              <h1
-                class="font-normal text-black dark:text-gray-400 text-3xl md:text-4xl mb-5"
+            <div class="text-center md:text-right">
+              <NuxtLink 
+                href="https://www.bracu.ac.bd" 
+                target="_blank"
+                class="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition duration-300"
               >
-                Demo API Generator
-              </h1>
-
-              <p class="font-normal text-gray-500 text-sm md:text-base">
-                A dummy data free and documented API generator to facilitate
-                <br />
-                the process of testing the front-end portion of projects.
-              </p>
+                Visit University
+              </NuxtLink>
             </div>
           </div>
         </div>
@@ -334,133 +360,221 @@
     </div>
   </section>
 
-  <section class="py-10 md:py-10">
+  <!-- Featured Projects -->
+  <section class="py-16 md:py-20 bg-gradient-to-r from-gray-50 to-blue-50 dark:from-gray-800 dark:to-gray-900">
+    <div class="container max-w-screen-xl mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="font-bold text-gray-900 dark:text-gray-100 text-4xl md:text-5xl mb-6">
+          Featured Projects
+        </h2>
+        <p class="font-normal text-gray-600 dark:text-gray-300 text-lg md:text-xl max-w-2xl mx-auto">
+          Showcase of impactful projects and applications I've built and contributed to
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <!-- WeGro Global -->
+        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-300">
+          <div class="bg-gradient-to-r from-green-400 to-blue-500 h-48 flex items-center justify-center">
+            <div class="text-center text-white">
+              <h3 class="text-3xl font-bold mb-2">WeGro Global</h3>
+              <p class="text-lg opacity-90">Agriculture Simplified</p>
+            </div>
+          </div>
+          <div class="p-8">
+            <h4 class="font-bold text-gray-900 dark:text-gray-100 text-xl mb-4">
+              Agricultural Fintech Platform
+            </h4>
+            <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+              Innovative financing solutions for smallholder farmers with NestJS backend, 
+              dynamic project management, and investment platform featuring crowdfunding capabilities.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full text-sm">NestJS</span>
+              <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-sm">TypeScript</span>
+              <span class="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-3 py-1 rounded-full text-sm">PostgreSQL</span>
+              <span class="bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 px-3 py-1 rounded-full text-sm">AWS</span>
+            </div>
+            <NuxtLink 
+              href="https://wegro.global" 
+              target="_blank"
+              class="inline-block bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition duration-300 font-semibold"
+            >
+              Visit Platform
+            </NuxtLink>
+          </div>
+        </div>
+
+        <!-- Commerce Connections -->
+        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-300">
+          <div class="bg-gradient-to-r from-blue-500 to-purple-600 h-48 flex items-center justify-center">
+            <div class="text-center text-white">
+              <h3 class="text-3xl font-bold mb-2">Commerce Connections</h3>
+              <p class="text-lg opacity-90">B2B Integration Solutions</p>
+            </div>
+          </div>
+          <div class="p-8">
+            <h4 class="font-bold text-gray-900 dark:text-gray-100 text-xl mb-4">
+              Enterprise B2B/EDI Platform
+            </h4>
+            <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+              Full-stack development for enterprise clients with EDI solutions, 
+              API integrations, and business process automation for global trading partners.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-sm">Full-Stack</span>
+              <span class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full text-sm">EDI/B2B</span>
+              <span class="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-3 py-1 rounded-full text-sm">API Integration</span>
+            </div>
+            <NuxtLink 
+              href="https://commerce-connections.com" 
+              target="_blank"
+              class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition duration-300 font-semibold"
+            >
+              Visit Platform
+            </NuxtLink>
+          </div>
+        </div>
+
+        <!-- AshMart BD -->
+        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-300">
+          <div class="bg-gradient-to-r from-orange-400 to-red-500 h-48 flex items-center justify-center">
+            <div class="text-center text-white">
+              <h3 class="text-3xl font-bold mb-2">AshMart BD</h3>
+              <p class="text-lg opacity-90">E-commerce Platform</p>
+            </div>
+          </div>
+          <div class="p-8">
+            <h4 class="font-bold text-gray-900 dark:text-gray-100 text-xl mb-4">
+              Multi-Category E-commerce
+            </h4>
+            <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+              Complete e-commerce solution with categories ranging from electronics to fashion, 
+              featuring advanced product management, payment integration, and user experience optimization.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 px-3 py-1 rounded-full text-sm">Laravel</span>
+              <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-sm">E-commerce</span>
+              <span class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full text-sm">Payment APIs</span>
+            </div>
+            <NuxtLink 
+              href="https://www.ashmartbd.com" 
+              target="_blank"
+              class="inline-block bg-orange-600 text-white px-6 py-3 rounded-lg hover:bg-orange-700 transition duration-300 font-semibold"
+            >
+              Visit Store
+            </NuxtLink>
+          </div>
+        </div>
+
+        <!-- Azerbaijan Medical Journal -->
+        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-300">
+          <div class="bg-gradient-to-r from-teal-400 to-blue-500 h-48 flex items-center justify-center">
+            <div class="text-center text-white">
+              <h3 class="text-3xl font-bold mb-2">Medical Journal</h3>
+              <p class="text-lg opacity-90">Academic Publishing</p>
+            </div>
+          </div>
+          <div class="p-8">
+            <h4 class="font-bold text-gray-900 dark:text-gray-100 text-xl mb-4">
+              Azerbaijan Medical Journal
+            </h4>
+            <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+              Comprehensive medical journal platform covering anatomy, physiology, pharmacology, 
+              and pathology with advanced content management and academic publishing features.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="bg-teal-100 dark:bg-teal-900 text-teal-800 dark:text-teal-200 px-3 py-1 rounded-full text-sm">Academic</span>
+              <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-sm">CMS</span>
+              <span class="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-3 py-1 rounded-full text-sm">Publishing</span>
+            </div>
+            <NuxtLink 
+              href="https://www.azerbaijanmedicaljournal.net" 
+              target="_blank"
+              class="inline-block bg-teal-600 text-white px-6 py-3 rounded-lg hover:bg-teal-700 transition duration-300 font-semibold"
+            >
+              Visit Journal
+            </NuxtLink>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Strengths -->
+  <section class="py-16 md:py-20 bg-white dark:bg-gray-900">
+    <div class="container max-w-screen-xl mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="font-bold text-gray-900 dark:text-gray-100 text-4xl md:text-5xl mb-6">
+          Key Strengths
+        </h2>
+        <p class="font-normal text-gray-600 dark:text-gray-300 text-lg md:text-xl max-w-2xl mx-auto">
+          Core competencies that drive successful project delivery and team collaboration
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="text-center p-6 bg-gradient-to-b from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-700 rounded-2xl">
+          <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-2xl text-blue-600 dark:text-blue-400">🔧</span>
+          </div>
+          <h3 class="font-bold text-gray-900 dark:text-gray-100 text-lg mb-3">
+            Clean, Efficient Code
+          </h3>
+          <p class="text-gray-600 dark:text-gray-300 text-sm">
+            Writing maintainable, scalable code following best practices and industry standards
+          </p>
+        </div>
+
+        <div class="text-center p-6 bg-gradient-to-b from-green-50 to-emerald-50 dark:from-gray-800 dark:to-gray-700 rounded-2xl">
+          <div class="w-16 h-16 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-2xl text-green-600 dark:text-green-400">🧠</span>
+          </div>
+          <h3 class="font-bold text-gray-900 dark:text-gray-100 text-lg mb-3">
+            Problem Solving
+          </h3>
+          <p class="text-gray-600 dark:text-gray-300 text-sm">
+            Strong analytical ability to identify, analyze, and solve complex technical challenges
+          </p>
+        </div>
+
+        <div class="text-center p-6 bg-gradient-to-b from-purple-50 to-violet-50 dark:from-gray-800 dark:to-gray-700 rounded-2xl">
+          <div class="w-16 h-16 bg-purple-100 dark:bg-purple-900 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-2xl text-purple-600 dark:text-purple-400">🏗️</span>
+          </div>
+          <h3 class="font-bold text-gray-900 dark:text-gray-100 text-lg mb-3">
+            Scalable Architecture
+          </h3>
+          <p class="text-gray-600 dark:text-gray-300 text-sm">
+            Designing robust, scalable system architectures for high-performance applications
+          </p>
+        </div>
+
+        <div class="text-center p-6 bg-gradient-to-b from-orange-50 to-amber-50 dark:from-gray-800 dark:to-gray-700 rounded-2xl">
+          <div class="w-16 h-16 bg-orange-100 dark:bg-orange-900 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-2xl text-orange-600 dark:text-orange-400">🌐</span>
+          </div>
+          <h3 class="font-bold text-gray-900 dark:text-gray-100 text-lg mb-3">
+            Global Communication
+          </h3>
+          <p class="text-gray-600 dark:text-gray-300 text-sm">
+            Effective communication and collaboration with international clients and teams
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Inspirational Quote -->
+  <section class="py-16 md:py-20 bg-gradient-to-r from-indigo-600 to-purple-600">
     <div class="container max-w-screen-xl mx-auto px-4">
       <div class="text-center">
-        <h1
-          class="font-normal text-black dark:text-gray-200 text-3xl md:text-5xl lg:text-5xl mb-10 md:mb-10 lg:mb-10"
-        >
-          "If it doesn't set your soul on fire, it's not worth the burn."
-        </h1>
-      </div>
-    </div>
-  </section>
-
-  <section class="py-10 md:py-10">
-    <div class="container max-w-screen-xl mx-auto px-4">
-      <h1
-        class="font-medium text-black dark:text-gray-400 text-3xl md:text-4xl mb-5"
-      >
-        Experience
-      </h1>
-
-      <p class="font-normal text-gray-500 text-xs md:text-base mb-20">
-        Below is a summary of the places I worked as professional
-      </p>
-
-      <div class="flex flex-col lg:flex-row justify-between">
-        <div class="space-y-8 md:space-y-16 mb-16 md:mb-0">
-          <h6 class="font-medium text-gray-400 text-base uppercase">Company</h6>
-
-          <p class="font-semibold text-black dark:text-gray-300 text-base">
-            Massa Fames
-            <span class="font-normal text-gray-400 dark:text-gray-300"
-              >/ New York</span
-            >
-          </p>
-
-          <p class="font-semibold text-black dark:text-gray-300 text-base">
-            Massa Fames
-            <span class="font-normal text-gray-400 dark:text-gray-300"
-              >/ New York</span
-            >
-          </p>
-        </div>
-
-        <div class="space-y-8 md:space-y-16 mb-16 md:mb-0">
-          <h6 class="font-medium text-gray-400 text-base uppercase">
-            Position
-          </h6>
-
-          <p class="font-normal text-gray-400 text-base">
-            Junior Front-End Developer
-          </p>
-
-          <p class="font-normal text-gray-400 text-base">
-            Junior Front-End Developer
-          </p>
-        </div>
-
-        <div class="space-y-8 md:space-y-16">
-          <h6 class="font-medium text-gray-400 text-base uppercase">Year</h6>
-
-          <p class="font-normal text-gray-400 text-base">2016</p>
-
-          <p class="font-normal text-gray-400 text-base">2016</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="py-10 md:py-16">
-    <div class="container max-w-screen-xl mx-auto px-4">
-      <h1
-        class="font-medium text-black dark:text-white text-3xl md:text-4xl mb-5"
-      >
-        Testimonial
-      </h1>
-
-      <p
-        class="font-normal text-black dark:text-white text-xs md:text-base mb-10 md:mb-20"
-      >
-        Below is a summary of the places I studied
-      </p>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="bg-gray-300 dark:bg-gray-100 px-8 py-10 rounded-md">
-          <p class="font-normal text-black text-md mb-4">
-            Lorem ipsum dolor sit amet, consectetur <br />
-            adipiscing elit, sed do eiusmod tempor <br />
-            incididunt ut labore et dolore magna aliqua.
-          </p>
-
-          <h6 class="font-semibold text-black text-md">
-            Stephan Clark
-            <span class="font-medium text-gray-400 text-sm"
-              >- CEO at EarlyBird</span
-            >
-          </h6>
-        </div>
-
-        <div class="bg-gray-300 dark:bg-gray-100 px-8 py-10 rounded-md">
-          <p class="font-normal text-black text-md mb-4">
-            Lorem ipsum dolor sit amet, consectetur <br />
-            adipiscing elit, sed do eiusmod tempor <br />
-            incididunt ut labore et dolore magna aliqua.
-          </p>
-
-          <h6 class="font-semibold text-black text-md">
-            Stephan Clark
-            <span class="font-medium text-gray-400 text-sm"
-              >- CEO at EarlyBird</span
-            >
-          </h6>
-        </div>
-
-        <div class="bg-gray-300 dark:bg-gray-100 px-8 py-10 rounded-md">
-          <p class="font-normal text-black text-md mb-4">
-            Lorem ipsum dolor sit amet, consectetur <br />
-            adipiscing elit, sed do eiusmod tempor <br />
-            incididunt ut labore et dolore magna aliqua.
-          </p>
-
-          <h6 class="font-semibold text-black text-md">
-            Stephan Clark
-            <span class="font-medium text-gray-400 text-sm"
-              >- CEO at EarlyBird</span
-            >
-          </h6>
-        </div>
+        <h2 class="font-bold text-white text-3xl md:text-5xl lg:text-6xl mb-8">
+          "Clean code always looks like it was written by someone who cares."
+        </h2>
+        <p class="text-indigo-100 text-lg md:text-xl">
+          — Robert C. Martin
+        </p>
       </div>
     </div>
   </section>
@@ -485,25 +599,25 @@ export default {
           `,
         },
       ],
-      title: "MD ASHIKUR RAHMAN | Software Engineer",
+      title: "MD ASHIKUR RAHMAN | Senior Software Engineer - Backend & Cloud Specialist",
       meta: [
         {
           name: "keywords",
           content:
-            "ASHIKUR, RAHMAN, Software, Engineer, Web, Developer, Backend, Frontend, MERN, MEAN, Laravel, Vue, React, PHP",
+            "Ashikur Rahman, Senior Software Engineer, NestJS, Laravel, PostgreSQL, AWS, Docker, Backend Developer, Full Stack, TypeScript, Node.js, Cloud Architecture, WeGro Global",
         },
         {
           name: "author",
-          content: "Ashikur Jholok | MD ASHIKUR RAHMAN",
+          content: "MD Ashikur Rahman | Senior Software Engineer",
         },
         {
           name: "description",
           content:
-            "Discover the intuitive web application of skilled developer MD ASHIKUR RAHMAN.",
+            "Senior Software Engineer with 5+ years experience in backend & full-stack development. Expert in NestJS, Laravel, PostgreSQL, AWS. Currently at WeGro Global Ltd.",
         },
         {
           property: "og:site_name",
-          content: "MD ASHIKUR RAHMAN | Software Engineer",
+          content: "MD ASHIKUR RAHMAN | Senior Software Engineer",
         },
         {
           property: "og:url",
@@ -511,12 +625,12 @@ export default {
         },
         {
           property: "og:title",
-          content: "MD ASHIKUR RAHMAN | Software Engineer",
+          content: "MD ASHIKUR RAHMAN | Senior Software Engineer - Backend & Cloud Specialist",
         },
         {
           property: "og:description",
           content:
-            "Discover the intuitive web application of skilled developer MD ASHIKUR RAHMAN.",
+            "Senior Software Engineer with 5+ years experience in backend & full-stack development. Expert in NestJS, Laravel, PostgreSQL, AWS. Currently at WeGro Global Ltd.",
         },
         { property: "og:image", content: `summary_large_image` },
         { name: "twitter:card", content: `summary_large_image` },
@@ -527,7 +641,7 @@ export default {
     return {
       typeValue: "",
       typeStatus: false,
-      typeArray: ["Software Engineer.", "Website Developer.", "Gamer."],
+      typeArray: ["Backend Specialist.", "Full-Stack Developer.", "Cloud Architect.", "Problem Solver."],
       typingSpeed: 60,
       erasingSpeed: 70,
       newTextDelay: 1500,
