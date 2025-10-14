@@ -223,7 +223,7 @@
                     >EDI</a
                   >
                   solutions, API integrations, and business process automation
-                  for global trading partners. They improve B2B supply chain
+                  for global trading partners & improve improve B2B supply chain
                   collaboration, smart enterprise communication and electronic
                   data interchange (EDI). They have been in business for over 20
                   years and this experience in B2B and EDI, as well as our
@@ -355,14 +355,10 @@
               </div>
 
               <div>
-                <h5
-                  class="font-semibold text-gray-900 dark:text-gray-100 mb-2"
-                >
+                <h5 class="font-semibold text-gray-900 dark:text-gray-100 mb-2">
                   Key Features:
                 </h5>
-                <ul
-                  class="text-sm text-gray-600 dark:text-gray-300 space-y-1"
-                >
+                <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1">
                   <li>• Multi-category product catalog system</li>
                   <li>• Integrated payment processing (Stripe/PayPal)</li>
                   <li>• Advanced search and filtering capabilities</li>
@@ -477,14 +473,10 @@
               </div>
 
               <div>
-                <h5
-                  class="font-semibold text-gray-900 dark:text-gray-100 mb-2"
-                >
+                <h5 class="font-semibold text-gray-900 dark:text-gray-100 mb-2">
                   Key Features:
                 </h5>
-                <ul
-                  class="text-sm text-gray-600 dark:text-gray-300 space-y-1"
-                >
+                <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1">
                   <li>• Academic paper submission and review system</li>
                   <li>• Advanced content management capabilities</li>
                   <li>• Multi-disciplinary medical coverage</li>
@@ -511,7 +503,7 @@
                 <NuxtLink
                   href="https://www.azerbaijanmedicaljournal.net"
                   target="_blank"
-                  class="px-6 py-3 border-2 border-teal-600 text-teal-600 rounded-lg hover:bg-teal-600 hover:text-white transition duration-300 font-semibold"
+                  class="px-6 py-3 border-2 border-red-700 text-red-700 rounded-lg hover:bg-red-900 hover:text-white transition duration-300 font-semibold"
                 >
                   Visit Journal
                 </NuxtLink>
