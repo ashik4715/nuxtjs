@@ -27,138 +27,132 @@
     <div class="container max-w-screen-xl mx-auto px-4">
       <div class="grid grid-cols-1 gap-12">
         <!-- WeGro Global -->
-        <template>
-          <div
-            class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition duration-300 group"
-          >
-            <!-- Larger Screenshot -->
-            <div class="relative h-80 overflow-hidden">
-              <!-- Spinner -->
-              <div
-                v-if="loading"
-                class="absolute inset-0 flex items-center justify-center bg-gray-100 dark:bg-gray-700"
+        <div
+          class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition duration-300 group"
+        >
+          <!-- Larger Screenshot -->
+          <div class="relative h-80 overflow-hidden">
+            <!-- Spinner -->
+            <div
+              v-if="loading"
+              class="absolute inset-0 flex items-center justify-center bg-gray-100 dark:bg-gray-700"
+            >
+              <svg
+                class="animate-spin h-10 w-10 text-green-800"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
               >
-                <svg
-                  class="animate-spin h-10 w-10 text-green-800"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                >
-                  <circle
-                    class="opacity-25"
-                    cx="12"
-                    cy="12"
-                    r="10"
-                    stroke="currentColor"
-                    stroke-width="4"
-                  ></circle>
-                  <path
-                    class="opacity-75"
-                    fill="currentColor"
-                    d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
-                  ></path>
-                </svg>
-              </div>
-
-              <!-- Website Preview -->
-              <iframe
-                src="https://wegro.global"
-                class="w-full h-full absolute top-0 left-0 border-none"
-                loading="lazy"
-                title="WeGro Global Preview"
-                @load="loading = false"
-              ></iframe>
+                <circle
+                  class="opacity-25"
+                  cx="12"
+                  cy="12"
+                  r="10"
+                  stroke="currentColor"
+                  stroke-width="4"
+                ></circle>
+                <path
+                  class="opacity-75"
+                  fill="currentColor"
+                  d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+                ></path>
+              </svg>
             </div>
 
-            <!-- Content Section -->
-            <div
-              class="flex flex-col md:flex-row justify-between items-start md:items-stretch gap-6 p-8"
-            >
-              <!-- Card Body -->
-              <div class="flex-1 space-y-6">
-                <div>
-                  <h4
-                    class="font-bold text-gray-900 dark:text-gray-100 text-xl mb-4"
-                  >
-                    Agricultural Fintech Platform
-                  </h4>
-                  <p
-                    class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed"
-                  >
-                    Innovative financing solutions for smallholder farmers with
-                    NestJS backend, dynamic project management, and investment
-                    platform featuring crowdfunding capabilities.
-                  </p>
-                </div>
+            <!-- Website Preview -->
+            <iframe
+              src="https://wegro.global"
+              class="w-full h-full absolute top-0 left-0 border-none"
+              loading="lazy"
+              title="WeGro Global Preview"
+              @load="loading = false"
+            ></iframe>
+          </div>
 
-                <div>
-                  <h5
-                    class="font-semibold text-gray-900 dark:text-gray-100 mb-2"
-                  >
-                    Key Features:
-                  </h5>
-                  <ul
-                    class="text-sm text-gray-600 dark:text-gray-300 space-y-1"
-                  >
-                    <li>
-                      • Real-time project tracking and investment management
-                    </li>
-                    <li>• Secure payment processing with multiple gateways</li>
-                    <li>• Advanced analytics and reporting dashboard</li>
-                    <li>• Mobile-responsive crowdfunding platform</li>
-                  </ul>
-                </div>
-
-                <div class="flex flex-wrap gap-2">
-                  <span
-                    class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full text-sm"
-                    >NestJS</span
-                  >
-                  <span
-                    class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-sm"
-                    >TypeScript</span
-                  >
-                  <span
-                    class="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-3 py-1 rounded-full text-sm"
-                    >PostgreSQL</span
-                  >
-                  <span
-                    class="bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 px-3 py-1 rounded-full text-sm"
-                    >AWS</span
-                  >
-                </div>
-
-                <div class="flex gap-3">
-                  <NuxtLink
-                    href="https://wegro.global"
-                    target="_blank"
-                    class="px-6 py-3 border-2 border-green-800 text-green-800 rounded-lg hover:bg-green-800 hover:text-white transition duration-300 font-semibold"
-                  >
-                    Visit Platform
-                  </NuxtLink>
-                </div>
-              </div>
-
-              <!-- Mini Name + Tagline Card -->
-              <div
-                class="w-full md:w-64 flex-shrink-0 bg-white dark:bg-gray-700 rounded-xl shadow-md text-center p-6 self-center"
-              >
-                <h3
-                  class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-2"
+          <!-- Content Section -->
+          <div
+            class="flex flex-col md:flex-row justify-between items-start md:items-stretch gap-6 p-8"
+          >
+            <!-- Card Body -->
+            <div class="flex-1 space-y-6">
+              <div>
+                <h4
+                  class="font-bold text-gray-900 dark:text-gray-100 text-xl mb-4"
                 >
-                  WeGro Global
-                </h3>
-                <p class="text-gray-600 dark:text-gray-400 text-lg">
-                  Agriculture Simplified
+                  Agricultural Fintech Platform
+                </h4>
+                <p
+                  class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed"
+                >
+                  Innovative financing solutions for smallholder farmers with
+                  NestJS backend, dynamic project management, and investment
+                  platform featuring crowdfunding capabilities.
                 </p>
               </div>
+
+              <div>
+                <h5 class="font-semibold text-gray-900 dark:text-gray-100 mb-2">
+                  Key Features:
+                </h5>
+                <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1">
+                  <li>
+                    • Real-time project tracking and investment management
+                  </li>
+                  <li>• Secure payment processing with multiple gateways</li>
+                  <li>• Advanced analytics and reporting dashboard</li>
+                  <li>• Mobile-responsive crowdfunding platform</li>
+                </ul>
+              </div>
+
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full text-sm"
+                  >NestJS</span
+                >
+                <span
+                  class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-sm"
+                  >TypeScript</span
+                >
+                <span
+                  class="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-3 py-1 rounded-full text-sm"
+                  >PostgreSQL</span
+                >
+                <span
+                  class="bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 px-3 py-1 rounded-full text-sm"
+                  >AWS</span
+                >
+              </div>
+
+              <div class="flex gap-3">
+                <NuxtLink
+                  href="https://wegro.global"
+                  target="_blank"
+                  class="px-6 py-3 border-2 border-green-800 text-green-800 rounded-lg hover:bg-green-800 hover:text-white transition duration-300 font-semibold"
+                >
+                  Visit Platform
+                </NuxtLink>
+              </div>
+            </div>
+
+            <!-- Mini Name + Tagline Card -->
+            <div
+              class="w-full md:w-64 flex-shrink-0 bg-white dark:bg-gray-700 rounded-xl shadow-md text-center p-6 self-center"
+            >
+              <h3
+                class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-2"
+              >
+                WeGro Global
+              </h3>
+              <p class="text-gray-600 dark:text-gray-400 text-lg">
+                Agriculture Simplified
+              </p>
             </div>
           </div>
-        </template>
+        </div>
 
         <!-- Commerce Connections -->
         <div
-          class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-300 group"
+          class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition duration-300 group"
         >
           <!-- Larger Screenshot -->
           <div class="relative h-80 overflow-hidden">
