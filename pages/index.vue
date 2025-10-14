@@ -117,7 +117,7 @@
               <h4 class="font-semibold text-green-600 dark:text-green-400 text-xl mb-2">
                 Commerce Connection Ltd (UK)
               </h4>
-              <p class="text-gray-600 dark:text-gray-300">Remote / Chobham, UK</p>
+              <p class="text-gray-600 dark:text-gray-300">Onsite / Chobham, United Kingdom</p>
             </div>
             <div class="mt-4 md:mt-0">
               <span class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-4 py-2 rounded-full text-sm font-medium">
@@ -375,11 +375,13 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
         <!-- WeGro Global -->
         <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-300">
-          <div class="bg-gradient-to-r from-green-400 to-blue-500 h-48 flex items-center justify-center">
-            <div class="text-center text-white">
-              <h3 class="text-3xl font-bold mb-2">WeGro Global</h3>
-              <p class="text-lg opacity-90">Agriculture Simplified</p>
-            </div>
+          <div class="relative h-64 overflow-hidden">
+            <iframe
+              src="https://wegro.global"
+              class="w-full h-full border-none"
+              loading="lazy"
+              title="WeGro Global Preview"
+            ></iframe>
           </div>
           <div class="p-8">
             <h4 class="font-bold text-gray-900 dark:text-gray-100 text-xl mb-4">
@@ -407,11 +409,13 @@
 
         <!-- Commerce Connections -->
         <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-300">
-          <div class="bg-gradient-to-r from-blue-500 to-purple-600 h-48 flex items-center justify-center">
-            <div class="text-center text-white">
-              <h3 class="text-3xl font-bold mb-2">Commerce Connections</h3>
-              <p class="text-lg opacity-90">B2B Integration Solutions</p>
-            </div>
+          <div class="relative h-64 overflow-hidden">
+            <iframe
+              src="https://commerce-connections.com"
+              class="w-full h-full border-none"
+              loading="lazy"
+              title="Commerce Connections Preview"
+            ></iframe>
           </div>
           <div class="p-8">
             <h4 class="font-bold text-gray-900 dark:text-gray-100 text-xl mb-4">
@@ -438,11 +442,13 @@
 
         <!-- AshMart BD -->
         <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-300">
-          <div class="bg-gradient-to-r from-orange-400 to-red-500 h-48 flex items-center justify-center">
-            <div class="text-center text-white">
-              <h3 class="text-3xl font-bold mb-2">AshMart BD</h3>
-              <p class="text-lg opacity-90">E-commerce Platform</p>
-            </div>
+          <div class="relative h-64 overflow-hidden">
+            <iframe
+              src="https://www.ashmartbd.com"
+              class="w-full h-full border-none"
+              loading="lazy"
+              title="AshMart BD Preview"
+            ></iframe>
           </div>
           <div class="p-8">
             <h4 class="font-bold text-gray-900 dark:text-gray-100 text-xl mb-4">
@@ -469,11 +475,13 @@
 
         <!-- Azerbaijan Medical Journal -->
         <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-300">
-          <div class="bg-gradient-to-r from-teal-400 to-blue-500 h-48 flex items-center justify-center">
-            <div class="text-center text-white">
-              <h3 class="text-3xl font-bold mb-2">Medical Journal</h3>
-              <p class="text-lg opacity-90">Academic Publishing</p>
-            </div>
+          <div class="relative h-64 overflow-hidden">
+            <iframe
+              src="https://www.azerbaijanmedicaljournal.net"
+              class="w-full h-full border-none"
+              loading="lazy"
+              title="Azerbaijan Medical Journal Preview"
+            ></iframe>
           </div>
           <div class="p-8">
             <h4 class="font-bold text-gray-900 dark:text-gray-100 text-xl mb-4">
