@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-gray-50 dark:bg-gray-200 py-4">
+  <div class="min-h-screen bg-gray-200 dark:bg-gray-200 py-4">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="bg-white dark:bg-gray-200 rounded-lg shadow-lg p-6">
         <div class="text-center mb-8">
@@ -13,10 +13,10 @@
         </div>
 
         <!-- Chat Messages -->
-        <div class="h-96 overflow-y-auto mb-6 p-4 bg-gray-50 rounded-lg">
+        <div class="h-96 overflow-y-auto mb-6 p-4 bg-gray-200 rounded-lg">
           <div
             v-if="messages.length === 0"
-            class="text-center text-gray-500 mt-8"
+            class="text-center text-gray-800 mt-8"
           >
             <p>
               👋 Hello! I'm Ashikur's AI assistant. Feel free to ask me about
@@ -154,6 +154,20 @@ const exampleQuestions = [
   "Has he worked in both Bangladesh and the UK?",
   "What frontend technologies does Ashikur use?",
   "Is Ashikur open to collaborations or new opportunities?",
+  "What is Ashikur’s current role at WeGro Global?",
+  "Can you describe the WeGro micro-finance app for farmers?",
+  "How does the NestJS backend at WeGro support Flutter frontend?",
+  "What challenges did Ashikur solve in NID verification and credit checking?",
+  "How does the loan and repayment process work in WeGro’s system?",
+  "What was Ashikur’s role at Commerce Connection?",
+  "How did he handle bulk email marketing at Azerbaijan Medical Journal?",
+  "Which payment gateways did Ashikur integrate in Ashmark-BD?",
+  "What technologies did he use for the Open Source Journal platform?",
+  "What is his experience in B2B enterprise integrations?",
+  "Which cloud and DevOps tools does he use (AWS, Docker, CI/CD)?",
+  "What are Ashikur’s strongest backend development skills?",
+  "How did his education in AI influence his software engineering career?",
+  "Is Ashikur open to collaborations or new projects?",
 ];
 
 // Voice settings

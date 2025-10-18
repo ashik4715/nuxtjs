@@ -16,25 +16,52 @@
       "degree": "BSc in Computer Science",
       "specialization": "Artificial Intelligence",
       "university": "BRAC University",
+      "passing_year": "2019",
       "status": "Completed",
-      "description": "Completed BSc in Computer Science with specialization in Artificial Intelligence from BRAC University in late 2018. The program emphasized algorithms, AI technologies, and included an industrial placement to gain real-world development experience."
+      "description": "Completed BSc in Computer Science with specialization in Artificial Intelligence from BRAC University, passing year 2019. The program emphasized algorithms, AI technologies, and included an industrial placement to gain real-world development experience."
     }
   },
   "work_experience": [
     {
       "position": "Senior Backend Engineer",
       "company": "WeGro Global Ltd",
+      "company_type": "Micro-fintech Company",
       "location": "UK",
       "duration": "August 2024 - Present",
       "status": "Current",
-      "description": "Leading backend architecture and development using NestJS (TypeORM Architecture), NextJS, TypeScript, and PostgreSQL. Responsible for deploying production-ready applications on AWS EC2, managing CI/CD with GitHub Actions, and overseeing containerized infrastructure using Docker, Nginx, and Certbot."
+      "description": "Leading backend architecture and development using NestJS (TypeORM Architecture), NextJS, TypeScript, and PostgreSQL. Responsible for deploying production-ready applications on AWS EC2, managing CI/CD with GitHub Actions, and overseeing containerized infrastructure using Docker, Nginx, and Certbot.",
+      "detailed_work": {
+        "primary_project": "Micro-finance Platform for Farmers in Bangladesh",
+        "technologies": ["Flutter", "NestJS", "TypeScript", "PostgreSQL", "AWS"],
+        "key_features": [
+          "Bank account opening with proper NID verification system",
+          "Credit check integration with private and public banks of Bangladesh",
+          "Loan amount determination and approval workflow",
+          "Collection money return system when farmers profit from crop/vegetable sales",
+          "Micro-finance solutions specifically designed for agricultural sector"
+        ],
+        "impact": "Helping Bangladeshi farmers access financial services and micro-loans to improve their agricultural business"
+      }
     },
     {
       "position": "Junior Software Consultant",
       "company": "Commerce Connection LTD",
+      "company_type": "B2B Enterprise Data Support",
       "location": "Chobham, UK",
       "duration": "September 2023 - January 2024",
-      "description": "Provided client-facing technical consulting and participated in full-stack software development, improving both technical depth and stakeholder communication."
+      "description": "Provided client-facing technical consulting and participated in full-stack software development, improving both technical depth and stakeholder communication.",
+      "detailed_work": {
+        "primary_focus": "Business to Business Enterprise Data Support",
+        "technologies": ["Angular", "MongoDB", "EDI Systems", "API Integration"],
+        "key_responsibilities": [
+          "EDI/B2B integration with major trading partners",
+          "API gateway development for seamless data exchange",
+          "Business process automation workflows",
+          "Enterprise-grade security and compliance implementation",
+          "Electronic Data Interchange (EDI) solutions for global trading"
+        ],
+        "company_background": "Over 20 years experience in B2B and EDI solutions, enabling clients to embark safely on electronic trading journeys"
+      }
     },
     {
       "position": "Lead PHP Developer",
@@ -42,6 +69,48 @@
       "location": "Dhaka, Bangladesh",
       "duration": "May 2019 - November 2022",
       "description": "Led backend development using PHP and Laravel, focusing on reporting systems, analytics tools, and business intelligence features. Strengthened data analysis and software design skills."
+    },
+    {
+      "position": "Full-Stack Developer",
+      "company": "Azerbaijan Medical Journal (Open Source)",
+      "company_type": "Open Source Journal Publishing Platform",
+      "location": "Remote",
+      "duration": "2021 - 2022",
+      "description": "Developed comprehensive medical journal publishing platform with advanced content management system.",
+      "detailed_work": {
+        "primary_project": "Medical Journal Publishing Platform",
+        "technologies": ["Laravel", "PHP", "MySQL", "PayPal API", "Stripe API", "Email Marketing"],
+        "key_features": [
+          "Bulk email marketing system handling 10,000+ emails",
+          "PayPal business API integration for subscription payments",
+          "Stripe business API integration for seamless transactions",
+          "Academic paper submission and review system",
+          "Multi-disciplinary medical content management",
+          "Advanced content management capabilities"
+        ],
+        "specialization": "Email marketing automation and payment gateway integrations"
+      }
+    },
+    {
+      "position": "E-commerce Developer",
+      "company": "Ashmark-BD",
+      "company_type": "Mini Online E-store Platform (Alibaba/Amazon style)",
+      "location": "Dhaka, Bangladesh",
+      "duration": "2020 - 2021",
+      "description": "Developed comprehensive e-commerce platform similar to Alibaba or Amazon for Bangladeshi market.",
+      "detailed_work": {
+        "primary_project": "Multi-vendor E-commerce Platform",
+        "technologies": ["Laravel", "PHP", "MySQL", "PayPal API", "Stripe API", "Payment Processing"],
+        "key_features": [
+          "Multi-category product catalog system (electronics to fashion)",
+          "Integrated payment processing with Stripe and PayPal",
+          "Advanced search and filtering capabilities",
+          "Customer management and order tracking system",
+          "Vendor management and multi-seller marketplace",
+          "Payment gateway integrations for secure transactions"
+        ],
+        "platform_type": "Alibaba/Amazon-style online marketplace for Bangladesh"
+      }
     },
     {
       "position": "Laravel Intern",
