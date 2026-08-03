@@ -21,6 +21,7 @@
     "@headlessui/vue": "^1.7.12",
     "@heroicons/vue": "^2.0.17",
     "@vercel/node": "^2.10.2",
+    "@vercel/speed-insights": "^2.0.0",
     "@vueuse/core": "^9.13.0",
     "openai": "^5.8.2"
   }
