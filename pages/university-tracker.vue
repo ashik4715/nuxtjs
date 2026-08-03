@@ -425,6 +425,41 @@
                         class="mt-1 block w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-3 py-2 text-gray-900 dark:text-white shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
                       />
                     </div>
+                    <div>
+                      <label class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                        >Entrance Exam/Interview</label
+                      >
+                      <input
+                        v-model="germanForm.entranceExamInterview"
+                        type="text"
+                        class="mt-1 block w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-3 py-2 text-gray-900 dark:text-white shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
+                        placeholder="e.g., yes, online viva"
+                      />
+                    </div>
+                    <div>
+                      <label class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                        >GRE/GMAT</label
+                      >
+                      <input
+                        v-model="germanForm.greGmat"
+                        type="text"
+                        class="mt-1 block w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-3 py-2 text-gray-900 dark:text-white shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
+                        placeholder="Required score or -"
+                      />
+                    </div>
+                    <div>
+                      <label class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                        >Restricted</label
+                      >
+                      <select
+                        v-model="germanForm.restricted"
+                        class="mt-1 block w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-3 py-2 text-gray-900 dark:text-white shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
+                      >
+                        <option value="No-NC">No-NC (Non-restricted)</option>
+                        <option value="NC">NC (Numerus Clausus)</option>
+                        <option value="Not mentioned">Not mentioned</option>
+                      </select>
+                    </div>
                   </div>
                   <div>
                     <label class="block text-sm font-medium text-gray-700 dark:text-gray-300"
@@ -713,7 +748,7 @@ const tabs = [
 ];
 
 // Security question composable
-const { askQuestion, verifyAnswer, currentQuestion } = useSecurityQuestion();
+const { askQuestion, verifyAnswer, currentQuestion, userAnswer } = useSecurityQuestion();
 const showSecurityDialog = ref(false);
 const securityQuestion = ref('');
 const pendingDeleteAction = ref<(() => void) | null>(null);
@@ -1131,6 +1166,28 @@ const filteredGermanPrograms = computed(() => {
     );
   }
 
+  // Sort
+  if (germanSortField.value) {
+    const field = germanSortField.value as keyof GermanProgram;
+    const direction = germanSortDirection.value === 'asc' ? 1 : -1;
+    result = [...result].sort((a, b) => {
+      const aVal = a[field];
+      const bVal = b[field];
+      if (aVal === null || aVal === undefined) return 1;
+      if (bVal === null || bVal === undefined) return -1;
+      if (typeof aVal === 'string' && typeof bVal === 'string') {
+        return aVal.localeCompare(bVal) * direction;
+      }
+      if (typeof aVal === 'number' && typeof bVal === 'number') {
+        return (aVal - bVal) * direction;
+      }
+      if (typeof aVal === 'boolean' && typeof bVal === 'boolean') {
+        return (aVal === bVal ? 0 : aVal ? -1 : 1) * direction;
+      }
+      return String(aVal).localeCompare(String(bVal)) * direction;
+    });
+  }
+
   return result;
 });
 
@@ -1144,6 +1201,25 @@ const filteredNonGermanPrograms = computed(() => {
     );
   }
 
+  // Sort
+  if (nonGermanSortField.value) {
+    const field = nonGermanSortField.value as keyof NonGermanProgram;
+    const direction = nonGermanSortDirection.value === 'asc' ? 1 : -1;
+    result = [...result].sort((a, b) => {
+      const aVal = a[field];
+      const bVal = b[field];
+      if (aVal === null || aVal === undefined) return 1;
+      if (bVal === null || bVal === undefined) return -1;
+      if (typeof aVal === 'string' && typeof bVal === 'string') {
+        return aVal.localeCompare(bVal) * direction;
+      }
+      if (typeof aVal === 'number' && typeof bVal === 'number') {
+        return (aVal - bVal) * direction;
+      }
+      return String(aVal).localeCompare(String(bVal)) * direction;
+    });
+  }
+
   return result;
 });
 
@@ -1155,6 +1231,25 @@ const filteredProfessors = computed(() => {
     result = result.filter((p) =>
       Object.values(p).some((val) => typeof val === 'string' && val.toLowerCase().includes(query))
     );
+  }
+
+  // Sort
+  if (professorSortField.value) {
+    const field = professorSortField.value as keyof Professor;
+    const direction = professorSortDirection.value === 'asc' ? 1 : -1;
+    result = [...result].sort((a, b) => {
+      const aVal = a[field];
+      const bVal = b[field];
+      if (aVal === null || aVal === undefined) return 1;
+      if (bVal === null || bVal === undefined) return -1;
+      if (typeof aVal === 'string' && typeof bVal === 'string') {
+        return aVal.localeCompare(bVal) * direction;
+      }
+      if (typeof aVal === 'number' && typeof bVal === 'number') {
+        return (aVal - bVal) * direction;
+      }
+      return String(aVal).localeCompare(String(bVal)) * direction;
+    });
   }
 
   return result;
@@ -1377,7 +1472,8 @@ const confirmDeleteProfessor = (professor: Professor) => {
 };
 
 // Security dialog
-const handleSecurityVerify = (_answer: string) => {
+const handleSecurityVerify = (answer: string) => {
+  userAnswer.value = answer;
   if (verifyAnswer()) {
     pendingDeleteAction.value?.();
     pendingDeleteAction.value = null;
