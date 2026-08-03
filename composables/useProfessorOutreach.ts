@@ -1,4 +1,4 @@
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 
 interface Professor {
   id: string;
@@ -73,7 +73,7 @@ export function useProfessorOutreach() {
     }
   };
 
-  const getStats = () => {
+  const stats = computed(() => {
     const total = professors.value.length;
     const byStatus = professors.value.reduce(
       (acc, prof) => {
@@ -96,7 +96,7 @@ export function useProfessorOutreach() {
       byStatus,
       byCountry,
     };
-  };
+  });
 
   return {
     professors,
@@ -106,6 +106,6 @@ export function useProfessorOutreach() {
     updateStatus,
     updateContactDate,
     updateFollowUpDate,
-    getStats,
+    stats,
   };
 }

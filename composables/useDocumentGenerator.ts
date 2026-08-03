@@ -81,6 +81,7 @@ export function useDocumentGenerator() {
   };
 
   const downloadDocument = (content: string, filename: string) => {
+    if (!import.meta.client) return;
     const blob = new Blob([content], { type: 'text/plain' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');

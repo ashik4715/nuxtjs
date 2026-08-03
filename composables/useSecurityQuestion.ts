@@ -2,12 +2,15 @@ import { ref } from 'vue';
 
 interface SecurityQuestion {
   question: string;
-  answer: string;
+  encodedAnswer: string;
 }
 
+const encode = (text: string): string => btoa(text);
+const decode = (encoded: string): string => atob(encoded);
+
 const QUESTIONS: SecurityQuestion[] = [
-  { question: 'What is the nickname of author?', answer: 'jholok' },
-  { question: 'What is the college roll number of author?', answer: '4715' },
+  { question: 'What is the nickname of author?', encodedAnswer: encode('jholok') },
+  { question: 'What is the college roll number of author?', encodedAnswer: encode('4715') },
 ];
 
 export function useSecurityQuestion() {
@@ -24,9 +27,8 @@ export function useSecurityQuestion() {
 
   const verifyAnswer = (): boolean => {
     if (!currentQuestion.value) return false;
-    return (
-      userAnswer.value.toLowerCase().trim() === currentQuestion.value.answer.toLowerCase().trim()
-    );
+    const expected = decode(currentQuestion.value.encodedAnswer).toLowerCase().trim();
+    return userAnswer.value.toLowerCase().trim() === expected;
   };
 
   const reset = () => {

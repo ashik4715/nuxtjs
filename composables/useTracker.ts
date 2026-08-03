@@ -1,10 +1,10 @@
 import { ref, computed, watch, type Ref } from 'vue';
-import { useLocalStorage } from '@vueuse/core';
+import { useLocalStorage, useDebounceFn } from '@vueuse/core';
 
 interface TrackerOptions<T> {
   storageKey: string;
   data: T[];
-  defaultSort?: string;
+  defaultSort?: keyof T & string;
   defaultDirection?: 'asc' | 'desc';
 }
 
@@ -12,15 +12,35 @@ export function useTracker<T extends { id: string }>(options: TrackerOptions<T>)
   const storage = useLocalStorage<T[]>(options.storageKey, options.data);
   const items = ref<T[]>(storage.value) as Ref<T[]>;
   const searchQuery = ref('');
-  const sortField = ref(options.defaultSort || '');
+  const sortField = ref<keyof T & string>(options.defaultSort || ('' as keyof T & string));
   const sortDirection = ref<'asc' | 'desc'>(options.defaultDirection || 'asc');
   const filters = ref<Record<string, string>>({});
+
+  const debouncedSearchQuery = ref('');
+  const debouncedFilters = ref<Record<string, string>>({});
+
+  const updateSearch = useDebounceFn((value: string) => {
+    debouncedSearchQuery.value = value;
+  }, 300);
+
+  const updateFilter = useDebounceFn((key: string, value: string) => {
+    debouncedFilters.value = { ...debouncedFilters.value, [key]: value };
+  }, 300);
+
+  watch(searchQuery, (val) => updateSearch(val));
+  watch(
+    filters,
+    (val) => {
+      Object.entries(val).forEach(([key, value]) => updateFilter(key, value));
+    },
+    { deep: true }
+  );
 
   const filteredItems = computed(() => {
     let result = items.value;
 
-    if (searchQuery.value) {
-      const query = searchQuery.value.toLowerCase();
+    if (debouncedSearchQuery.value) {
+      const query = debouncedSearchQuery.value.toLowerCase();
       result = result.filter((item) => {
         return Object.values(item).some((value) => {
           if (typeof value === 'string') {
@@ -31,7 +51,7 @@ export function useTracker<T extends { id: string }>(options: TrackerOptions<T>)
       });
     }
 
-    Object.entries(filters.value).forEach(([key, value]) => {
+    Object.entries(debouncedFilters.value).forEach(([key, value]) => {
       if (value) {
         result = result.filter((item) => {
           const itemValue = item[key as keyof T];
@@ -50,8 +70,8 @@ export function useTracker<T extends { id: string }>(options: TrackerOptions<T>)
     if (!sortField.value) return filteredItems.value;
 
     return [...filteredItems.value].sort((a, b) => {
-      const aVal = a[sortField.value as keyof T];
-      const bVal = b[sortField.value as keyof T];
+      const aVal = a[sortField.value];
+      const bVal = b[sortField.value];
 
       let comparison = 0;
       if (typeof aVal === 'string' && typeof bVal === 'string') {
