@@ -1,0 +1,23 @@
+#!/bin/sh
+
+# Conventional Commits format validation
+# https://www.conventionalcommits.org/
+commit_msg=$(cat "$1")
+
+# Pattern: type(scope): description
+# Allowed types: feat, fix, docs, style, refactor, perf, test, build, ci, chore, revert
+pattern="^(feat|fix|docs|style|refactor|perf|test|build|ci|chore|revert)(\(.+\))?(!)?: .+"
+
+if ! echo "$commit_msg" | grep -qE "$pattern"; then
+  echo "❌ Invalid commit message format."
+  echo ""
+  echo "Expected format: type(scope): description"
+  echo ""
+  echo "Examples:"
+  echo "  feat: add user authentication"
+  echo "  fix(api): handle null response"
+  echo "  docs: update README"
+  echo ""
+  echo "Allowed types: feat, fix, docs, style, refactor, perf, test, build, ci, chore, revert"
+  exit 1
+fi

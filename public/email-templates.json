@@ -1,0 +1,17 @@
+[
+  {
+    "templateName": "Initial_Cold_Intro",
+    "subject": "Exploring collaboration in {{Research_Area}} - with interests in Big Data and Image Processing",
+    "body": "Dear {{Professor_Title}} {{Professor_LastName}},\n\nI'm Md Ashikur Rahman, a software developer with six years of experience and multiple publications (IEEE, IJERT, Oxford, AUJST).\n\n{{Personalized_Hook}}\n\nI am interested in joining your {{Program_Type}} program for {{Start_Term}}. I can contribute to ML systems, visualization, and robust image/vision pipelines.\n\nWould you be open to a short discussion about potential collaboration or RA/TA funding?\n\nBest regards,\nMd Ashikur Rahman\n[LinkedIn] [Website]\nWegro Global\nDhaka, Bangladesh"
+  },
+  {
+    "templateName": "Followup_1",
+    "subject": "Following up on {{Research_Area}} collaboration",
+    "body": "Dear {{Professor_Title}} {{Professor_LastName}},\n\nI wanted to follow up on my earlier note regarding potential collaboration in {{Research_Area}}. I remain very interested in your group's work and would appreciate any opportunity to contribute.\n\nBest regards,\nMd Ashikur Rahman\n[LinkedIn] [Website]\nWegro Global\nDhaka, Bangladesh"
+  },
+  {
+    "templateName": "Followup_2",
+    "subject": "Gentle reminder - {{Research_Area}} opportunity",
+    "body": "Dear {{Professor_Title}} {{Professor_LastName}},\n\nJust checking whether you had a chance to review my earlier message about possible collaboration. If now is not ideal, I would appreciate guidance on timing or whether a colleague might be a better contact.\n\nKind regards,\nMd Ashikur Rahman\n[LinkedIn] [Website]\nWegro Global\nDhaka, Bangladesh"
+  }
+]

@@ -1,0 +1,34 @@
+Template_Name,Subject,Body
+Initial_Cold_Intro,Exploring collaboration in {{Research_Area}} - with interests in Big Data and Image Processing,"Dear {{Professor_Title}} {{Professor_LastName}},
+
+I’m Md Ashikur Rahman, a software developer with six years of experience and multiple publications (IEEE, IJERT, Oxford, AUJST).
+
+{{Personalized_Hook}}
+
+I am interested in joining your {{Program_Type}} program for {{Start_Term}}. I can contribute to ML systems, visualization, and robust image/vision pipelines.
+
+Would you be open to a short discussion about potential collaboration or RA/TA funding?
+
+Best regards,
+Md Ashikur Rahman
+[LinkedIn] [Website]
+Wegro Global
+Dhaka, Bangladesh"
+Followup_1,Following up on {{Research_Area}} collaboration,"Dear {{Professor_Title}} {{Professor_LastName}},
+
+I wanted to follow up on my earlier note regarding potential collaboration in {{Research_Area}}. I remain very interested in your group’s work and would appreciate any opportunity to contribute.
+
+Best regards,
+Md Ashikur Rahman
+[LinkedIn] [Website]
+Wegro Global
+Dhaka, Bangladesh"
+Followup_2,Gentle reminder - {{Research_Area}} opportunity,"Dear {{Professor_Title}} {{Professor_LastName}},
+
+Just checking whether you had a chance to review my earlier message about possible collaboration. If now is not ideal, I would appreciate guidance on timing or whether a colleague might be a better contact.
+
+Kind regards,
+Md Ashikur Rahman
+[LinkedIn] [Website]
+Wegro Global
+Dhaka, Bangladesh"

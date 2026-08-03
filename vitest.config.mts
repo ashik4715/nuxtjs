@@ -1,5 +1,6 @@
 import { defineConfig } from 'vitest/config';
 import vue from '@vitejs/plugin-vue';
+import { fileURLToPath, URL } from 'node:url';
 
 export default defineConfig({
   plugins: [vue()],
@@ -14,8 +15,8 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '~': '/<rootDir>',
-      '@': '/<rootDir>',
+      '~': fileURLToPath(new URL('.', import.meta.url)),
+      '@': fileURLToPath(new URL('.', import.meta.url)),
     },
   },
 });

@@ -2,7 +2,7 @@
   <div class="min-h-screen bg-gray-50 dark:bg-gray-900 py-8">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Header -->
-      <div class="mb-8">
+      <div class="mt-5 pt-5">
         <h1 class="text-3xl font-bold text-gray-900 dark:text-white">
           University Application Tracker & Outreach
         </h1>
@@ -667,12 +667,12 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted } from 'vue';
+import { ArrowDownTrayIcon, MagnifyingGlassIcon, PlusIcon } from '@heroicons/vue/24/outline';
 import { useLocalStorage } from '@vueuse/core';
-import { MagnifyingGlassIcon, PlusIcon, ArrowDownTrayIcon } from '@heroicons/vue/24/outline';
-import TrackerTable from '~/components/TrackerTable.vue';
+import { computed, onMounted, ref } from 'vue';
 import ProfessorDialog from '~/components/ProfessorDialog.vue';
 import SecurityDialog from '~/components/SecurityDialog.vue';
+import TrackerTable from '~/components/TrackerTable.vue';
 import { useSecurityQuestion } from '~/composables/useSecurityQuestion';
 
 // Types

@@ -5,6 +5,8 @@ export const useLocalStorage = <T>(key: string, defaultValue: T) => {
   return storedValue;
 };
 
+export const clearLocalStorageMock = () => {};
+
 export const useDebounceFn = <T extends (...args: unknown[]) => unknown>(fn: T, _delay: number) => {
   return fn;
 };
