@@ -711,9 +711,6 @@
       @cancel="closeSecurityDialog"
     />
 
-    <!-- Chatbot Drawer -->
-    <ChatbotDrawer ref="chatbotRef" :context="chatContext" />
-
     <!-- Dify AI Chatbot -->
     <DifyChatbot />
   </div>
