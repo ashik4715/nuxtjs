@@ -179,9 +179,15 @@ const userInput = ref('');
 const messages = ref<Array<{ role: 'user' | 'assistant'; content: string }>>([]);
 const messagesContainer = ref<HTMLElement | null>(null);
 
-const config = useRuntimeConfig();
-const DIFY_API_URL = config.public.difyApiUrl;
-const DIFY_API_KEY = config.public.difyApiKey;
+// Use environment variables that will be available after hydration
+const DIFY_API_URL = ref('');
+const DIFY_API_KEY = ref('');
+
+if (import.meta.client) {
+  const config = useRuntimeConfig();
+  DIFY_API_URL.value = config.public.difyApiUrl;
+  DIFY_API_KEY.value = config.public.difyApiKey;
+}
 
 let speechSynthesis: SpeechSynthesis | null = null;
 let femaleVoice: SpeechSynthesisVoice | null = null;
@@ -271,10 +277,10 @@ const sendMessage = async () => {
   isLoading.value = true;
 
   try {
-    const response = await fetch(`${DIFY_API_URL}/chat-messages`, {
+    const response = await fetch(`${DIFY_API_URL.value}/chat-messages`, {
       method: 'POST',
       headers: {
-        Authorization: `Bearer ${DIFY_API_KEY}`,
+        Authorization: `Bearer ${DIFY_API_KEY.value}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
