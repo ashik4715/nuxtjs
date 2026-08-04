@@ -1,0 +1,45 @@
+id,university,course,country,intake,startDate,endDate,portal,vpdRequired,moiAccepted,tuitionFee,entranceExamInterview,applicationFee,applied,qsRanking,greGmat,restricted,link,regionCategory
+cse-de-001,TU Munich,MSc Informatics,Germany,Winter,2027-10-01,2027-07-31,University Portal,Yes,no,0,-,0,False,28,,NC,https://www.in.tum.de/en/studies/degree-programs/degree-programs-overview.html,Germany
+cse-de-002,RWTH Aachen,MSc Computer Science,Germany,Winter,2026-10-01,2026-09-30,University Portal,Yes,no,0,-,0,False,106,,NC,https://www.rwth-aachen.de/en/studies/degree-programs/,Germany
+cse-de-003,TU Berlin,MSc Computer Science,Germany,Winter,2027-10-01,2027-02-28,University Portal,Yes,no,0,-,30,False,158,,No-NC,https://www.tu.berlin/en/studying/study-programs/all-programs-offered,Germany
+cse-de-004,University of Freiburg,MSc Computer Science,Germany,Winter,2027-10-01,2026-12-31,University Portal,Yes,no,1500,-,0,False,245,,No-NC,https://www.informatik.uni-freiburg.de/study/master-en/,Germany
+cse-de-005,University of Bonn,MSc Computer Science,Germany,Winter,2027-10-01,2027-07-31,University Portal,-,no,0,-,0,False,209,,NC,https://www.uni-bonn.de/en/studying/degree-programs/degree-programs-a-z/computer-science-msc,Germany
+cse-de-006,University of Stuttgart,MSc Computer Science,Germany,Winter,2027-10-01,2027-01-15,University Portal,-,no,1500,"yes, online viva",0,False,318,,No-NC,https://www.uni-stuttgart.de/en/study/study-programs/Computer-Science-M.Sc.-00001/,Germany
+cse-de-007,TU Dortmund,MSc Data Science,Germany,Winter,2027-10-01,2027-01-15,Uni-Assist,-,yes,0,-,30,False,691,,No-NC,https://statistik.tu-dortmund.de/en/studies/degrees/data-science-msc/,Germany
+cse-de-008,TU Darmstadt,MSc Computer Science,Germany,Winter,2027-10-01,2027-01-15,University Portal,-,yes,0,"yes, offline test",0,False,250,,No-NC,https://www.informatik.tu-darmstadt.de/en/studies/degree-programs/master/computer-science,Germany
+cse-de-009,University of Göttingen,MSc Applied Data Science,Germany,Summer,2027-04-01,2026-11-01,University Portal,-,yes,0,other,0,False,261,,NC,https://www.uni-goettingen.de/en/642405.html,Germany
+cse-de-010,University of Passau,MSc Computer Science,Germany,Summer,2027-04-01,2026-12-15,Uni-Assist,-,yes,0,-,30,False,1201-1400,,No-NC,https://www.uni-passau.de/en/msc-computer-science/,Germany
+cse-de-011,University of Kassel,MSc Computer Science,Germany,Winter,2027-10-01,2027-01-15,Uni-Assist,-,yes,0,-,30,False,1201-1400,,No-NC,https://www.uni-kassel.de/uni/en/studium/computer-science-master.html,Germany
+cse-de-012,University of Bamberg,MSc Software Systems Science,Germany,Winter,2027-10-01,2027-01-15,University Portal,-,no,0,-,60,False,1201-1400,,No-NC,https://www.uni-bamberg.de/en/ma-isosysc/,Germany
+cse-eu-001,University of Helsinki,MSc Computer Science,Finland,Winter,2027-10-01,2027-01-31,Other,-,yes,0,-,0,False,104,,-,https://www.helsinki.fi/en/degree-programmes/computer-science-masters-programme,Europe
+cse-eu-002,KTH Royal Institute of Technology,MSc Machine Learning,Sweden,Winter,2027-10-01,2027-01-15,Other,-,yes,0,-,0,False,73,,-,https://www.kth.se/en/studies/master/computer-science,Europe
+cse-eu-003,Technical University of Denmark,MSc Computer Science,Denmark,Winter,2027-10-01,2027-01-15,Other,-,yes,0,-,0,False,104,,-,https://www.dtu.dk/english/education/msc/computer-science-engineering,Europe
+cse-eu-004,Aalto University,MSc Computer Science,Finland,Winter,2027-10-01,2027-01-15,Other,-,yes,15000,-,0,False,113,,-,https://www.aalto.fi/en/study-options/computer-science-computer-communication-and-information-sciences-master-of-science-technology,Europe
+cse-eu-006,TU Delft,MSc Computer Science,Netherlands,Winter,2027-10-01,2027-01-15,Other,-,yes,2200,-,0,False,47,,-,https://ewi.tudelft.nl/en/education/msc-programmes/msc-computer-science/,Europe
+cse-eu-007,University of Amsterdam,MSc Computer Science,Netherlands,Winter,2027-10-01,2027-01-15,Other,-,yes,2200,-,0,False,53,,-,https://www.uva.nl/en/education/programmes/masters/computer-science,Europe
+cse-eu-008,Trinity College Dublin,MSc Computer Science,Ireland,Winter,2027-10-01,2027-04-30,Other,-,yes,25000,-,55,False,81,,-,https://www.scss.tcd.ie/,Europe
+cse-eu-009,University of Galway,MSc Computer Science,Ireland,Winter,2027-10-01,2027-02-28,Other,-,yes,24000,-,35,False,251,,-,https://www.nuigalway.ie/computer-science/,Europe
+cse-eu-012,University of Warsaw,MSc Computer Science,Poland,Winter,2027-10-01,2027-01-31,Other,-,yes,3000,-,0,False,284,,-,https://www.mimuw.edu.pl/en/studies,Europe
+cse-eu-013,Charles University,MSc Computer Science,Czech Republic,Winter,2027-10-01,2027-02-28,Other,-,yes,5000,-,0,False,233,,-,https://www.mff.cuni.cz/en/prospective-students/programs/,Europe
+cse-em-001,Sweden/Denmark/Germany,EDISS - Data-intensive Software Systems,Sweden/Denmark/Germany,Winter,2027-10-01,2027-01-31,Other,-,yes,0,-,0,False,-,,-,https://ediss.emjmd.eu/,Europe
+cse-em-002,France/Germany/Spain,DEAI - Data Engineering & AI,France/Germany/Spain,Winter,2027-10-01,2027-01-31,Other,-,yes,0,-,0,False,-,,-,https://deai-emjmd.eu/,Other
+cse-em-003,UK/Ireland/Germany,CYBERSURE - Cybersecurity,UK/Ireland/Germany,Winter,2027-10-01,2027-01-31,Other,-,yes,0,-,0,False,-,,-,https://cybersure.eu/,Europe
+cse-em-004,Germany/Netherlands,EMMC IMAGINE - Medical Image Computing,Germany/Netherlands,Winter,2027-10-01,2027-01-31,Other,-,yes,0,-,0,False,-,,-,https://emmc-imagine.eu/,Europe
+cse-em-005,Italy/Finland/Sweden,EMJM in Imaging,Italy/Finland/Sweden,Winter,2027-10-01,2027-01-09,Other,-,yes,0,-,0,False,-,,-,https://emjminaging.eu/,Europe
+cse-em-006,France/Spain/Hungary,IPCVai - Image Processing & CV,France/Spain/Hungary,Winter,2027-10-01,2027-01-15,Other,-,yes,0,-,0,False,-,,-,https://ipcv.eu/,Other
+cse-em-007,Spain/Netherlands/Italy,EMAI - Erasmus Mundus in AI,Spain/Netherlands/Italy,Winter,2027-10-01,2026-12-20,Other,-,yes,0,-,0,False,-,,-,https://emai.jumpingcrab.com/,Europe
+cse-em-008,France/Spain/Norway,COSI - Computational Colour and Spectral Imaging,France/Spain/Norway,Winter,2027-10-01,2027-01-15,Other,-,yes,0,-,0,False,-,,-,https://cosi-master.eu/,Europe
+cse-na-001,University of Waterloo,MMath Computer Science,Canada,Winter,2027-09-01,2026-12-15,Other,-,yes,22000,-,0,False,112,,-,https://cs.uwaterloo.ca/,North America
+cse-na-002,University of British Columbia,MSc Computer Science,Canada,Winter,2027-09-01,2026-12-15,Other,-,yes,9000,-,0,False,34,,-,https://www.cs.ubc.ca/grad/,North America
+cse-na-003,University of Alberta,MSc Computing Science,Canada,Winter,2027-09-01,2027-01-15,Other,-,yes,10000,-,135,False,110,,-,https://www.cs.ualberta.ca/,North America
+cse-na-004,Simon Fraser University,MSc Computing Science,Canada,Winter,2027-09-01,2027-01-15,Other,-,yes,17500,-,0,False,318,,-,https://www.cs.sfu.ca/,North America
+cse-na-005,McGill University,MSc Computer Science,Canada,Winter,2027-09-01,2027-01-15,Other,-,yes,20000,-,0,False,30,,-,https://www.cs.mcgill.ca/,North America
+cse-na-006,University of Toronto,MSc Computer Science,Canada,Winter,2027-09-01,2026-12-15,Other,-,yes,24000,-,0,False,21,,-,https://www.cs.toronto.edu/,North America
+cse-na-007,Memorial University of Newfoundland,MSc Computer Science,Canada,Winter,2027-09-01,2027-01-15,Other,-,yes,3500,-,0,False,801-1000,,-,https://www.mun.ca/cs/graduate/,North America
+cse-na-008,University of Regina,MSc Computer Science,Canada,Winter,2027-09-01,2027-03-01,Other,-,yes,6000,-,0,False,801-1000,,-,https://www.uregina.ca/computer-science/graduate/,North America
+cse-na-009,Lakehead University,MSc Computer Science,Canada,Winter,2027-09-01,2027-02-01,Other,-,yes,8000,-,0,False,901+,,-,https://www.lakeheadu.ca/programs/grad/msc-computer-science,North America
+cse-na-010,University of New Brunswick,MSc Computer Science,Canada,Winter,2027-09-01,2027-02-01,Other,-,yes,7500,-,0,False,701-750,,-,https://www.unb.ca/cs/,North America
+cse-na-011,University of Prince Edward Island,MSc Computer Science,Canada,Winter,2027-09-01,2027-03-01,Other,-,yes,7000,-,0,False,901+,,-,https://www.upei.ca/computer-science,North America
+cse-na-012,Cape Breton University,MSc Information Technology,Canada,Winter,2027-09-01,2027-03-01,Other,-,yes,6500,-,0,False,901+,,-,https://www.cbu.ca/academics/programs/master-of-science-in-information-technology/,North America
+cse-na-013,Thompson Rivers University,MSc Computer Science,Canada,Winter,2027-09-01,2027-03-01,Other,-,yes,7000,-,0,False,901+,,-,https://www.tru.ca/programs/catalogue/master-of-science-in-computer-science.html,North America
+cse-na-014,University of Northern British Columbia,MSc Computing Science,Canada,Winter,2027-09-01,2027-02-01,Other,-,yes,5000,-,0,False,901+,,-,https://www.unbc.ca/programs/msc-computer-science,North America

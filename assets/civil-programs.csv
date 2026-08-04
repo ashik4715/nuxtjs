@@ -1,0 +1,33 @@
+id,university,course,country,intake,startDate,endDate,portal,vpdRequired,moiAccepted,tuitionFee,entranceExamInterview,applicationFee,applied,qsRanking,greGmat,restricted,link,regionCategory
+civil-de-001,TU Munich,MSc Civil Engineering,Germany,Winter,2027-10-01,2027-07-31,University Portal,Yes,no,0,-,0,False,28,,NC,https://www.in.tum.de/en/studies/degree-programs/degree-programs-overview.html,Germany
+civil-de-002,RWTH Aachen,MSc Civil Engineering,Germany,Winter,2026-10-01,2026-09-30,University Portal,Yes,no,0,-,0,False,106,,NC,https://www.rwth-aachen.de/en/studies/degree-programs/,Germany
+civil-de-003,TU Berlin,MSc Civil Engineering,Germany,Winter,2027-10-01,2027-02-28,University Portal,Yes,no,0,-,30,False,158,,No-NC,https://www.tu.berlin/en/studying/study-programs/all-programs-offered,Germany
+civil-de-004,University of Stuttgart,MSc Civil Engineering,Germany,Winter,2027-10-01,2027-01-15,University Portal,-,no,1500,-,0,False,318,,No-NC,https://www.uni-stuttgart.de/en/study/study-programs/Civil-Engineering-M.Sc.-00001/,Germany
+civil-de-005,TU Braunschweig,MSc Civil Engineering,Germany,Winter,2027-10-01,2027-01-15,University Portal,-,no,0,-,0,False,501-510,,No-NC,https://www.tu-braunschweig.de/en/studying/degree-programs/all-degree-programs/civil-engineering/,Germany
+civil-de-006,TU Darmstadt,MSc Civil Engineering,Germany,Winter,2027-10-01,2027-01-15,University Portal,-,no,0,-,0,False,250,,No-NC,https://www.informatik.tu-darmstadt.de/en/studies/degree-programs/master/computer-science,Germany
+civil-de-007,University of Karlsruhe (KIT),MSc Civil Engineering,Germany,Winter,2027-10-01,2027-01-15,University Portal,-,no,0,-,0,False,119,,No-NC,https://www.kit.edu/studium/studienangebote/Master-Civil-Engineering-702.php,Germany
+civil-de-008,TU Hamburg,MSc Civil Engineering,Germany,Winter,2027-10-01,2027-02-28,University Portal,-,no,0,-,0,False,601-650,,No-NC,https://www.tuhh.de/tuhh/en/studying/before-studying/degree-courses/masters-programs,Germany
+civil-eu-001,Technical University of Denmark,MSc Civil Engineering,Denmark,Winter,2027-10-01,2027-01-15,Other,-,yes,0,-,0,False,104,,-,https://www.dtu.dk/english/education/msc/civil-engineering,Europe
+civil-eu-002,KTH Royal Institute of Technology,MSc Structural Engineering,Sweden,Winter,2027-10-01,2027-01-15,Other,-,yes,0,-,0,False,73,,-,https://www.kth.se/en/studies/master/civil-and-structural-engineering,Europe
+civil-eu-003,University of Helsinki,MSc Civil Engineering,Finland,Winter,2027-10-01,2027-01-15,Other,-,yes,0,-,0,False,104,,-,https://www.helsinki.fi/en/degree-programmes/civil-engineering-masters-programme,Europe
+civil-eu-005,TU Delft,MSc Civil Engineering,Netherlands,Winter,2027-10-01,2027-01-15,Other,-,yes,2200,-,0,False,47,,-,https://www.tudelft.nl/en/education/msc-programmes/msc-civil-engineering,Europe
+civil-eu-006,Trinity College Dublin,MSc Civil Engineering,Ireland,Winter,2027-10-01,2027-04-30,Other,-,yes,25000,-,55,False,81,,-,https://www.tcd.ie/civil-structural-environ/,Europe
+civil-eu-007,University of Galway,MEng Civil Engineering,Ireland,Winter,2027-10-01,2027-02-28,Other,-,yes,24000,-,35,False,251,,-,https://www.nuigalway.ie/civil-engineering/,Europe
+civil-eu-008,NTNU Norway,MSc Civil Engineering,Norway,Winter,2027-10-01,2027-01-15,Other,-,yes,0,-,0,False,102,,-,https://www.ntnu.edu/studies/ms-civil-engineering,Europe
+civil-eu-011,Politecnico di Milano,MSc Civil Engineering,Italy,Winter,2027-10-01,2027-01-15,Other,-,yes,3800,-,0,False,123,,-,https://www.polimi.it/en/study/degree-programmes/,Europe
+civil-eu-012,TU Wien,MSc Civil Engineering,Austria,Winter,2027-10-01,2027-01-15,Other,-,yes,730,-,0,False,184,,-,https://www.tuwien.at/en/studies/degree-programs/civil-engineering,Europe
+civil-eu-013,University of Zagreb,MSc Civil Engineering,Croatia,Winter,2027-10-01,2027-02-28,Other,-,yes,1000,-,0,False,651-700,,-,https://www.unizg.hr/en/study/study-programmes,Europe
+civil-em-001,France/Spain/Germany,RESCO - Renewable Energy & Sustainable Construction,France/Spain/Germany,Winter,2027-10-01,2027-01-31,Other,-,yes,0,-,0,False,-,,-,https://resco-emjmd.eu/,Other
+civil-em-002,France/Spain/Netherlands,TERRA - Earthen Architecture & Construction,France/Spain/Netherlands,Winter,2027-10-01,2027-01-31,Other,-,yes,0,-,0,False,-,,-,https://terra-emjmd.eu/,Europe
+civil-em-003,Portugal/Finland/Germany,EMJM - Sustainable Transportation,Portugal/Finland/Germany,Winter,2027-10-01,2027-01-31,Other,-,yes,0,-,0,False,-,,-,https://sustainabletransportation.eu/,Europe
+civil-em-004,Denmark/Spain/Germany,EMJM - Erasmus Mundus in Wind Energy,Denmark/Spain/Germany,Winter,2027-10-01,2027-01-31,Other,-,yes,0,-,0,False,-,,-,https://emwindenergy.eu/,Europe
+civil-em-005,Belgium/Spain/Italy,EMJM - Management of Interior Environments,Belgium/Spain/Italy,Winter,2027-10-01,2027-01-31,Other,-,yes,0,-,0,False,-,,-,https://emjm-interiorenvironments.eu/,Europe
+civil-na-001,University of British Columbia,MSc Civil Engineering,Canada,Winter,2027-09-01,2026-12-15,Other,-,yes,9000,-,0,False,34,,-,https://www.civil.ubc.ca/graduate/,North America
+civil-na-002,University of Waterloo,MEng Civil Engineering,Canada,Winter,2027-09-01,2026-12-15,Other,-,yes,22000,-,0,False,112,,-,https://uwaterloo.ca/civil-environmental-engineering/graduate-studies,North America
+civil-na-003,University of Alberta,MSc Civil Engineering,Canada,Winter,2027-09-01,2027-01-15,Other,-,yes,10000,-,135,False,110,,-,https://www.ualberta.ca/civil-engineering/,North America
+civil-na-004,University of Toronto,MEng Civil Engineering,Canada,Winter,2027-09-01,2026-12-15,Other,-,yes,24000,-,0,False,21,,-,https://civmin.utoronto.ca/graduate-programs/,North America
+civil-na-005,McGill University,MEng Civil Engineering,Canada,Winter,2027-09-01,2027-01-15,Other,-,yes,20000,-,0,False,30,,-,https://www.mcgill.ca/civil/,North America
+civil-na-006,Memorial University of Newfoundland,MEng Civil Engineering,Canada,Winter,2027-09-01,2027-02-01,Other,-,yes,4000,-,0,False,801-1000,,-,https://www.mun.ca/eng/civil/,North America
+civil-na-007,University of Regina,MSc Civil Engineering,Canada,Winter,2027-09-01,2027-03-01,Other,-,yes,7000,-,0,False,801-1000,,-,https://www.uregina.ca/engineering/civil,North America
+civil-na-008,University of New Brunswick,MSc Civil Engineering,Canada,Winter,2027-09-01,2027-02-01,Other,-,yes,8000,-,0,False,701-750,,-,https://www.unb.ca/civil/,North America
+civil-na-009,Lakehead University,MSc Civil Engineering,Canada,Winter,2027-09-01,2027-02-01,Other,-,yes,9000,-,0,False,901+,,-,https://www.lakeheadu.ca/programs/grad/msc-civil-engineering,North America

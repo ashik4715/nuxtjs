@@ -1,13 +1,5 @@
-import OpenAI from 'openai';
 import fs from 'node:fs';
 import path from 'node:path';
-
-const config = useRuntimeConfig();
-
-const openai = new OpenAI({
-  apiKey: config.openaiApiKey as string,
-  baseURL: 'https://opencode.ai/zen/go/v1',
-});
 
 interface AiData {
   personal_info?: { name?: string; description?: string };
@@ -45,9 +37,10 @@ function findRelevantContext(query: string, aiData: AiData): string {
   );
 }
 
-function getLocalResponse(query: string, context: string, _aiData: AiData): string {
+function getResponse(query: string, context: string, aiData: AiData): string {
   const lower = query.toLowerCase();
 
+  // Program-specific responses
   if (context) {
     if (lower.includes('deadline') || lower.includes('when')) {
       return `For ${context}: Please check the official program website for the most up-to-date deadline information. Application deadlines vary by program and intake. Typically, winter intake deadlines are January-July, and summer intake deadlines are October-January.`;
@@ -57,8 +50,8 @@ function getLocalResponse(query: string, context: string, _aiData: AiData): stri
       return `For ${context}: Tuition fees vary by program and country. German public universities are generally tuition-free (only semester contribution of 150-350 EUR). Canadian universities range from CAD 5,000-25,000/year. Check the program website for exact fees.`;
     }
 
-    if (lower.includes('apply') || lower.includes('application')) {
-      return `To apply to ${context}: 1) Visit the program website, 2) Check admission requirements, 3) Prepare required documents (transcripts, CV, motivation letter, reference letters, English proficiency proof), 4) Submit application before deadline, 5) Pay application fee if required.`;
+    if (lower.includes('apply') || lower.includes('application') || lower.includes('portal')) {
+      return `To apply to ${context}: 1) Visit the program website, 2) Check admission requirements, 3) Prepare required documents (transcripts, CV, motivation letter, reference letters, English proficiency proof), 4) Submit application before deadline, 5) Pay application fee if required. For German universities, many use uni-assist.`;
     }
 
     if (lower.includes('requirement') || lower.includes('document')) {
@@ -69,22 +62,40 @@ function getLocalResponse(query: string, context: string, _aiData: AiData): stri
       return `Scholarships for ${context}: Check DAAD (Germany), Erasmus Mundus (EU), university-specific scholarships, and government scholarships from your home country. Apply early as deadlines are 6-12 months before program start.`;
     }
 
+    if (lower.includes('visa')) {
+      return `For ${context}: Student visa requires admission letter, proof of finances (11,208 EUR/year blocked account for Germany), health insurance, and accommodation proof. Apply 3-6 months before start date.`;
+    }
+
     return `Here's what I know about ${context}: Check the official program website for the most current information about deadlines, requirements, and fees. You can also contact the university's international admissions office directly.`;
   }
 
+  // Profile-specific responses
   if (lower.includes('skill') || lower.includes('technology') || lower.includes('tech stack')) {
-    return 'Technical skills: TypeScript, JavaScript, Python, PHP, C#, Node.js, NestJS, Laravel, Vue.js, React, PostgreSQL, MySQL, MongoDB, AWS (EC2, RDS, S3), Docker, GitHub CI/CD.';
+    return `Technical skills: ${aiData.skills?.join(', ') || 'TypeScript, JavaScript, Python, PHP, Node.js, NestJS, Laravel, Vue.js, React, PostgreSQL, AWS'}.`;
   }
 
-  if (lower.includes('experience') || lower.includes('work') || lower.includes('job')) {
-    return 'Work experience: Senior Backend Engineer at WeGro (2024-present), Junior Software Consultant at Commerce Connections UK (2023), Lead PHP Developer at MNB Technology (2019-2022), Laravel Intern at Mazegeek (2019).';
+  if (
+    lower.includes('experience') ||
+    lower.includes('work') ||
+    lower.includes('job') ||
+    lower.includes('role')
+  ) {
+    if (aiData.work_experience?.length) {
+      return `Work experience: ${aiData.work_experience.map((exp) => `${exp.position} at ${exp.company} (${exp.duration})`).join('. ')}.`;
+    }
+    return 'Work experience: Senior Backend Engineer at WeGro (2024-present), Junior Software Consultant at Commerce Connections UK (2023), Lead PHP Developer at MNB Technology (2019-2022).';
   }
 
   if (lower.includes('publication') || lower.includes('paper') || lower.includes('research')) {
     return 'Publications: 4 international papers - IEEE Conference on Kinect 3D Reconstruction (2019), IJERT Journal on Kinect Sensor Applications (2018), Oxford FLE on Industrial Networking (2017), AUJST Journal on Data Mining Classification (2018).';
   }
 
-  if (lower.includes('education') || lower.includes('university') || lower.includes('degree')) {
+  if (
+    lower.includes('education') ||
+    lower.includes('university') ||
+    lower.includes('degree') ||
+    lower.includes('study')
+  ) {
     return 'Education: BSc in Computer Science and Engineering from BRAC University, Bangladesh (2019). Partial MSc in Information Technology at University of Wedel, Germany (2022, incomplete).';
   }
 
@@ -92,6 +103,11 @@ function getLocalResponse(query: string, context: string, _aiData: AiData): stri
     return 'Contact: Email - ashikurjhalak@gmail.com, LinkedIn - linkedin.com/in/ashikur-rahman-0a272ba1, GitHub - github.com/ashik4715, Website - jholok.vercel.app';
   }
 
+  if (lower.includes('who') || lower.includes('about') || lower.includes('tell me about')) {
+    return 'I am Mohammed Ashikur Rahman, a Senior Software Engineer from Dhaka, Bangladesh. I specialize in backend development with NestJS, TypeScript, and PostgreSQL. I have research interests in 3D reconstruction, computer vision, and generative AI. I have 4 international publications.';
+  }
+
+  // General study abroad responses
   if (lower.includes('visa') || lower.includes('student visa')) {
     return 'For Germany student visa: Apply at your local German embassy with admission letter, proof of finances (approx 11,208 EUR/year in blocked account), health insurance, and accommodation proof. Apply 3-6 months before start date.';
   }
@@ -176,7 +192,11 @@ export default defineEventHandler(async (event) => {
         'Vue.js',
         'React',
         'PostgreSQL',
+        'MySQL',
+        'MongoDB',
         'AWS',
+        'Docker',
+        'GitHub CI/CD',
       ],
       work_experience: [
         {
@@ -211,29 +231,8 @@ export default defineEventHandler(async (event) => {
     }
 
     const relevantContext = findRelevantContext(query, aiData);
+    const responseText = getResponse(query, chatContext || '', aiData);
 
-    if (config.openaiApiKey) {
-      try {
-        const systemPrompt = chatContext
-          ? `You are a helpful study counselor. User asks about "${chatContext}". Context: ${relevantContext}. Be specific and helpful.`
-          : `You are a helpful AI assistant. Context: ${relevantContext}. Be specific and helpful.`;
-
-        const response = await openai.chat.completions.create({
-          model: 'deepseek',
-          max_tokens: 500,
-          messages: [{ role: 'user', content: `${systemPrompt}\n\nUser question: ${query}` }],
-        });
-
-        const apiResponse = response.choices?.[0]?.message?.content;
-        if (apiResponse) {
-          return { response: apiResponse, context: relevantContext };
-        }
-      } catch (apiError) {
-        console.warn('OpenCode API failed, using local response:', apiError);
-      }
-    }
-
-    const responseText = getLocalResponse(query, chatContext || '', aiData);
     return { response: responseText, context: relevantContext };
   } catch (error) {
     console.error('Error in AI agent:', error);
