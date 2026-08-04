@@ -1,6 +1,6 @@
 <template>
   <div class="min-h-screen bg-gray-50 dark:bg-gray-900 py-8">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Header -->
       <div class="mt-5 pt-5">
         <h1 class="text-3xl font-bold text-gray-900 dark:text-white">
@@ -9,7 +9,32 @@
         <p class="mt-2 text-gray-600 dark:text-gray-400">
           Search, filter, sort, personalize programs and track professor outreach
         </p>
-        <div class="mt-4 flex items-center space-x-2">
+        <div class="mt-4 flex items-center space-x-4">
+          <!-- Tracker Mode Selector -->
+          <div class="flex rounded-lg bg-gray-200 dark:bg-gray-700 p-1">
+            <button
+              :class="[
+                'px-4 py-2 text-sm font-medium rounded-md transition-colors',
+                trackerMode === 'cse'
+                  ? 'bg-blue-600 text-white shadow'
+                  : 'text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600',
+              ]"
+              @click="trackerMode = 'cse'"
+            >
+              CSE Study Tracker
+            </button>
+            <button
+              :class="[
+                'px-4 py-2 text-sm font-medium rounded-md transition-colors',
+                trackerMode === 'civil'
+                  ? 'bg-blue-600 text-white shadow'
+                  : 'text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600',
+              ]"
+              @click="trackerMode = 'civil'"
+            >
+              Civil Engineering Study Tracker
+            </button>
+          </div>
           <span
             :class="[
               'inline-flex items-center px-3 py-1 rounded-full text-sm font-medium',
@@ -122,6 +147,7 @@
             @edit="openEditGermanDialog"
             @delete="confirmDeleteGerman"
             @toggle-applied="toggleGermanApplied"
+            @ask-ai="handleAskAI"
           />
         </div>
       </div>
@@ -200,6 +226,7 @@
             @edit="openEditNonGermanDialog"
             @delete="confirmDeleteNonGerman"
             @toggle-applied="toggleNonGermanApplied"
+            @ask-ai="handleAskAI"
           />
         </div>
       </div>
@@ -279,6 +306,7 @@
             @sort="handleProfessorSort"
             @edit="openEditProfessorDialog"
             @delete="confirmDeleteProfessor"
+            @ask-ai="handleAskAI"
           />
         </div>
       </div>
@@ -317,7 +345,7 @@
                         >University *</label
                       >
                       <input
-                        v-model="germanForm.universityName"
+                        v-model="germanForm.university"
                         type="text"
                         required
                         class="mt-1 block w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-3 py-2 text-gray-900 dark:text-white shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
@@ -328,7 +356,7 @@
                         >Course Name *</label
                       >
                       <input
-                        v-model="germanForm.courseName"
+                        v-model="germanForm.course"
                         type="text"
                         required
                         class="mt-1 block w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-3 py-2 text-gray-900 dark:text-white shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
@@ -349,20 +377,20 @@
                     </div>
                     <div>
                       <label class="block text-sm font-medium text-gray-700 dark:text-gray-300"
-                        >Application Start Date</label
+                        >Start Date</label
                       >
                       <input
-                        v-model="germanForm.applicationStartDate"
+                        v-model="germanForm.startDate"
                         type="date"
                         class="mt-1 block w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-3 py-2 text-gray-900 dark:text-white shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
                       />
                     </div>
                     <div>
                       <label class="block text-sm font-medium text-gray-700 dark:text-gray-300"
-                        >Application End Date</label
+                        >End Date</label
                       >
                       <input
-                        v-model="germanForm.applicationEndDate"
+                        v-model="germanForm.endDate"
                         type="date"
                         class="mt-1 block w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-3 py-2 text-gray-900 dark:text-white shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
                       />
@@ -372,7 +400,7 @@
                         >Portal</label
                       >
                       <input
-                        v-model="germanForm.applicationPortal"
+                        v-model="germanForm.portal"
                         type="text"
                         class="mt-1 block w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-3 py-2 text-gray-900 dark:text-white shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
                       />
@@ -457,7 +485,7 @@
                       >
                         <option value="No-NC">No-NC (Non-restricted)</option>
                         <option value="NC">NC (Numerus Clausus)</option>
-                        <option value="Not mentioned">Not mentioned</option>
+                        <option value="-">-</option>
                       </select>
                     </div>
                   </div>
@@ -466,7 +494,7 @@
                       >Application Link</label
                     >
                     <input
-                      v-model="germanForm.applicationLink"
+                      v-model="germanForm.link"
                       type="url"
                       class="mt-1 block w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-3 py-2 text-gray-900 dark:text-white shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
                       placeholder="https://"
@@ -531,7 +559,7 @@
                         >Program *</label
                       >
                       <input
-                        v-model="nonGermanForm.program"
+                        v-model="nonGermanForm.course"
                         type="text"
                         required
                         class="mt-1 block w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-3 py-2 text-gray-900 dark:text-white shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
@@ -560,57 +588,65 @@
                     </div>
                     <div>
                       <label class="block text-sm font-medium text-gray-700 dark:text-gray-300"
-                        >Degree</label
+                        >Start Date</label
                       >
                       <input
-                        v-model="nonGermanForm.degree"
-                        type="text"
-                        class="mt-1 block w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-3 py-2 text-gray-900 dark:text-white shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
-                      />
-                    </div>
-                    <div>
-                      <label class="block text-sm font-medium text-gray-700 dark:text-gray-300"
-                        >Scholarship</label
-                      >
-                      <input
-                        v-model="nonGermanForm.scholarship"
-                        type="text"
-                        class="mt-1 block w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-3 py-2 text-gray-900 dark:text-white shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
-                      />
-                    </div>
-                    <div>
-                      <label class="block text-sm font-medium text-gray-700 dark:text-gray-300"
-                        >Application Fee</label
-                      >
-                      <input
-                        v-model="nonGermanForm.appFee"
-                        type="text"
-                        class="mt-1 block w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-3 py-2 text-gray-900 dark:text-white shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
-                      />
-                    </div>
-                    <div>
-                      <label class="block text-sm font-medium text-gray-700 dark:text-gray-300"
-                        >Deadline</label
-                      >
-                      <input
-                        v-model="nonGermanForm.deadline"
+                        v-model="nonGermanForm.startDate"
                         type="date"
                         class="mt-1 block w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-3 py-2 text-gray-900 dark:text-white shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
                       />
                     </div>
                     <div>
                       <label class="block text-sm font-medium text-gray-700 dark:text-gray-300"
-                        >Status</label
+                        >End Date</label
                       >
-                      <select
-                        v-model="nonGermanForm.status"
+                      <input
+                        v-model="nonGermanForm.endDate"
+                        type="date"
                         class="mt-1 block w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-3 py-2 text-gray-900 dark:text-white shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
+                      />
+                    </div>
+                    <div>
+                      <label class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                        >Portal</label
                       >
-                        <option value="Not Applied">Not Applied</option>
-                        <option value="Applied">Applied</option>
-                        <option value="Accepted">Accepted</option>
-                        <option value="Rejected">Rejected</option>
-                      </select>
+                      <input
+                        v-model="nonGermanForm.portal"
+                        type="text"
+                        class="mt-1 block w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-3 py-2 text-gray-900 dark:text-white shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
+                      />
+                    </div>
+                    <div>
+                      <label class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                        >Tuition Fee (EUR)</label
+                      >
+                      <input
+                        v-model.number="nonGermanForm.tuitionFee"
+                        type="number"
+                        min="0"
+                        class="mt-1 block w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-3 py-2 text-gray-900 dark:text-white shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
+                      />
+                    </div>
+                    <div>
+                      <label class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                        >Application Fee (EUR)</label
+                      >
+                      <input
+                        v-model.number="nonGermanForm.applicationFee"
+                        type="number"
+                        min="0"
+                        class="mt-1 block w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-3 py-2 text-gray-900 dark:text-white shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
+                      />
+                    </div>
+                    <div>
+                      <label class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                        >QS Ranking</label
+                      >
+                      <input
+                        v-model="nonGermanForm.qsRanking"
+                        type="text"
+                        class="mt-1 block w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-3 py-2 text-gray-900 dark:text-white shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
+                      />
                     </div>
                   </div>
                   <div>
@@ -621,6 +657,17 @@
                       v-model="nonGermanForm.relevancyScore"
                       type="text"
                       class="mt-1 block w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-3 py-2 text-gray-900 dark:text-white shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
+                    />
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                      >Application Link</label
+                    >
+                    <input
+                      v-model="nonGermanForm.link"
+                      type="url"
+                      class="mt-1 block w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-3 py-2 text-gray-900 dark:text-white shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
+                      placeholder="https://"
                     />
                   </div>
                 </form>
@@ -663,52 +710,25 @@
       @verify="handleSecurityVerify"
       @cancel="closeSecurityDialog"
     />
+
+    <!-- Chatbot Drawer -->
+    <ChatbotDrawer ref="chatbotRef" :context="chatContext" />
   </div>
 </template>
 
 <script setup lang="ts">
 import { ArrowDownTrayIcon, MagnifyingGlassIcon, PlusIcon } from '@heroicons/vue/24/outline';
 import { useLocalStorage } from '@vueuse/core';
-import { computed, onMounted, ref } from 'vue';
+import { computed, onMounted, ref, watch } from 'vue';
 import ProfessorDialog from '~/components/ProfessorDialog.vue';
 import SecurityDialog from '~/components/SecurityDialog.vue';
 import TrackerTable from '~/components/TrackerTable.vue';
 import { useSecurityQuestion } from '~/composables/useSecurityQuestion';
+import csePrograms from '~/assets/cse-programs.json';
+import civilPrograms from '~/assets/civil-programs.json';
+import professorsData from '~/assets/professors.json';
 
 // Types
-interface GermanProgram {
-  id: string;
-  universityName: string;
-  courseName: string;
-  intake: string;
-  applicationStartDate: string | null;
-  applicationEndDate: string | null;
-  applicationPortal: string;
-  vpdRequired: string;
-  moiAccepted: string;
-  tuitionFee: number;
-  entranceExamInterview: string;
-  greGmat: string;
-  applied: boolean;
-  qsRanking: string;
-  applicationFee: number | null;
-  restricted: string;
-  applicationLink: string;
-}
-
-interface NonGermanProgram {
-  id: string;
-  program: string;
-  university: string;
-  country: string;
-  degree: string;
-  scholarship: string;
-  appFee: string;
-  deadline: string;
-  relevancyScore: string;
-  status: string;
-}
-
 interface Professor {
   id: string;
   status: string;
@@ -737,15 +757,53 @@ interface Professor {
   lastContactDate: string | null;
   followUpDate: string | null;
   notes: string;
+  field: 'cse' | 'civil';
 }
+
+// Tracker mode state
+const trackerMode = ref<'cse' | 'civil'>('cse');
 
 // Tab state
 const activeTab = ref('german');
-const tabs = [
-  { id: 'german', name: 'German Universities' },
-  { id: 'non-german', name: 'Non-German Programs' },
-  { id: 'professors', name: 'Professor Outreach' },
-];
+
+// Tabs based on tracker mode
+const tabs = computed(() => {
+  if (trackerMode.value === 'cse') {
+    return [
+      { id: 'german', name: 'German Universities' },
+      { id: 'non-german', name: 'Non-German Programs' },
+      { id: 'professors', name: 'Professor Outreach' },
+    ];
+  }
+  return [
+    { id: 'german', name: 'German Universities' },
+    { id: 'non-german', name: 'Non-German Programs' },
+    { id: 'professors', name: 'Professor Outreach' },
+  ];
+});
+
+// Unified program interface for both CSE and Civil
+interface UnifiedProgram {
+  id: string;
+  university: string;
+  course: string;
+  intake: string;
+  startDate: string | null;
+  endDate: string | null;
+  portal: string;
+  vpdRequired: string;
+  moiAccepted: string;
+  tuitionFee: number;
+  entranceExamInterview: string;
+  applicationFee: number;
+  applied: boolean;
+  qsRanking: string;
+  greGmat: string;
+  restricted: string;
+  link: string;
+  country?: string;
+  relevancyScore?: string;
+}
 
 // Security question composable
 const { askQuestion, verifyAnswer, currentQuestion, userAnswer } = useSecurityQuestion();
@@ -753,28 +811,44 @@ const showSecurityDialog = ref(false);
 const securityQuestion = ref('');
 const pendingDeleteAction = ref<(() => void) | null>(null);
 
+// Chatbot context
+const chatContext = ref('');
+const chatbotRef = ref<{ openDrawer: () => void } | null>(null);
+
+const handleAskAI = (row: UnifiedProgram | Professor) => {
+  if ('course' in row) {
+    chatContext.value = `${row.university} - ${row.course}`;
+  } else if ('professorFirstName' in row) {
+    chatContext.value = `${row.professorFirstName} ${row.professorLastName} at ${row.university}`;
+  }
+  // Open the chatbot drawer
+  nextTick(() => {
+    chatbotRef.value?.openDrawer();
+  });
+};
+
 // Storage check
 const storageAvailable = ref(true);
 
-// German Programs
-const germanPrograms = useLocalStorage<GermanProgram[]>('german-programs', []);
+// German Programs (unified structure for both CSE and Civil)
+const germanPrograms = useLocalStorage<UnifiedProgram[]>('german-programs', []);
 const germanSearchQuery = ref('');
-const germanSortField = ref('applicationStartDate');
+const germanSortField = ref('startDate');
 const germanSortDirection = ref<'asc' | 'desc'>('asc');
 const showAddGermanDialog = ref(false);
 const showEditGermanDialog = ref(false);
-const editingGermanProgram = ref<GermanProgram | null>(null);
-const germanForm = ref<Partial<GermanProgram>>({});
+const editingGermanProgram = ref<UnifiedProgram | null>(null);
+const germanForm = ref<Partial<UnifiedProgram>>({});
 
-// Non-German Programs
-const nonGermanPrograms = useLocalStorage<NonGermanProgram[]>('non-german-programs', []);
+// Non-German Programs (unified structure for both CSE and Civil)
+const nonGermanPrograms = useLocalStorage<UnifiedProgram[]>('non-german-programs', []);
 const nonGermanSearchQuery = ref('');
-const nonGermanSortField = ref('deadline');
+const nonGermanSortField = ref('endDate');
 const nonGermanSortDirection = ref<'asc' | 'desc'>('asc');
 const showAddNonGermanDialog = ref(false);
 const showEditNonGermanDialog = ref(false);
-const editingNonGermanProgram = ref<NonGermanProgram | null>(null);
-const nonGermanForm = ref<Partial<NonGermanProgram>>({});
+const editingNonGermanProgram = ref<UnifiedProgram | null>(null);
+const nonGermanForm = ref<Partial<UnifiedProgram>>({});
 
 // Professors
 const professors = useLocalStorage<Professor[]>('professors', []);
@@ -785,14 +859,14 @@ const showAddProfessorDialog = ref(false);
 const showEditProfessorDialog = ref(false);
 const editingProfessor = ref<Professor | null>(null);
 
-// Column definitions
+// Column definitions for German programs
 const germanColumns = [
-  { key: 'universityName', label: 'University', sortable: true },
-  { key: 'courseName', label: 'Course', sortable: true },
+  { key: 'university', label: 'University', sortable: true },
+  { key: 'course', label: 'Course', sortable: true },
   { key: 'intake', label: 'Intake', sortable: true },
-  { key: 'applicationStartDate', label: 'Start Date', sortable: true, type: 'date' as const },
-  { key: 'applicationEndDate', label: 'End Date', sortable: true, type: 'date' as const },
-  { key: 'applicationPortal', label: 'Portal', sortable: true },
+  { key: 'startDate', label: 'Start Date', sortable: true, type: 'date' as const },
+  { key: 'endDate', label: 'End Date', sortable: true, type: 'date' as const },
+  { key: 'portal', label: 'Portal', sortable: true },
   { key: 'vpdRequired', label: 'VPD', sortable: true },
   { key: 'moiAccepted', label: 'MOI', sortable: true },
   { key: 'tuitionFee', label: 'Tuition Fee', sortable: true, type: 'currency' as const },
@@ -802,20 +876,42 @@ const germanColumns = [
   { key: 'qsRanking', label: 'QS Ranking', sortable: true },
   { key: 'greGmat', label: 'GRE/GMAT', sortable: true },
   { key: 'restricted', label: 'Restricted', sortable: true },
-  { key: 'applicationLink', label: 'Link', sortable: false, type: 'link' as const },
+  { key: 'link', label: 'Link', sortable: false, type: 'link' as const },
 ];
 
-const nonGermanColumns = [
-  { key: 'program', label: 'Program', sortable: true },
-  { key: 'university', label: 'University', sortable: true },
-  { key: 'country', label: 'Country', sortable: true },
-  { key: 'degree', label: 'Degree', sortable: true },
-  { key: 'scholarship', label: 'Scholarship', sortable: true },
-  { key: 'appFee', label: 'App Fee', sortable: true },
-  { key: 'deadline', label: 'Deadline', sortable: true, type: 'date' as const },
-  { key: 'relevancyScore', label: 'Relevancy', sortable: true },
-  { key: 'status', label: 'Status', sortable: true, type: 'badge' as const },
-];
+// Column definitions for non-German programs
+const nonGermanColumns = computed(() => {
+  if (trackerMode.value === 'cse') {
+    return [
+      { key: 'course', label: 'Program', sortable: true },
+      { key: 'university', label: 'University', sortable: true },
+      { key: 'country', label: 'Country', sortable: true },
+      { key: 'startDate', label: 'Start Date', sortable: true, type: 'date' as const },
+      { key: 'endDate', label: 'End Date', sortable: true, type: 'date' as const },
+      { key: 'portal', label: 'Portal', sortable: true },
+      { key: 'tuitionFee', label: 'Tuition Fee', sortable: true, type: 'currency' as const },
+      { key: 'applicationFee', label: 'App Fee', sortable: true, type: 'currency' as const },
+      { key: 'applied', label: 'Applied', sortable: true, type: 'checkbox' as const },
+      { key: 'qsRanking', label: 'QS Ranking', sortable: true },
+      { key: 'link', label: 'Link', sortable: false, type: 'link' as const },
+      { key: 'relevancyScore', label: 'Relevancy', sortable: true },
+    ];
+  }
+  return [
+    { key: 'course', label: 'Program', sortable: true },
+    { key: 'university', label: 'University', sortable: true },
+    { key: 'country', label: 'Country', sortable: true },
+    { key: 'startDate', label: 'Start Date', sortable: true, type: 'date' as const },
+    { key: 'endDate', label: 'End Date', sortable: true, type: 'date' as const },
+    { key: 'portal', label: 'Portal', sortable: true },
+    { key: 'tuitionFee', label: 'Tuition Fee', sortable: true, type: 'currency' as const },
+    { key: 'applicationFee', label: 'App Fee', sortable: true, type: 'currency' as const },
+    { key: 'applied', label: 'Applied', sortable: true, type: 'checkbox' as const },
+    { key: 'qsRanking', label: 'QS Ranking', sortable: true },
+    { key: 'link', label: 'Link', sortable: false, type: 'link' as const },
+    { key: 'relevancyScore', label: 'Relevancy', sortable: true },
+  ];
+});
 
 const professorColumns = [
   { key: 'professorFirstName', label: 'Professor', sortable: true },
@@ -830,260 +926,64 @@ const professorColumns = [
   { key: 'notes', label: 'Notes', sortable: false },
 ];
 
-// Seed data for German programs
-const germanSeedData: GermanProgram[] = [
-  {
-    id: 'german-001',
-    universityName: 'Bauhaus University Weimar',
-    courseName: 'M.Sc. Digital Engineering',
-    intake: 'Summer',
-    applicationStartDate: '2026-10-01',
-    applicationEndDate: '2027-01-15',
-    applicationPortal: 'Uni-Assist',
-    vpdRequired: '-',
-    moiAccepted: 'no',
-    tuitionFee: 0,
-    entranceExamInterview: 'yes, online viva',
-    greGmat: '',
-    applied: false,
-    qsRanking: '-',
-    applicationFee: 30,
-    restricted: 'No-NC',
-    applicationLink:
-      'https://www.uni-weimar.de/en/civil-and-environmental-engineering/studies/master-degree-programmes/digital-engineering/',
-  },
-  {
-    id: 'german-002',
-    universityName: 'Bauhaus University Weimar',
-    courseName: 'M.Sc. Human-Computer Interaction',
-    intake: 'Summer',
-    applicationStartDate: '2026-10-01',
-    applicationEndDate: '2027-01-15',
-    applicationPortal: 'Uni-Assist',
-    vpdRequired: '-',
-    moiAccepted: 'no',
-    tuitionFee: 0,
-    entranceExamInterview: '-',
-    greGmat: '',
-    applied: false,
-    qsRanking: '-',
-    applicationFee: 30,
-    restricted: 'No-NC',
-    applicationLink: 'https://www.uni-weimar.de/en/media/studies/human-computer-interaction-msc/',
-  },
-  {
-    id: 'german-003',
-    universityName: 'Brandenburg University of Technology',
-    courseName: 'M.Sc. Artificial Intelligence',
-    intake: 'Summer',
-    applicationStartDate: '2026-11-01',
-    applicationEndDate: '2027-01-15',
-    applicationPortal: 'Uni-Assist',
-    vpdRequired: '-',
-    moiAccepted: 'no',
-    tuitionFee: 0,
-    entranceExamInterview: '-',
-    greGmat: '',
-    applied: false,
-    qsRanking: '-',
-    applicationFee: 30,
-    restricted: 'No-NC',
-    applicationLink: 'https://www.b-tu.de/en/artificial-intelligence-ms/page',
-  },
-  {
-    id: 'german-004',
-    universityName: 'FAU Erlangen-Nürnberg',
-    courseName: 'M.Sc. Data Science',
-    intake: 'Summer',
-    applicationStartDate: null,
-    applicationEndDate: '2026-11-30',
-    applicationPortal: 'University Portal',
-    vpdRequired: '-',
-    moiAccepted: 'yes',
-    tuitionFee: 4000,
-    entranceExamInterview: 'yes, online viva',
-    greGmat: '',
-    applied: false,
-    qsRanking: '218',
-    applicationFee: 100,
-    restricted: 'No-NC',
-    applicationLink: 'https://www.datascience.nat.fau.eu/study/master-data-science-english/',
-  },
-  {
-    id: 'german-005',
-    universityName: 'Fulda University of Applied Sciences',
-    courseName: 'M.Sc. Global Software Development',
-    intake: 'Summer',
-    applicationStartDate: '2026-11-01',
-    applicationEndDate: '2026-12-01',
-    applicationPortal: 'Uni-Assist',
-    vpdRequired: '-',
-    moiAccepted: 'Not mentioned',
-    tuitionFee: 0,
-    entranceExamInterview: 'yes, online test',
-    greGmat: '',
-    applied: false,
-    qsRanking: '-',
-    applicationFee: 30,
-    restricted: 'No-NC',
-    applicationLink: 'https://www.hs-fulda.de/en/studyprogramme/global-software-development-msc',
-  },
-];
+// Transform JSON data to unified format
+const transformGermanProgram = (
+  p: Record<string, unknown>,
+  _source: 'cse' | 'civil'
+): UnifiedProgram => ({
+  id: p.id as string,
+  university: p.university as string,
+  course: p.course as string,
+  intake: p.intake as string,
+  startDate: p.startDate as string | null,
+  endDate: p.endDate as string | null,
+  portal: p.portal as string,
+  vpdRequired: p.vpdRequired as string,
+  moiAccepted: p.moiAccepted as string,
+  tuitionFee: p.tuitionFee as number,
+  entranceExamInterview: p.entranceExamInterview as string,
+  applicationFee: p.applicationFee as number,
+  applied: p.applied as boolean,
+  qsRanking: p.qsRanking as string,
+  greGmat: p.greGmat as string,
+  restricted: p.restricted as string,
+  link: p.link as string,
+});
 
-// Seed data for non-German programs
-const nonGermanSeedData: NonGermanProgram[] = [
-  {
-    id: 'non-german-001',
-    program: 'EMJM in Imaging',
-    university: 'Politecnico di Milano / Tampere / Mid Sweden',
-    country: 'Italy / Finland / Sweden',
-    degree: 'Joint MSc',
-    scholarship: 'Full Erasmus Scholarship (1,400 EUR/mo)',
-    appFee: '0 EUR',
-    deadline: '2027-01-09',
-    relevancyScore: 'High (3D Reconstruction, RGB-D Mapping)',
-    status: 'Not Applied',
-  },
-  {
-    id: 'non-german-002',
-    program: 'IPCVai (Image Processing, Computer Vision & AI)',
-    university: 'Univ. of Bordeaux / UAM Spain / PPKE Hungary',
-    country: 'France / Spain / Hungary',
-    degree: 'Joint MSc',
-    scholarship: 'Full Erasmus Scholarship (1,400 EUR/mo)',
-    appFee: '0 EUR',
-    deadline: '2027-01-15',
-    relevancyScore: 'High (OpenCV, Computer Vision, OCR)',
-    status: 'Not Applied',
-  },
-  {
-    id: 'non-german-003',
-    program: 'EMAI (Erasmus Mundus in AI)',
-    university: 'UPF Spain / Radboud Netherlands / Sapienza Italy',
-    country: 'Spain / Netherlands / Italy',
-    degree: 'Joint MSc',
-    scholarship: 'Full Erasmus Scholarship (1,400 EUR/mo)',
-    appFee: '0 EUR',
-    deadline: '2026-12-20',
-    relevancyScore: 'High (Multimodal AI, LLM Integration)',
-    status: 'Not Applied',
-  },
-  {
-    id: 'non-german-004',
-    program: 'MSc Computer Science (Thesis)',
-    university: 'Memorial University of Newfoundland',
-    country: 'Canada',
-    degree: 'MSc',
-    scholarship: 'Min. 20,000 CAD/year funding',
-    appFee: '120 CAD',
-    deadline: '2026-12-01',
-    relevancyScore: 'High (Computer Vision, 3D Sensor Fusion)',
-    status: 'Not Applied',
-  },
-  {
-    id: 'non-german-005',
-    program: 'MSc Computing Science (Thesis)',
-    university: 'University of Alberta',
-    country: 'Canada',
-    degree: 'MSc',
-    scholarship: 'Min. 24,000-28,000 CAD/year funding',
-    appFee: '135 CAD',
-    deadline: '2027-01-15',
-    relevancyScore: 'High (AI, Computer Vision, Medical Imaging)',
-    status: 'Not Applied',
-  },
-];
+const transformNonGermanProgram = (
+  p: Record<string, unknown>,
+  _source: 'cse' | 'civil'
+): UnifiedProgram => ({
+  id: p.id as string,
+  university: p.university as string,
+  course: p.course as string,
+  intake: p.intake as string,
+  startDate: p.startDate as string | null,
+  endDate: p.endDate as string | null,
+  portal: p.portal as string,
+  vpdRequired: p.vpdRequired as string,
+  moiAccepted: p.moiAccepted as string,
+  tuitionFee: p.tuitionFee as number,
+  entranceExamInterview: p.entranceExamInterview as string,
+  applicationFee: p.applicationFee as number,
+  applied: p.applied as boolean,
+  qsRanking: p.qsRanking as string,
+  greGmat: p.greGmat as string,
+  restricted: p.restricted as string,
+  link: p.link as string,
+  country: p.country as string,
+  relevancyScore: p.relevancyScore as string,
+});
 
-// Professor seed data
-const professorSeedData: Professor[] = [
-  {
-    id: 'prof-001',
-    status: 'Ready',
-    priority: 'A',
-    country: 'Germany',
-    region: 'Europe',
-    university: 'TU Munich',
-    department: 'Informatics',
-    professorTitle: 'Professor',
-    professorFirstName: 'Daniel',
-    professorLastName: 'Cremers',
-    email: 'cremers@tum.de',
-    altEmail: '',
-    researchArea: '3D Reconstruction, RGB-D, SLAM',
-    keywords: 'Computer Vision;3D;Fusion',
-    yourPaperMatch: 'Kinect 3D Reconstruction Fusion Mapping (IEEE 2019)',
-    personalizedHook: 'Your work on 3D Reconstruction aligns with my publication.',
-    programType: 'PhD',
-    startTerm: 'Fall 2026',
-    fundingPath: 'RA, DAAD',
-    eligibilityNotes: 'GPA is flexible with strong research.',
-    websiteSource: '',
-    linkedPaperUrl: 'https://ieeexplore.ieee.org/abstract/document/8934596/',
-    emailVerification: 'VALID',
-    campaignStatus: 'SCHEDULED',
-    lastContactDate: null,
-    followUpDate: null,
-    notes: 'Top choice',
-  },
-  {
-    id: 'prof-002',
-    status: 'Ready',
-    priority: 'A',
-    country: 'Germany',
-    region: 'Europe',
-    university: 'RWTH Aachen',
-    department: 'Computer Science',
-    professorTitle: 'Professor',
-    professorFirstName: 'Bastian',
-    professorLastName: 'Leibe',
-    email: 'leibe@vision.rwth-aachen.de',
-    altEmail: '',
-    researchArea: 'Object Recognition, Computer Vision',
-    keywords: 'Computer Vision;Object Recognition',
-    yourPaperMatch: 'Kinect 3D Reconstruction Fusion Mapping (IEEE 2019)',
-    personalizedHook: 'Your work on Object Recognition aligns with my publication.',
-    programType: 'PhD',
-    startTerm: 'Fall 2026',
-    fundingPath: 'RA, DFG',
-    eligibilityNotes: 'Excellent industry connections.',
-    websiteSource: '',
-    linkedPaperUrl: '',
-    emailVerification: 'VALID',
-    campaignStatus: 'SCHEDULED',
-    lastContactDate: null,
-    followUpDate: null,
-    notes: '',
-  },
-  {
-    id: 'prof-003',
-    status: 'Ready',
-    priority: 'A',
-    country: 'Canada',
-    region: 'North America',
-    university: 'University of Waterloo',
-    department: 'Comp. Science',
-    professorTitle: 'Professor',
-    professorFirstName: 'Jesse',
-    professorLastName: 'Hoey',
-    email: 'jhoey@uwaterloo.ca',
-    altEmail: '',
-    researchArea: 'Affective Computing, AI',
-    keywords: 'Affective Computing;AI',
-    yourPaperMatch: 'Classification Rules Comparison into Data Mining Concept (AUJST 2018)',
-    personalizedHook: 'Your work on Affective Computing aligns with my publication.',
-    programType: 'MSc→PhD',
-    startTerm: 'Fall 2026',
-    fundingPath: 'NSERC, RA',
-    eligibilityNotes: 'Waterloo is excellent for AI.',
-    websiteSource: 'https://cs.uwaterloo.ca/~jhoey/',
-    linkedPaperUrl: '',
-    emailVerification: 'VALID',
-    campaignStatus: 'SCHEDULED',
-    lastContactDate: null,
-    followUpDate: null,
-    notes: '',
-  },
-];
+// Load programs from JSON
+const cseGermanPrograms = csePrograms.german.map((p) => transformGermanProgram(p, 'cse'));
+const cseNonGermanPrograms = csePrograms.nonGerman.map((p) => transformNonGermanProgram(p, 'cse'));
+const civilGermanPrograms = civilPrograms.german.map((p) => transformGermanProgram(p, 'civil'));
+const civilNonGermanPrograms = civilPrograms.nonGerman.map((p) =>
+  transformNonGermanProgram(p, 'civil')
+);
+
+// Professor seed data loaded from JSON file
 
 // Initialize data
 onMounted(() => {
@@ -1098,14 +998,23 @@ onMounted(() => {
 
   // Load seed data if empty
   if (germanPrograms.value.length === 0) {
-    germanPrograms.value = germanSeedData;
+    germanPrograms.value = trackerMode.value === 'cse' ? cseGermanPrograms : civilGermanPrograms;
   }
   if (nonGermanPrograms.value.length === 0) {
-    nonGermanPrograms.value = nonGermanSeedData;
+    nonGermanPrograms.value =
+      trackerMode.value === 'cse' ? cseNonGermanPrograms : civilNonGermanPrograms;
   }
-  if (professors.value.length === 0) {
-    professors.value = professorSeedData;
-  }
+  // Always load professors from JSON to ensure field attribute exists
+  professors.value = professorsData as Professor[];
+});
+
+// Watch for tracker mode changes to reload data
+watch(trackerMode, (newMode) => {
+  germanPrograms.value = newMode === 'cse' ? cseGermanPrograms : civilGermanPrograms;
+  nonGermanPrograms.value = newMode === 'cse' ? cseNonGermanPrograms : civilNonGermanPrograms;
+  // Always reload professors from source to ensure field attribute exists
+  professors.value = professorsData as Professor[];
+  activeTab.value = 'german';
 });
 
 // Computed stats
@@ -1121,35 +1030,32 @@ const germanStats = computed(() => {
 
 const nonGermanStats = computed(() => {
   const total = nonGermanPrograms.value.length;
-  const fullyFunded = nonGermanPrograms.value.filter((p) =>
-    p.scholarship.toLowerCase().includes('full')
-  ).length;
-  const applied = nonGermanPrograms.value.filter(
-    (p) => p.status.toLowerCase() === 'applied'
-  ).length;
+  const fullyFunded = nonGermanPrograms.value.filter((p) => p.tuitionFee === 0).length;
+  const applied = nonGermanPrograms.value.filter((p) => p.applied).length;
   const countries = new Set(
-    nonGermanPrograms.value.flatMap((p) => p.country.split('/').map((c) => c.trim()))
+    nonGermanPrograms.value.flatMap((p) => (p.country || '').split('/').map((c) => c.trim()))
   ).size;
   return { total, fullyFunded, applied, countries };
 });
 
 const professorStats = computed(() => {
-  const total = professors.value.length;
-  const contacted = professors.value.filter(
+  const modeProfessors = professors.value.filter((p) => p.field === trackerMode.value);
+  const total = modeProfessors.length;
+  const contacted = modeProfessors.filter(
     (p) =>
       p.status.toLowerCase() === 'contacted' ||
       p.status.toLowerCase() === 'responded' ||
       p.status.toLowerCase() === 'meeting scheduled' ||
       p.status.toLowerCase() === 'applied'
   ).length;
-  const responded = professors.value.filter(
+  const responded = modeProfessors.filter(
     (p) =>
       p.status.toLowerCase() === 'responded' ||
       p.status.toLowerCase() === 'meeting scheduled' ||
       p.status.toLowerCase() === 'applied'
   ).length;
   const responseRate = total > 0 ? Math.round((responded / total) * 100) : 0;
-  const pendingFollowUps = professors.value.filter(
+  const pendingFollowUps = modeProfessors.filter(
     (p) => p.followUpDate && new Date(p.followUpDate) <= new Date()
   ).length;
   return { total, contacted, responseRate, pendingFollowUps };
@@ -1168,7 +1074,7 @@ const filteredGermanPrograms = computed(() => {
 
   // Sort
   if (germanSortField.value) {
-    const field = germanSortField.value as keyof GermanProgram;
+    const field = germanSortField.value as keyof UnifiedProgram;
     const direction = germanSortDirection.value === 'asc' ? 1 : -1;
     result = [...result].sort((a, b) => {
       const aVal = a[field];
@@ -1203,7 +1109,7 @@ const filteredNonGermanPrograms = computed(() => {
 
   // Sort
   if (nonGermanSortField.value) {
-    const field = nonGermanSortField.value as keyof NonGermanProgram;
+    const field = nonGermanSortField.value as keyof UnifiedProgram;
     const direction = nonGermanSortDirection.value === 'asc' ? 1 : -1;
     result = [...result].sort((a, b) => {
       const aVal = a[field];
@@ -1224,7 +1130,7 @@ const filteredNonGermanPrograms = computed(() => {
 });
 
 const filteredProfessors = computed(() => {
-  let result = professors.value;
+  let result = professors.value.filter((p) => p.field === trackerMode.value);
 
   if (professorSearchQuery.value) {
     const query = professorSearchQuery.value.toLowerCase();
@@ -1283,17 +1189,56 @@ const handleProfessorSort = (field: string) => {
   }
 };
 
+// CSV Export
+const exportCSV = (data: Record<string, unknown>[], filename: string) => {
+  if (data.length === 0) return;
+
+  const headers = Object.keys(data[0]);
+  const csvContent = [
+    headers.join(','),
+    ...data.map((row) =>
+      headers
+        .map((header) => {
+          const value = row[header];
+          if (typeof value === 'string' && value.includes(',')) {
+            return `"${value}"`;
+          }
+          return value;
+        })
+        .join(',')
+    ),
+  ].join('\n');
+
+  const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+  const link = document.createElement('a');
+  link.href = URL.createObjectURL(blob);
+  link.download = filename;
+  link.click();
+};
+
+const exportGermanCSV = () => {
+  exportCSV(filteredGermanPrograms.value, 'german-programs.csv');
+};
+
+const exportNonGermanCSV = () => {
+  exportCSV(filteredNonGermanPrograms.value, 'non-german-programs.csv');
+};
+
+const exportProfessorCSV = () => {
+  exportCSV(filteredProfessors.value, 'professors.csv');
+};
+
 // German Program CRUD
 const saveGermanProgram = () => {
   if (showAddGermanDialog.value) {
-    const newProgram: GermanProgram = {
+    const newProgram: UnifiedProgram = {
       id: `german-${Date.now()}`,
-      universityName: germanForm.value.universityName || '',
-      courseName: germanForm.value.courseName || '',
+      university: germanForm.value.university || '',
+      course: germanForm.value.course || '',
       intake: germanForm.value.intake || '',
-      applicationStartDate: germanForm.value.applicationStartDate || null,
-      applicationEndDate: germanForm.value.applicationEndDate || null,
-      applicationPortal: germanForm.value.applicationPortal || '',
+      startDate: germanForm.value.startDate || null,
+      endDate: germanForm.value.endDate || null,
+      portal: germanForm.value.portal || '',
       vpdRequired: germanForm.value.vpdRequired || '-',
       moiAccepted: germanForm.value.moiAccepted || 'no',
       tuitionFee: germanForm.value.tuitionFee || 0,
@@ -1301,9 +1246,9 @@ const saveGermanProgram = () => {
       greGmat: germanForm.value.greGmat || '',
       applied: germanForm.value.applied || false,
       qsRanking: germanForm.value.qsRanking || '-',
-      applicationFee: germanForm.value.applicationFee || null,
+      applicationFee: germanForm.value.applicationFee || 0,
       restricted: germanForm.value.restricted || 'No-NC',
-      applicationLink: germanForm.value.applicationLink || '',
+      link: germanForm.value.link || '',
     };
     germanPrograms.value.push(newProgram);
   } else if (editingGermanProgram.value) {
@@ -1318,7 +1263,7 @@ const saveGermanProgram = () => {
   closeGermanDialog();
 };
 
-const openEditGermanDialog = (program: GermanProgram) => {
+const openEditGermanDialog = (program: UnifiedProgram) => {
   editingGermanProgram.value = { ...program };
   germanForm.value = { ...program };
   showEditGermanDialog.value = true;
@@ -1331,7 +1276,7 @@ const closeGermanDialog = () => {
   germanForm.value = {};
 };
 
-const confirmDeleteGerman = (program: GermanProgram) => {
+const confirmDeleteGerman = (program: UnifiedProgram) => {
   securityQuestion.value = currentQuestion.value?.question || 'What is the nickname of author?';
   askQuestion();
   showSecurityDialog.value = true;
@@ -1350,17 +1295,26 @@ const toggleGermanApplied = (id: string) => {
 // Non-German Program CRUD
 const saveNonGermanProgram = () => {
   if (showAddNonGermanDialog.value) {
-    const newProgram: NonGermanProgram = {
+    const newProgram: UnifiedProgram = {
       id: `non-german-${Date.now()}`,
-      program: nonGermanForm.value.program || '',
       university: nonGermanForm.value.university || '',
+      course: nonGermanForm.value.course || '',
+      intake: nonGermanForm.value.intake || '',
+      startDate: nonGermanForm.value.startDate || null,
+      endDate: nonGermanForm.value.endDate || null,
+      portal: nonGermanForm.value.portal || '',
+      vpdRequired: nonGermanForm.value.vpdRequired || '-',
+      moiAccepted: nonGermanForm.value.moiAccepted || 'no',
+      tuitionFee: nonGermanForm.value.tuitionFee || 0,
+      entranceExamInterview: nonGermanForm.value.entranceExamInterview || '-',
+      greGmat: nonGermanForm.value.greGmat || '',
+      applied: nonGermanForm.value.applied || false,
+      qsRanking: nonGermanForm.value.qsRanking || '-',
+      applicationFee: nonGermanForm.value.applicationFee || 0,
+      restricted: nonGermanForm.value.restricted || '-',
+      link: nonGermanForm.value.link || '',
       country: nonGermanForm.value.country || '',
-      degree: nonGermanForm.value.degree || '',
-      scholarship: nonGermanForm.value.scholarship || '',
-      appFee: nonGermanForm.value.appFee || '0 EUR',
-      deadline: nonGermanForm.value.deadline || '',
       relevancyScore: nonGermanForm.value.relevancyScore || '',
-      status: nonGermanForm.value.status || 'Not Applied',
     };
     nonGermanPrograms.value.push(newProgram);
   } else if (editingNonGermanProgram.value) {
@@ -1377,7 +1331,7 @@ const saveNonGermanProgram = () => {
   closeNonGermanDialog();
 };
 
-const openEditNonGermanDialog = (program: NonGermanProgram) => {
+const openEditNonGermanDialog = (program: UnifiedProgram) => {
   editingNonGermanProgram.value = { ...program };
   nonGermanForm.value = { ...program };
   showEditNonGermanDialog.value = true;
@@ -1390,7 +1344,7 @@ const closeNonGermanDialog = () => {
   nonGermanForm.value = {};
 };
 
-const confirmDeleteNonGerman = (program: NonGermanProgram) => {
+const confirmDeleteNonGerman = (program: UnifiedProgram) => {
   securityQuestion.value = currentQuestion.value?.question || 'What is the nickname of author?';
   askQuestion();
   showSecurityDialog.value = true;
@@ -1402,7 +1356,7 @@ const confirmDeleteNonGerman = (program: NonGermanProgram) => {
 const toggleNonGermanApplied = (id: string) => {
   const program = nonGermanPrograms.value.find((p) => p.id === id);
   if (program) {
-    program.status = program.status === 'Applied' ? 'Not Applied' : 'Applied';
+    program.applied = !program.applied;
   }
 };
 
@@ -1437,6 +1391,7 @@ const saveProfessor = (professor: Partial<Professor>) => {
       lastContactDate: professor.lastContactDate || null,
       followUpDate: professor.followUpDate || null,
       notes: professor.notes || '',
+      field: professor.field || trackerMode.value,
     };
     professors.value.push(newProfessor);
   } else if (editingProfessor.value) {
@@ -1484,44 +1439,5 @@ const handleSecurityVerify = (answer: string) => {
 const closeSecurityDialog = () => {
   showSecurityDialog.value = false;
   pendingDeleteAction.value = null;
-};
-
-// CSV Export
-const exportCSV = (data: Record<string, unknown>[], filename: string) => {
-  if (data.length === 0) return;
-
-  const headers = Object.keys(data[0]);
-  const csvContent = [
-    headers.join(','),
-    ...data.map((row) =>
-      headers
-        .map((header) => {
-          const value = row[header];
-          if (typeof value === 'string' && value.includes(',')) {
-            return `"${value}"`;
-          }
-          return value;
-        })
-        .join(',')
-    ),
-  ].join('\n');
-
-  const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
-  const link = document.createElement('a');
-  link.href = URL.createObjectURL(blob);
-  link.download = filename;
-  link.click();
-};
-
-const exportGermanCSV = () => {
-  exportCSV(filteredGermanPrograms.value, 'german-programs.csv');
-};
-
-const exportNonGermanCSV = () => {
-  exportCSV(filteredNonGermanPrograms.value, 'non-german-programs.csv');
-};
-
-const exportProfessorCSV = () => {
-  exportCSV(filteredProfessors.value, 'professors.csv');
 };
 </script>

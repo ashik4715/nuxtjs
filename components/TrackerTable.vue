@@ -99,6 +99,13 @@
           <td class="px-4 py-3 text-sm whitespace-nowrap">
             <div class="flex items-center space-x-2">
               <button
+                class="text-purple-600 hover:text-purple-800 dark:text-purple-400 dark:hover:text-purple-300"
+                title="Ask AI about this"
+                @click="emit('ask-ai', row)"
+              >
+                <ChatBubbleLeftIcon class="h-4 w-4" />
+              </button>
+              <button
                 class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
                 @click="emit('edit', row)"
               >
@@ -132,6 +139,7 @@ import {
   ChevronUpIcon,
   ChevronDownIcon,
   ChevronUpDownIcon,
+  ChatBubbleLeftIcon,
   PencilIcon,
   TrashIcon,
 } from '@heroicons/vue/24/outline';
@@ -165,6 +173,7 @@ const emit = defineEmits<{
   edit: [row: TrackerRow];
   delete: [row: TrackerRow];
   'toggle-applied': [id: string];
+  'ask-ai': [row: TrackerRow];
 }>();
 
 const getBadgeClass = (value: string): string => {
