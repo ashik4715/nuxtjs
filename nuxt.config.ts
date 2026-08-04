@@ -59,7 +59,8 @@ export default defineNuxtConfig({
   runtimeConfig: {
     openaiApiKey: process.env.OPENCODE_API_KEY || process.env.NUXT_OPENAI_API_KEY,
     public: {
-      // Public keys go here
+      difyApiUrl: process.env.DIFY_API_URL || 'https://api.dify.ai/v1',
+      difyApiKey: process.env.DIFY_API_KEY || '',
     },
   },
 });

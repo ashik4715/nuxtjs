@@ -53,38 +53,17 @@
             <span class="text-2xl">👩‍🏫</span>
             <span class="font-semibold text-sm">Study Counselor (AI)</span>
           </div>
-          <div class="flex items-center space-x-2">
-            <button
-              :class="[
-                'p-1.5 rounded-full transition-colors',
-                voiceEnabled ? 'bg-white/20' : 'bg-white/10',
-              ]"
-              :title="voiceEnabled ? 'Voice ON - Click to disable' : 'Voice OFF - Click to enable'"
-              @click="toggleVoice"
+          <div class="flex items-center space-x-3">
+            <!-- Voice Selector -->
+            <select
+              v-model="selectedVoice"
+              class="bg-white/20 text-white text-xs px-2 py-1 rounded border border-white/30 focus:outline-none focus:ring-1 focus:ring-white/50 cursor-pointer"
             >
-              <svg
-                v-if="voiceEnabled"
-                class="w-4 h-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"
-                />
-              </svg>
-              <svg v-else class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2"
-                />
-              </svg>
-            </button>
+              <option value="female" class="text-gray-900">Female</option>
+              <option value="male" class="text-gray-900">Male</option>
+              <option value="off" class="text-gray-900">Voice Off</option>
+            </select>
+            <!-- Close Button -->
             <button class="text-white hover:text-gray-200" @click="toggleChat">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path
@@ -100,39 +79,89 @@
 
         <!-- Voice Status -->
         <div
-          v-if="voiceEnabled"
+          v-if="selectedVoice !== 'off'"
           class="bg-green-100 text-green-800 text-xs px-4 py-1 flex items-center space-x-1 flex-shrink-0"
         >
           <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-          <span>Voice enabled - responses will be read aloud</span>
+          <span>{{ selectedVoice === 'female' ? 'Female' : 'Male' }} voice enabled</span>
         </div>
 
-        <!-- Dify Iframe -->
-        <iframe
-          ref="difyIframe"
-          :src="difyUrl"
-          class="flex-1 border-none"
-          allow="microphone; clipboard-write"
-          @load="onIframeLoad"
-        ></iframe>
+        <!-- Messages Area -->
+        <div ref="messagesContainer" class="flex-1 overflow-y-auto p-4 space-y-3 bg-gray-50">
+          <div v-if="messages.length === 0" class="text-center text-gray-500 mt-8">
+            <span class="text-4xl block mb-2">👩‍🏫</span>
+            <p class="text-sm font-medium">Hi! I'm your Study Counselor</p>
+            <p class="text-xs text-gray-400 mt-1">
+              Ask me about programs, applications, visas, or scholarships
+            </p>
+          </div>
 
-        <!-- Read Aloud Button -->
-        <div class="border-t border-gray-200 px-4 py-2 bg-gray-50 flex-shrink-0">
-          <button
-            :disabled="!lastMessage"
-            class="w-full flex items-center justify-center space-x-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors text-sm"
-            @click="readLastMessage"
+          <div
+            v-for="(msg, index) in messages"
+            :key="index"
+            class="flex"
+            :class="msg.role === 'user' ? 'justify-end' : 'justify-start'"
           >
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"
-              />
-            </svg>
-            <span>{{ isSpeaking ? 'Stop Speaking' : 'Read Last Answer Aloud' }}</span>
-          </button>
+            <div
+              :class="[
+                'max-w-[85%] px-4 py-2 rounded-lg text-sm',
+                msg.role === 'user'
+                  ? 'bg-blue-600 text-white rounded-br-none'
+                  : 'bg-white text-gray-900 shadow border border-gray-200 rounded-bl-none',
+              ]"
+            >
+              {{ msg.content }}
+            </div>
+          </div>
+
+          <div v-if="isLoading" class="flex justify-start">
+            <div
+              class="bg-white px-4 py-2 rounded-lg rounded-bl-none shadow border border-gray-200"
+            >
+              <div class="flex space-x-1">
+                <div
+                  class="w-2 h-2 bg-gray-400 rounded-full animate-bounce"
+                  style="animation-delay: 0ms"
+                ></div>
+                <div
+                  class="w-2 h-2 bg-gray-400 rounded-full animate-bounce"
+                  style="animation-delay: 150ms"
+                ></div>
+                <div
+                  class="w-2 h-2 bg-gray-400 rounded-full animate-bounce"
+                  style="animation-delay: 300ms"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Input Area -->
+        <div class="border-t border-gray-200 p-3 bg-white flex-shrink-0">
+          <div class="flex space-x-2">
+            <input
+              v-model="userInput"
+              type="text"
+              placeholder="Type your question..."
+              :disabled="isLoading"
+              class="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 text-sm text-gray-900 disabled:opacity-50"
+              @keypress.enter="sendMessage"
+            />
+            <button
+              :disabled="isLoading || !userInput.trim()"
+              class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              @click="sendMessage"
+            >
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </Transition>
@@ -140,33 +169,38 @@
 </template>
 
 <script setup lang="ts">
-import { onUnmounted, ref } from 'vue';
+import { nextTick, onUnmounted, ref, watch } from 'vue';
 
 const isOpen = ref(false);
-const voiceEnabled = ref(true);
+const selectedVoice = ref('female');
 const isSpeaking = ref(false);
-const lastMessage = ref('');
-const difyIframe = ref<HTMLIFrameElement | null>(null);
-const difyUrl = 'https://udify.app/chatbot/q9cswZbNuQjCfNiv';
+const isLoading = ref(false);
+const userInput = ref('');
+const messages = ref<Array<{ role: 'user' | 'assistant'; content: string }>>([]);
+const messagesContainer = ref<HTMLElement | null>(null);
+
+const config = useRuntimeConfig();
+const DIFY_API_URL = config.public.difyApiUrl;
+const DIFY_API_KEY = config.public.difyApiKey;
 
 let speechSynthesis: SpeechSynthesis | null = null;
 let femaleVoice: SpeechSynthesisVoice | null = null;
+let maleVoice: SpeechSynthesisVoice | null = null;
 
 const toggleChat = () => {
   isOpen.value = !isOpen.value;
-};
-
-const toggleVoice = () => {
-  voiceEnabled.value = !voiceEnabled.value;
-  if (!voiceEnabled.value) {
-    stopSpeaking();
+  if (isOpen.value && messages.value.length === 0) {
+    messages.value.push({
+      role: 'assistant',
+      content:
+        "Hi! I'm your Study Counselor. I can help with applications, visas, scholarships, and more. What would you like to know?",
+    });
   }
 };
 
 const initVoice = () => {
   if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
     speechSynthesis = window.speechSynthesis;
-
     const loadVoices = () => {
       const voices = speechSynthesis!.getVoices();
       femaleVoice =
@@ -176,34 +210,41 @@ const initVoice = () => {
             v.name.includes('Victoria') ||
             v.name.includes('Zira') ||
             v.name.includes('Hazel') ||
-            v.name.includes('Google UK English Female') ||
-            v.lang.startsWith('en')
+            v.name.includes('Google UK English Female')
         ) ||
+        voices.find((v) => v.lang.startsWith('en')) ||
+        voices[0] ||
+        null;
+      maleVoice =
+        voices.find(
+          (v) =>
+            v.name.includes('Daniel') ||
+            v.name.includes('James') ||
+            v.name.includes('Google UK English Male')
+        ) ||
+        voices.find((v) => v.lang.startsWith('en')) ||
         voices[0] ||
         null;
     };
-
     loadVoices();
     speechSynthesis.onvoiceschanged = loadVoices;
   }
 };
 
 const speak = (text: string) => {
-  if (!speechSynthesis || !voiceEnabled.value) return;
-
+  if (!speechSynthesis || selectedVoice.value === 'off') return;
   speechSynthesis.cancel();
   const utterance = new SpeechSynthesisUtterance(text);
   utterance.rate = 0.9;
-  utterance.pitch = 1.0;
-  if (femaleVoice) utterance.voice = femaleVoice;
-
+  utterance.pitch = selectedVoice.value === 'female' ? 1.1 : 0.9;
+  const voice = selectedVoice.value === 'female' ? femaleVoice : maleVoice;
+  if (voice) utterance.voice = voice;
   utterance.onstart = () => {
     isSpeaking.value = true;
   };
   utterance.onend = () => {
     isSpeaking.value = false;
   };
-
   speechSynthesis.speak(utterance);
 };
 
@@ -214,38 +255,67 @@ const stopSpeaking = () => {
   }
 };
 
-const readLastMessage = () => {
-  if (isSpeaking.value) {
-    stopSpeaking();
-  } else if (lastMessage.value) {
-    speak(lastMessage.value);
+const scrollToBottom = async () => {
+  await nextTick();
+  if (messagesContainer.value) {
+    messagesContainer.value.scrollTop = messagesContainer.value.scrollHeight;
   }
 };
 
-const onIframeLoad = () => {
-  // Try to read the last message from the iframe
-  // Note: This may not work due to cross-origin restrictions
+const sendMessage = async () => {
+  if (!userInput.value.trim() || isLoading.value) return;
+
+  const userMessage = userInput.value.trim();
+  messages.value.push({ role: 'user', content: userMessage });
+  userInput.value = '';
+  isLoading.value = true;
+
   try {
-    const iframe = difyIframe.value;
-    if (iframe?.contentDocument) {
-      const messages = iframe.contentDocument.querySelectorAll('[class*="message"]');
-      if (messages.length > 0) {
-        const lastMsg = messages[messages.length - 1];
-        lastMessage.value = lastMsg.textContent || '';
-      }
+    const response = await fetch(`${DIFY_API_URL}/chat-messages`, {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${DIFY_API_KEY}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        inputs: {},
+        query: userMessage,
+        response_mode: 'blocking',
+        conversation_id: '',
+        user: 'nuxt-user-' + Date.now(),
+      }),
+    });
+
+    const data = await response.json();
+
+    if (data.answer) {
+      messages.value.push({ role: 'assistant', content: data.answer });
+      speak(data.answer);
+    } else {
+      messages.value.push({
+        role: 'assistant',
+        content: 'Sorry, I could not process your request. Please try again.',
+      });
     }
-  } catch {
-    // Cross-origin - cannot access iframe content
-    console.log('Cannot access iframe content due to cross-origin policy');
+  } catch (error) {
+    console.error('Dify API error:', error);
+    messages.value.push({
+      role: 'assistant',
+      content: 'Sorry, there was an error. Please try again.',
+    });
+  } finally {
+    isLoading.value = false;
+    scrollToBottom();
   }
 };
 
-// Initialize voice on mount
-if (typeof window !== 'undefined') {
-  initVoice();
-}
+watch(
+  () => messages.value.length,
+  () => {
+    scrollToBottom();
+  }
+);
 
-onUnmounted(() => {
-  stopSpeaking();
-});
+if (typeof window !== 'undefined') initVoice();
+onUnmounted(() => stopSpeaking());
 </script>
