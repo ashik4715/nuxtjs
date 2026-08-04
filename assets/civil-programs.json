@@ -17,7 +17,7 @@
       "qsRanking": "28",
       "greGmat": "",
       "restricted": "NC",
-      "link": "https://www.tum.de/en/studies/degree-programs/all-degree-programs/civil-engineering-msc"
+      "link": "https://www.in.tum.de/en/studies/degree-programs/degree-programs-overview.html"
     },
     {
       "id": "civil-de-002",
@@ -36,7 +36,7 @@
       "qsRanking": "106",
       "greGmat": "",
       "restricted": "NC",
-      "link": "https://www.rwth-aachen.de/studium/alle-studiengaenge/?tx_rwthhochschulkurse_pi1[showUid]=7485&cHash=0a8d5b7e0a7a0a0a0a0a0a0a0a0a0a0a"
+      "link": "https://www.rwth-aachen.de/en/studies/degree-programs/"
     },
     {
       "id": "civil-de-003",
@@ -55,7 +55,7 @@
       "qsRanking": "158",
       "greGmat": "",
       "restricted": "No-NC",
-      "link": "https://www.tu.berlin/en/studying/study-programs/all-programs-offered/study-course/civil-engineering"
+      "link": "https://www.tu.berlin/en/studying/study-programs/all-programs-offered"
     },
     {
       "id": "civil-de-004",
@@ -112,7 +112,7 @@
       "qsRanking": "250",
       "greGmat": "",
       "restricted": "No-NC",
-      "link": "https://www.tu-darmstadt.de/studieren/studieninteressierte/studienangebot_studiengaenge/studiengang_334656.en.jsp"
+      "link": "https://www.informatik.tu-darmstadt.de/en/studies/degree-programs/master/computer-science"
     },
     {
       "id": "civil-de-007",
@@ -131,7 +131,7 @@
       "qsRanking": "119",
       "greGmat": "",
       "restricted": "No-NC",
-      "link": "https://www.kit.edu/studium/studienangebot/details/civil-engineering-msc.html"
+      "link": "https://www.kit.edu/studium/studienangebote/Master-Civil-Engineering-702.php"
     },
     {
       "id": "civil-de-008",
@@ -150,7 +150,7 @@
       "qsRanking": "601-650",
       "greGmat": "",
       "restricted": "No-NC",
-      "link": "https://www.tuhamburg.de/en/studying/degree-programs/all-degree-programs/civil-engineering/"
+      "link": "https://www.tuhh.de/tuhh/en/studying/before-studying/degree-courses/masters-programs"
     }
   ],
   "nonGerman": [
@@ -172,7 +172,7 @@
       "qsRanking": "104",
       "greGmat": "",
       "restricted": "-",
-      "link": "https://www.dtu.dk/english/education/msc-in-civil-engineering",
+      "link": "https://www.dtu.dk/english/education/msc/civil-engineering",
       "relevancyScore": "High"
     },
     {
@@ -193,7 +193,7 @@
       "qsRanking": "73",
       "greGmat": "",
       "restricted": "-",
-      "link": "https://www.kth.se/en/studies/master/structural-engineering-and-building-technology",
+      "link": "https://www.kth.se/en/studies/master/civil-and-structural-engineering",
       "relevancyScore": "High"
     },
     {
@@ -235,7 +235,7 @@
       "qsRanking": "47",
       "greGmat": "",
       "restricted": "-",
-      "link": "https://www.tudelft.nl/en/education/programmes/msc/civil-engineering",
+      "link": "https://www.tudelft.nl/en/education/msc-programmes/msc-civil-engineering",
       "relevancyScore": "High"
     },
     {
@@ -256,7 +256,7 @@
       "qsRanking": "81",
       "greGmat": "",
       "restricted": "-",
-      "link": "https://www.tcd.ie/civileng/study/postgraduate-taught/",
+      "link": "https://www.tcd.ie/civil-structural-environ/",
       "relevancyScore": "High"
     },
     {
@@ -277,7 +277,7 @@
       "qsRanking": "251",
       "greGmat": "",
       "restricted": "-",
-      "link": "https://www.nuigalway.ie/courses/postgraduate/msc-in-civil-engineering/",
+      "link": "https://www.nuigalway.ie/civil-engineering/",
       "relevancyScore": "High"
     },
     {
@@ -298,7 +298,7 @@
       "qsRanking": "102",
       "greGmat": "",
       "restricted": "-",
-      "link": "https://www.ntnu.edu/studies/msc-civil-engineering",
+      "link": "https://www.ntnu.edu/studies/ms-civil-engineering",
       "relevancyScore": "High"
     },
     {
@@ -319,7 +319,7 @@
       "qsRanking": "123",
       "greGmat": "",
       "restricted": "-",
-      "link": "https://www.polimi.it/en/prospective-students/degree-programs/civil-engineering",
+      "link": "https://www.polimi.it/en/study/degree-programmes/",
       "relevancyScore": "High"
     },
     {
@@ -361,7 +361,7 @@
       "qsRanking": "651-700",
       "greGmat": "",
       "restricted": "-",
-      "link": "https://www.grad.unizg.hr/en/studies/programmes/civil-engineering",
+      "link": "https://www.unizg.hr/en/study/study-programmes",
       "relevancyScore": "Medium"
     },
     {
@@ -487,7 +487,7 @@
       "qsRanking": "34",
       "greGmat": "",
       "restricted": "-",
-      "link": "https://www.civil.ubc.ca/graduate-programs",
+      "link": "https://www.civil.ubc.ca/graduate/",
       "relevancyScore": "High"
     },
     {
@@ -508,7 +508,7 @@
       "qsRanking": "112",
       "greGmat": "",
       "restricted": "-",
-      "link": "https://uwaterloo.ca/civil-environmental-engineering/graduate-programs",
+      "link": "https://uwaterloo.ca/civil-environmental-engineering/graduate-studies",
       "relevancyScore": "High"
     },
     {
@@ -529,7 +529,7 @@
       "qsRanking": "110",
       "greGmat": "",
       "restricted": "-",
-      "link": "https://www.ualberta.ca/engineering/department-of-civil-engineering/graduate-programs",
+      "link": "https://www.ualberta.ca/civil-engineering/",
       "relevancyScore": "High"
     },
     {
@@ -571,7 +571,7 @@
       "qsRanking": "30",
       "greGmat": "",
       "restricted": "-",
-      "link": "https://www.mcgill.ca/civil-grad/graduate-programs/",
+      "link": "https://www.mcgill.ca/civil/",
       "relevancyScore": "High"
     },
     {
@@ -592,7 +592,7 @@
       "qsRanking": "801-1000",
       "greGmat": "",
       "restricted": "-",
-      "link": "https://www.mun.ca/graduate-studies/programs/program-list/?subject=civil&program=MEng",
+      "link": "https://www.mun.ca/eng/civil/",
       "relevancyScore": "Medium"
     },
     {
@@ -613,7 +613,7 @@
       "qsRanking": "801-1000",
       "greGmat": "",
       "restricted": "-",
-      "link": "https://www.uregina.ca/graduate-studies/programs-of-study/programs-of-study-detail/?cat=civil-engineering",
+      "link": "https://www.uregina.ca/engineering/civil",
       "relevancyScore": "Medium"
     },
     {
@@ -634,7 +634,7 @@
       "qsRanking": "701-750",
       "greGmat": "",
       "restricted": "-",
-      "link": "https://www.unb.ca/graduate/programs/civil-engineering.html",
+      "link": "https://www.unb.ca/civil/",
       "relevancyScore": "Medium"
     },
     {
@@ -655,7 +655,7 @@
       "qsRanking": "901+",
       "greGmat": "",
       "restricted": "-",
-      "link": "https://www.lakeheadu.ca/programs/graduate/master-of-science-civil-engineering",
+      "link": "https://www.lakeheadu.ca/programs/grad/msc-civil-engineering",
       "relevancyScore": "Medium"
     }
   ]

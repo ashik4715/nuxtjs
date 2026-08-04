@@ -17,7 +17,7 @@
       "qsRanking": "28",
       "greGmat": "",
       "restricted": "NC",
-      "link": "https://www.tum.de/en/studies/degree-programs/all-degree-programs/informatics-msc"
+      "link": "https://www.in.tum.de/en/studies/degree-programs/degree-programs-overview.html"
     },
     {
       "id": "cse-de-002",
@@ -36,7 +36,7 @@
       "qsRanking": "106",
       "greGmat": "",
       "restricted": "NC",
-      "link": "https://www.rwth-aachen.de/studium/alle-studiengaenge/?tx_rwthhochschulkurse_pi1[showUid]=7485&cHash=0a8d5b7e0a7a0a0a0a0a0a0a0a0a0a0a"
+      "link": "https://www.rwth-aachen.de/en/studies/degree-programs/"
     },
     {
       "id": "cse-de-003",
@@ -55,7 +55,7 @@
       "qsRanking": "158",
       "greGmat": "",
       "restricted": "No-NC",
-      "link": "https://www.tu.berlin/en/studying/study-programs/all-programs-offered/study-course/computer-science-informatik-m-sc"
+      "link": "https://www.tu.berlin/en/studying/study-programs/all-programs-offered"
     },
     {
       "id": "cse-de-004",
@@ -74,7 +74,7 @@
       "qsRanking": "245",
       "greGmat": "",
       "restricted": "No-NC",
-      "link": "https://www.tf.uni-freiburg.de/en/study-programs/computer-science/m-sc-computer-science"
+      "link": "https://www.informatik.uni-freiburg.de/study/master-en/"
     },
     {
       "id": "cse-de-005",
@@ -150,7 +150,7 @@
       "qsRanking": "250",
       "greGmat": "",
       "restricted": "No-NC",
-      "link": "https://www.tu-darmstadt.de/studieren/studieninteressierte/studienangebot_studiengaenge/studiengang_334656.en.jsp"
+      "link": "https://www.informatik.tu-darmstadt.de/en/studies/degree-programs/master/computer-science"
     },
     {
       "id": "cse-de-009",
@@ -269,7 +269,7 @@
       "qsRanking": "73",
       "greGmat": "",
       "restricted": "-",
-      "link": "https://www.kth.se/en/studies/master/machine-learning",
+      "link": "https://www.kth.se/en/studies/master/computer-science",
       "relevancyScore": "High"
     },
     {
@@ -290,7 +290,7 @@
       "qsRanking": "104",
       "greGmat": "",
       "restricted": "-",
-      "link": "https://www.dtu.dk/english/education/msc-in-computer-science",
+      "link": "https://www.dtu.dk/english/education/msc/computer-science-engineering",
       "relevancyScore": "High"
     },
     {
@@ -332,7 +332,7 @@
       "qsRanking": "47",
       "greGmat": "",
       "restricted": "-",
-      "link": "https://www.tudelft.nl/en/education/programmes/msc/computer-science",
+      "link": "https://ewi.tudelft.nl/en/education/msc-programmes/msc-computer-science/",
       "relevancyScore": "High"
     },
     {
@@ -353,7 +353,7 @@
       "qsRanking": "53",
       "greGmat": "",
       "restricted": "-",
-      "link": "https://www.uva.nl/en/education/master/programmes/computer-science.html",
+      "link": "https://www.uva.nl/en/education/programmes/masters/computer-science",
       "relevancyScore": "High"
     },
     {
@@ -374,7 +374,7 @@
       "qsRanking": "81",
       "greGmat": "",
       "restricted": "-",
-      "link": "https://www.tcd.ie/cs/study/postgraduate-taught/",
+      "link": "https://www.scss.tcd.ie/",
       "relevancyScore": "High"
     },
     {
@@ -395,7 +395,7 @@
       "qsRanking": "251",
       "greGmat": "",
       "restricted": "-",
-      "link": "https://www.nuigalway.ie/courses/postgraduate/msc-in-computer-science/",
+      "link": "https://www.nuigalway.ie/computer-science/",
       "relevancyScore": "High"
     },
     {
@@ -416,7 +416,7 @@
       "qsRanking": "284",
       "greGmat": "",
       "restricted": "-",
-      "link": "https://www.mimuw.edu.pl/en/studies/msc-computer-science",
+      "link": "https://www.mimuw.edu.pl/en/studies",
       "relevancyScore": "Medium"
     },
     {
@@ -437,7 +437,7 @@
       "qsRanking": "233",
       "greGmat": "",
       "restricted": "-",
-      "link": "https://www.mff.cuni.cz/en/admission/degree-programmes/master-s-degree-programmes/computer-science/",
+      "link": "https://www.mff.cuni.cz/en/prospective-students/programs/",
       "relevancyScore": "Medium"
     },
     {
@@ -563,7 +563,7 @@
       "qsRanking": "-",
       "greGmat": "",
       "restricted": "-",
-      "link": "https://ipcvai.eu/",
+      "link": "https://ipcv.eu/",
       "relevancyScore": "High (OpenCV, Computer Vision, OCR)"
     },
     {
@@ -605,7 +605,7 @@
       "qsRanking": "-",
       "greGmat": "",
       "restricted": "-",
-      "link": "https://cosi.emjmd.eu/",
+      "link": "https://cosi-master.eu/",
       "relevancyScore": "Medium-High (3D Sensing, Spectral Data)"
     },
     {
@@ -626,7 +626,7 @@
       "qsRanking": "112",
       "greGmat": "",
       "restricted": "-",
-      "link": "https://cs.uwaterloo.ca/computer-science-future-students/graduate/",
+      "link": "https://cs.uwaterloo.ca/",
       "relevancyScore": "High"
     },
     {
@@ -647,7 +647,7 @@
       "qsRanking": "34",
       "greGmat": "",
       "restricted": "-",
-      "link": "https://www.cs.ubc.ca/prospective-students/graduate-degree-programs",
+      "link": "https://www.cs.ubc.ca/grad/",
       "relevancyScore": "High"
     },
     {
@@ -668,7 +668,7 @@
       "qsRanking": "110",
       "greGmat": "",
       "restricted": "-",
-      "link": "https://www.cs.ualberta.ca/graduate-studies",
+      "link": "https://www.cs.ualberta.ca/",
       "relevancyScore": "High (AI, Vision, Spatial Learning)"
     },
     {
@@ -689,7 +689,7 @@
       "qsRanking": "318",
       "greGmat": "",
       "restricted": "-",
-      "link": "https://www.sfu.ca/computing/graduate/prospective-students/programs/masters-programs.html",
+      "link": "https://www.cs.sfu.ca/",
       "relevancyScore": "High"
     },
     {
@@ -710,7 +710,7 @@
       "qsRanking": "30",
       "greGmat": "",
       "restricted": "-",
-      "link": "https://www.mcgill.ca/cs/graduate/",
+      "link": "https://www.cs.mcgill.ca/",
       "relevancyScore": "High"
     },
     {
@@ -731,7 +731,7 @@
       "qsRanking": "21",
       "greGmat": "",
       "restricted": "-",
-      "link": "https://www.cs.toronto.edu/graduate-studies",
+      "link": "https://www.cs.toronto.edu/",
       "relevancyScore": "High"
     },
     {
@@ -752,7 +752,7 @@
       "qsRanking": "801-1000",
       "greGmat": "",
       "restricted": "-",
-      "link": "https://www.mun.ca/graduate-studies/programs/program-list/?subject=computer&program=MSC",
+      "link": "https://www.mun.ca/cs/graduate/",
       "relevancyScore": "Medium"
     },
     {
@@ -773,7 +773,7 @@
       "qsRanking": "801-1000",
       "greGmat": "",
       "restricted": "-",
-      "link": "https://www.uregina.ca/graduate-studies/programs-of-study/programs-of-study-detail/?cat=computer-science",
+      "link": "https://www.uregina.ca/computer-science/graduate/",
       "relevancyScore": "Medium"
     },
     {
@@ -794,7 +794,7 @@
       "qsRanking": "901+",
       "greGmat": "",
       "restricted": "-",
-      "link": "https://www.lakeheadu.ca/programs/graduate/master-of-science-computer-science",
+      "link": "https://www.lakeheadu.ca/programs/grad/msc-computer-science",
       "relevancyScore": "Medium"
     },
     {
@@ -815,7 +815,7 @@
       "qsRanking": "701-750",
       "greGmat": "",
       "restricted": "-",
-      "link": "https://www.unb.ca/graduate/programs/computer-science.html",
+      "link": "https://www.unb.ca/cs/",
       "relevancyScore": "Medium"
     },
     {
@@ -836,7 +836,7 @@
       "qsRanking": "901+",
       "greGmat": "",
       "restricted": "-",
-      "link": "https://www.upei.ca/programs/computer-science/",
+      "link": "https://www.upei.ca/computer-science",
       "relevancyScore": "Medium"
     },
     {
@@ -857,7 +857,7 @@
       "qsRanking": "901+",
       "greGmat": "",
       "restricted": "-",
-      "link": "https://www.capebretonu.ca/programs/graduate/msc-information-technology",
+      "link": "https://www.cbu.ca/academics/programs/master-of-science-in-information-technology/",
       "relevancyScore": "Medium"
     },
     {
@@ -878,7 +878,7 @@
       "qsRanking": "901+",
       "greGmat": "",
       "restricted": "-",
-      "link": "https://www.tru.ca/programs/catalogue/program/computer-science.html",
+      "link": "https://www.tru.ca/programs/catalogue/master-of-science-in-computer-science.html",
       "relevancyScore": "Medium"
     },
     {
@@ -899,7 +899,7 @@
       "qsRanking": "901+",
       "greGmat": "",
       "restricted": "-",
-      "link": "https://www.unbc.ca/programs/msc-computing-science",
+      "link": "https://www.unbc.ca/programs/msc-computer-science",
       "relevancyScore": "Medium"
     }
   ]
